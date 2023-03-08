@@ -3,14 +3,14 @@ body{
     justify-content: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-image: url(../imagens/placa-de-circuito-tecnologia-vertical-de-alta-tecnologia-textura-de-fundo_107146-92.jpeg);
-    background-size: 179%;
+    background-size: 100%;
     background-position: 50%;
     border: 0;
     padding: 0;
     margin: 0;
 }
 .container{
-    width: 1000px;
+    width: 2000px;;
 }
 header{
     height: 100px;
@@ -21,7 +21,7 @@ header{
     align-items: center;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .logo{
     margin-left: 20px;
@@ -54,7 +54,7 @@ a{
 .menu-input{
     border-radius: 15px;
     border: 0;
-    margin-right: 30px;
+    margin-right: 10px;
     height: 18px;
     width: 150px;
 }
