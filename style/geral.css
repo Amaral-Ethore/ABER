@@ -2,7 +2,7 @@ body{
     display: flex;
     justify-content: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-image: url(../imagens/placa-de-circuito-tecnologia-vertical-de-alta-tecnologia-textura-de-fundo_107146-92.jpeg);
+    background-image: url(../imagens/6122b7b8600b0e5bc4be0d80b42c7b60.jpg);
     background-size: 100%;
     background-position: 50%;
     border: 0;
@@ -10,31 +10,31 @@ body{
     margin: 0;
 }
 .container{
-    width: 2000px;;
+    max-width: 500px;
 }
 header{
-    height: 100px;
     display: grid;
-    grid-template-rows: 80px 20px;
+    grid-template-rows: 50px 15px;
 }
 .h-1{
     align-items: center;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 .logo{
-    margin-left: 20px;
-    height: 60px;
+    height: 40px;
     width: fit-content;
+}
+.hover{
+    cursor: pointer;
 }
 img{
     height: 100%;
 }
 ul{
     display: flex;
-    list-style: none;
-    margin-right: 20px;
+    list-style: none;,,,,,,
     margin-bottom: 0;
     gap: 10px;
 }
@@ -51,17 +51,28 @@ a{
     text-decoration: none;
     color: white;
 }
+.search{
+    position: relative;
+}
 .menu-input{
     border-radius: 15px;
     border: 0;
     margin-right: 10px;
     height: 18px;
     width: 150px;
+    background-image: url(); 
+}
+.lupa{
+    position: absolute;
+    top: 6px;
+    right: 17px;
+    color: rgb(61, 61, 61);
+    font-size: 0.8rem;
 }
 .h-2 ul{
     margin: 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 0;
 }
 .h-2 li{

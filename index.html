@@ -20,12 +20,17 @@
     <header>
       <div class="h-1">
         <div class="logo">
-          <img src="/imagens/aber-logo-zip-file/png/logo-no-background.png" alt="logo">
+          <a href="index.html">
+            <img src="/imagens/aber-logo-zip-file/png/logo-no-background.png" alt="logo">
+          </a>
         </div>
         <div class="menu">
           <ul>
             <li>
-              <input class="menu-input" type="text">
+              <div class="search">
+                <input id="search" class="menu-input" type="text">
+                <i class=" lupa fa-solid fa-magnifying-glass"></i>
+              </div>
             </li>
             <li>
               <i class="fa-solid fa-plus"></i>
@@ -35,10 +40,30 @@
                 <i class="fa-solid fa-cart-shopping"></i>
               </a>
             </li>
-            <li>
-              <a href="">
-                <i class="fa-solid fa-user"></i>
-              </a>
+            <li class="hover">
+                <div class="dropdown">
+                  <i class="fa-solid fa-user" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"></i>
+                  </button>
+                  <form class="dropdown-menu p-4">
+                    <div class="mb-3">
+                      <label for="exampleDropdownFormEmail2" class="form-label">Email </label>
+                      <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@examplo.com">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleDropdownFormPassword2" class="form-label">Senha</label>
+                      <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Senha">
+                    </div>
+                    <div class="mb-3">
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                        <label class="form-check-label" for="dropdownCheck2">
+                          Lembrar Senha
+                        </label>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Logar</button>
+                  </form>
+                </div>
             </li>
           </ul>
         </div>
