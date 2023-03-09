@@ -10,7 +10,10 @@ body{
     margin: 0;
 }
 .container{
-    max-width: 500px;
+    max-width: 1000px;
+}
+.login-form{
+    transform: translate(-145px, 22px);
 }
 header{
     display: grid;
@@ -34,7 +37,7 @@ img{
 }
 ul{
     display: flex;
-    list-style: none;,,,,,,
+    list-style: none;
     margin-bottom: 0;
     gap: 10px;
 }
