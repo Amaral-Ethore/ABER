@@ -1,0 +1,10 @@
+
+main {
+    display: flex;
+    justify-content: space-around;
+
+}
+.conteudo_area {
+    width: 800px;
+  
+}
