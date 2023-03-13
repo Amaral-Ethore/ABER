@@ -12,6 +12,6 @@ function mudabanner(){
 function start(){
     setInterval(() => {
         mudabanner();
-    }, 3000);
+    }, 2500);
 }
 window.addEventListener('load', start);
