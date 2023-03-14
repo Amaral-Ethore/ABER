@@ -17,7 +17,7 @@ body{
 }
 header{
     display: grid;
-    grid-template-rows: 50px 15px;
+    grid-template-rows: 50px 25px;
 }
 .h-1{
     align-items: center;
@@ -26,7 +26,9 @@ header{
     justify-content: space-between;
 }
 .logo{
-    height: 100px;
+    position: relative;
+    left: 10px;
+    height: 45px;
     width: fit-content;
 }
 .hover{
@@ -73,6 +75,11 @@ a{
     right: 20px;
     color: rgb(60, 60, 60);
     font-size: 0.8rem;
+}
+.h-2{
+    display: grid;
+    align-items: center;
+    background-color: rgb(0, 149, 235);
 }
 .h-2 ul{
     margin: 0;
