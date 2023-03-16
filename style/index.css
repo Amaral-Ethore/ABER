@@ -18,103 +18,27 @@
     font-family: 'slayer';
     src: url(../fontes/slayer_movie/Slayer\ movie.ttf) format('truetype');
 }
-.banners{
-    margin-top: 20px;
-    position: relative;
-    width: 100%;
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
-.banner{
-    position: absolute;
-    width: 100%;
+.content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+.card{
+    background-color: darkgrey;
+    width: 75px;
     height: 100px;
-    background-color: rgb(109, 109, 109);
-    border-radius: 10px;
-    opacity: 0;
-    transition: 400ms;
 }
-.opacity{
-    opacity: 1;
-}
-.banner i{
-    color: white;
-}
-.banner0{
-    background-color: rgb(43, 159, 255);
-}
-.banner0 i{
-    position: absolute;
-    left: 25px;
-    top: 19px;
-    font-size: 4rem;
-}
-.banner0 p{
-    position: absolute;
-    font-size: 1.5rem;
-    bottom: 19px ;
-    right: 15px;font-family: 'base 2';
-    color: white;
-}
-.banner0 .keyboard{
-    position: absolute;
-    font-size: 1.7rem;
-    left: 25px;
-    top: 63px;
-}
-.banner0 .mouse{
-    position: absolute;
-    font-size: 1rem;
-    top: 70px;
-    left: 75px;
-}
-.banner1{
-    background-color: rgb(255, 66, 66);
-}
-.banner1 i{
-    position: absolute;
-    font-size: 4rem;
-    top: 16px;
-    left: 15px;
-}
-.banner1 P{
-    position: absolute;
-    font-family: 'darkcrystal';
-    font-size: 2rem;
-    color: white;
-    right: 20px;
-    top: 28px;
-}
-.banner2{
-    background-color: rgb(105, 199, 105);
-}
-.banner2 i{
-    position: absolute;
-    font-size: 3.7rem;
-    top: 15px;
-    left: 20px;
-}
-.banner2 p{
-    position: absolute;
-    font-family: 'maytra';
-    font-size: 3rem;
-    font-weight: 300;
-    color: white;
-    right: 20px;
-    top: 15px;
-}
-.banner3{
-    background-color: rgb(157, 89, 221);
-}
-.banner3 i{
-    position: absolute;
-    font-size: 4rem;
-    top: 17px;
-    left: 20px;
-}
-.banner3 p{
-    position: absolute;
-    font-family: 'slayer';
-    font-size: 1.2rem;
-    color: white;
-    right: 15px;
-    top: 35px;
+.banners .banner img{
+    max-width: 100%;
 }
