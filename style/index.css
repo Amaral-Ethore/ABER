@@ -30,9 +30,9 @@ main{
 }
 .cards{
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
-    justify-content: center;
 }
 .card{
     background-color: darkgrey;
