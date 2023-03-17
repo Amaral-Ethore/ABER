@@ -30,8 +30,8 @@ main{
 }
 .cards{
     display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    grid-template-columns: repeat(6, 1fr);
     gap: 20px;
 }
 .card{
@@ -39,6 +39,15 @@ main{
     width: 75px;
     height: 100px;
 }
+.banners{
+    position: relative;
+}
+.banner{
+    position: absolute;
+}
 .banners .banner img{
     max-width: 100%;
+}
+h2{
+    text-align: center;
 }
