@@ -9,7 +9,7 @@
     <title>Aber-Shop</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css">
     <link rel="stylesheet" href="/style/geral.css">
     <link rel="stylesheet" href="/style/index.css">
@@ -106,13 +106,25 @@
             </div>
         </header>
         <main>
-            <div class="banners">
-                <div class="banner">
-                    <img src="imagens/banners/0500346001598558021.png" alt="">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class=" bnrs carousel-inner">
+                    <div class="b b1 carousel-item active" data-bs-interval="2000">
+                        <img src="./imagens/banners/0500346001598558021.png" class="d-block w-100 b b1" alt="...">
+                    </div>
+                    <div class="b b2 carousel-item" data-bs-interval="2000">
+                        <img src="./imagens/banners/0882329001595854637.png" class="d-block w-100 b b2" alt="...">
+                    </div>
                 </div>
-                <div class="banner">
-                    <img src="imagens/banners/0882329001595854637.png" alt="">
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
             <div class="content">
                 <h2>
@@ -142,6 +154,59 @@
                     <div class="card"></div>
                     <div class="card"></div>
                 </div>
+                <div class="btns">
+                    <div class="btn1">
+                        <a href="http://">Ofertas do dia</a>
+                    </div>
+                    <div class="btn1">
+                        <a href="">Ofertas da Semana</a>
+                    </div>
+                </div>
+                <h2>Mais Vendidos</h2>
+                <div class="cards">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                </div>
+                <div class="footer">
+                    <div class="f-cont">
+                        <div class="f-div">
+                            <h3 class="institucional">Institucional</h3>
+                            <p>-----------</p>
+                            <p>---------------</p>
+                            <p>----------------------</p>
+                            <p>--------</p>
+                        </div>
+                        <div class="f-div">
+                            <h3 class="ajuda">Ajuda</h3>
+                            <p>-----------</p>
+                            <p>---------------</p>
+                            <p>----------------------</p>
+                            <p>--------</p>
+                        </div>
+                        <div class="f-div">
+                            <h3 class="dividas">Dúvidas</h3>
+                            <p>-----------</p>
+                            <p>---------------</p>
+                            <p>----------------------</p>
+                            <p>--------</p>
+                        </div>
+                        <div class="f-div">
+                            <h3 class="pagamentos">Pagamentos</h3>
+                            <p>-----------</p>
+                            <p>---------------</p>
+                            <p>----------------------</p>
+                            <p>--------</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
         <footer></footer>
@@ -151,6 +216,7 @@
         crossorigin="anonymous"></script>
     <script src="codigos/code.js"></script>
     <script src="/codigos/index.js"></script>
+
 </body>
 
 </html>

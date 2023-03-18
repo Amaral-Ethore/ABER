@@ -55,23 +55,26 @@ i{
 }
 a{
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 .search{
     position: relative;
 }
 .menu-input{
-    border-radius: 15px;
+    border-radius: 10px;
     border: 0;
     margin-right: 10px;
-    height: 18px;
-    width: 150px;
+    height: 20px;
+    width: 200px;
+    padding-block: 10px;
+    padding-left: 10px;
+    padding-right: 25px;
     background-image: url(); 
     border: 1px solid black;
 }
 .lupa{
     position: absolute;
-    top: 7px;
+    top: 6px;
     right: 20px;
     color: rgb(60, 60, 60);
     font-size: 0.8rem;
@@ -79,7 +82,7 @@ a{
 .h-2{
     display: grid;
     align-items: center;
-    background-color: rgb(0, 149, 235);
+    background-color: black;
 }
 .h-2 ul{
     margin: 0;
