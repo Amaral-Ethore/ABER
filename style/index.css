@@ -1,3 +1,11 @@
+*{
+    user-select: none;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    margin: 0;
+}
 @font-face {
     font-family: 'darkcrystal';
     src: url(../fontes/dark_crystal/dc_s.ttf) format('truetype');
@@ -18,36 +26,78 @@
     font-family: 'slayer';
     src: url(../fontes/slayer_movie/Slayer\ movie.ttf) format('truetype');
 }
+
 main{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    gap: 20px;
+                    }
+.bnrs{
+    display: flex;
 }
+
 .content{
     display: flex;
-    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 .cards{
     display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
     gap: 20px;
+    width: 730px;
+    width: 900px;
 }
+
 .card{
+    scroll-snap-align: end;
     background-color: darkgrey;
-    width: 75px;
-    height: 100px;
+    height: 200px;
+    width: 130px;
 }
-.banners{
-    position: relative;
-}
-.banner{
-    position: absolute;
-}
-.banners .banner img{
-    max-width: 100%;
-}
+
 h2{
+    text-align: center;
+}
+.btns{
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+    justify-content: space-around;
+}
+.btn1{
+    display: flex;
+    width: 200px;
+    height:50px;
+    background-color: rgb(54, 118, 214);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.btn1 a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.f-cont{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+}
+.f-div{
+    scale: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
 }
