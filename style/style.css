@@ -6,5 +6,12 @@ main {
 }
 .conteudo_area {
     width: 800px;
+    margin: 50px;
   
+}
+.form-label {
+    color: white;
+}
+.conteudo_area h3{
+    color: white;
 }
