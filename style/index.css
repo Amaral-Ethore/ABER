@@ -33,7 +33,6 @@ body {
     font-family: 'slayer';
     src: url(../fontes/slayer_movie/Slayer\ movie.ttf) format('truetype');
 }
-
 main {
     display: flex;
     justify-content: center;
@@ -63,7 +62,7 @@ main {
 
 .card {
     scroll-snap-align: end;
-    background-color: darkgrey;
+    background-color: rgb(255, 255, 255);
     height: 200px;
     width: 130px;
 }
