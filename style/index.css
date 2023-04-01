@@ -1,14 +1,3 @@
-* {
-    user-select: none;
-}
-
-html,
-body {
-    margin: 0;
-    padding: 0;
-    margin: 0;
-}
-
 @font-face {
     font-family: 'darkcrystal';
     src: url(../fontes/dark_crystal/dc_s.ttf) format('truetype');
@@ -33,6 +22,18 @@ body {
     font-family: 'slayer';
     src: url(../fontes/slayer_movie/Slayer\ movie.ttf) format('truetype');
 }
+
+* {
+    user-select: none;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    margin: 0;
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -67,9 +68,6 @@ main {
     width: 130px;
 }
 
-h2 {
-    text-align: center;
-}
 .btns {
     display: flex;
     margin-top: 30px;
@@ -86,18 +84,10 @@ h2 {
     margin-bottom: 30px;
 }
 
-.btn1 a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-.footer{
+.footer {
     margin-inline: 20px;
 }
+
 .f-cont {
     display: flex;
     justify-content: space-between;
@@ -114,25 +104,48 @@ h2 {
     text-align: center;
 }
 
+.btn1 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+}
+
+
 @media (max-width: 900px) {
-    .cards{
+    .cards {
         display: grid;
         grid-template-rows: 1fr;
-    }   
-    .f-div{
     }
-    .f-div h3, p{
+
+    .f-div h3,
+    p {
         font-size: 0.8rem;
     }
 }
+
 @media (max-width: 750px) {
-    .cards{
+    .cards {
         width: 600px;
     }
-    .f-cont{
+
+    .f-cont {
         flex-wrap: wrap;
     }
-    .f-cont h3, p{
+
+    .f-cont h3,
+    p {
         text-align: left;
     }
+}
+
+@media(max-width: 666){
+    
 }
