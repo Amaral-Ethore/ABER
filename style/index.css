@@ -40,8 +40,12 @@ main {
     flex-direction: column;
     gap: 20px;
 }
+<<<<<<< HEAD
+.bnrs{
+=======
 
 .bnrs {
+>>>>>>> aed1861ee5220dca9a9af019fa44d6ceec8c2eb4
     display: flex;
 }
 
