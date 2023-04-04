@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'darkcrystal';
+    src: url(../fontes/dark_crystal/dc_s.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'base 2';
+    src: url(../fontes/base_02/Base\ 02.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'aerosol';
+    src: url(../fontes/aerosol/Aerosol.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'maytra';
+    src: url(../fontes/maytra/Maytra.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'slayer';
+    src: url(../fontes/slayer_movie/Slayer\ movie.ttf) format('truetype');
+}
+
+* {
+    user-select: none;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bnrs {
+    display: flex;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cards {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    width: 730px;
+}
+
+.card {
+    scroll-snap-align: end;
+    background-color: rgb(255, 255, 255);
+    height: 200px;
+    width: 130px;
+}
+
+.btns {
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.btn1 {
+    display: flex;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(54, 118, 214);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.btn1 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@media (max-width: 900px) {
+    .cards {
+        display: grid;
+        grid-template-rows: 1fr;
+    }
+}
+
+@media (max-width: 750px) {
+    .cards {
+        width: 600px;
+    }
+}
+
+@media(max-width: 666){
+    
+}
