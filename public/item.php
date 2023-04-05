@@ -16,7 +16,7 @@
     <div class="container">
         <?php require_once("nav.php")?> 
         <main>
-                <div id="carouselItens" class="carousel slide">
+        <div id="carouselItens" class="carousel slide">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselItens" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselItens" data-bs-slide-to="1" aria-label="Slide 2"></button>

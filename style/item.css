@@ -1,5 +1,12 @@
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .carousel{
-    border: 2px solid red;
+    border: 5px solid red;
     height: 400px;
     width: 450px;
 }
