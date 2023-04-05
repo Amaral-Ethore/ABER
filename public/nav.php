@@ -1,7 +1,7 @@
 <header>
             <div class="h-1">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img class="logoimg" src="../imagens/aber-logo-zip-file/png/logo-no-background.png" alt="logo">
                     </a>
                 </div>
@@ -76,7 +76,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="./cad_cliente.php">
                                 Contato
                             </a>
                         </li>
