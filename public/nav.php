@@ -28,22 +28,18 @@
                                 </button>
                                 <form id="myDropdown" class="dropdown-menu p-4 login-form">
                                     <div class="mb-3">
-                                        <label for="exampleDropdownFormEmail2" class="form-label">Email </label>
-                                        <input type="email" class="form-control" id="exampleDropdownFormEmail2"
+                                        <label for="mail" class="form-label">Email </label>
+                                        <input type="email" class="form-control" id="mail" name="mailclie"
                                             placeholder="email@examplo.com">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="exampleDropdownFormPassword2" class="form-label">Senha</label>
-                                        <input type="password" class="form-control" id="exampleDropdownFormPassword2"
+                                        <label for="senha" class="form-label">Senha</label>
+                                        <input type="password" class="form-control" id="senha" name="senhaclie"
                                             placeholder="Senha">
                                     </div>
-                                    <div class="mb-3">
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-                                            <label class="form-check-label" for="dropdownCheck2">
-                                                Lembrar Senha
-                                            </label>
-                                        </div>
+                                    <div>
+                                        <input type="checkbox" name="funcionario" id="chkfunc">
+                                        <label for="funcionario">funcionario</label>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Logar</button>
                                 </form>
@@ -84,3 +80,4 @@
                 </div>
             </div>
         </header>
+        <script src="../codigos/code.js"></script>
