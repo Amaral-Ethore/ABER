@@ -19,7 +19,7 @@ class ClienteDAO
                 $cliente->setEndereco(($rs->endereco));
                 $cliente->setSenha(($rs->senha));
                 $cliente->setEmail(($rs->email));
-                $cliente->setCpfCnpj($rs->cpf_cnpj);
+                $cliente->setCpfCnpj($rs->cpfcnpj);
                 $cliente->setTelefone($rs->telefone);
                 $retorno[] = clone $cliente;
             }
@@ -44,7 +44,31 @@ class ClienteDAO
                 $cliente->setEndereco(($rs->endereco));
                 $cliente->setSenha(($rs->senha));
                 $cliente->setEmail(($rs->email));
-                $cliente->setCpfCnpj($rs->cpf_cnpj);
+                $cliente->setCpfCnpj($rs->cpfcnpj);
+                $cliente->setTelefone($rs->telefone);
+            }
+            return $cliente;
+        } catch (PDOException $ex) {
+            echo "Erro ao buscar cliente: " . $ex->getMessage();
+            die();
+        }
+    }
+
+    public function buscarPorEmail($mail)
+    {
+        $pdo = conectDb();
+        try {
+            $stmt = $pdo->prepare("SELECT * FROM clientes WHERE email = :email;");
+            $stmt->bindValue(":email", $mail);
+            $stmt->execute();
+            $cliente = new Cliente();
+            while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
+                $cliente->setId($rs->id);
+                $cliente->setNome(($rs->nome));
+                $cliente->setEndereco(($rs->endereco));
+                $cliente->setSenha(($rs->senha));
+                $cliente->setEmail(($rs->email));
+                $cliente->setCpfCnpj($rs->cpfcnpj);
                 $cliente->setTelefone($rs->telefone);
             }
             return $cliente;
@@ -78,7 +102,7 @@ class ClienteDAO
         $pdo = conectDb();
         $pdo->beginTransaction();
         try {
-            $stmt = $pdo->prepare("INSERT INTO clientes (nome,email,senha,endreco, cpf_cnpj, telefone) VALUES (:nome,:email, :senha, :endereco, :cpf, :tel)");
+            $stmt = $pdo->prepare("INSERT INTO clientes (nome,email,senha,endreco, cpfcnpj, telefone) VALUES (:nome,:email, :senha, :endereco, :cpf, :tel)");
             $stmt->bindValue(":nome", $cliente->getNome());
             $stmt->bindValue(":email", $cliente->getEmail());
             $stmt->bindValue(":senha", $cliente->getSenha());
@@ -103,7 +127,7 @@ class ClienteDAO
         $pdo = conectDb();
         $pdo->beginTransaction();
         try {
-            $stmt = $pdo->prepare("UPDATE clientes SET nome = :nome, email = :email, senha = :senha, endereco = :endereco, cpf_cnpj = :cpf, telefone = :tel WHERE id = :id");
+            $stmt = $pdo->prepare("UPDATE clientes SET nome = :nome, email = :email, senha = :senha, endereco = :endereco, cpfcnpj = :cpf, telefone = :tel WHERE id = :id");
             $stmt->bindValue(":nome", $cliente->getNome());
             $stmt->bindValue(":email", $cliente->getEmail());
             $stmt->bindValue(":senha", $cliente->getSenha());

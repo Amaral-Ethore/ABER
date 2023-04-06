@@ -12,9 +12,6 @@ function getchk(){
                 return "cliente";
         }
 }
-// chkfunc.addEventListener('click', () => {
-//         alert(getchk());
-// });
 function alteraName(obj){
         let inputmail = document.getElementById('mail');
         let inputsenha = document.getElementById('senha');
@@ -26,8 +23,10 @@ function alteraName(obj){
                 inputmail.setAttribute('name', "mailfunc");
                 inputsenha.setAttribute('name', "senhafunc")        
         }
-        alert(obj);
 }
+window.addEventListener('load',() => {
+        alteraName(getchk());
+})
 chkfunc.addEventListener('click',() => {
         alteraName(getchk());
 })
