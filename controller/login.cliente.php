@@ -1,6 +1,6 @@
 <?php
-require_once('./login.controller.php');
-$controller = new ClienteController();
+function buscaCliente($mailclie, $senhaclie){
+    $controller = new ClienteController();
     $cliente = new Cliente();
     $cliente = $controller->buscarPorEmail($mailclie);
     var_dump($cliente);
@@ -8,3 +8,4 @@ $controller = new ClienteController();
         $_SESSION['tipo'] = "cliente";
         $_SESSION['usuario'] = $cliente->getEmail();
     }
+}
