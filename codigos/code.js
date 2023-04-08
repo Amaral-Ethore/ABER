@@ -13,15 +13,12 @@ function getchk(){
         }
 }
 function alteraName(obj){
-        let inputmail = document.getElementById('mail');
-        let inputsenha = document.getElementById('senha');
+        let tipo = document.getElementById('tipo');
         if (obj == "cliente") {
-                inputmail.setAttribute('name', "mailclie");
-                inputsenha.setAttribute('name', "senhaclie")
+                tipo.setAttribute('name', "cliente");
         }
         if(obj == "funcionario"){
-                inputmail.setAttribute('name', "mailfunc");
-                inputsenha.setAttribute('name', "senhafunc")        
+                tipo.setAttribute('name', "funcionario");      
         }
 }
 window.addEventListener('load',() => {

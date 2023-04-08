@@ -1,24 +1,16 @@
-<?php 
-    require_once('../controller/cliente.controller.php');
-    require_once('../classes/cliente.class.php');
+<?php
     session_start();
-    $mailclie = isset($_POST['mailclie']) ? $_POST['mailclie'] : null;
-    $mailfunc = isset($_POST['mailfunc']) ? $_POST['mailfunc'] : null;
-    $senhaclie = isset($_POST['senhaclie']) ? $_POST['senhaclie'] : null;
-    $senhafunc = isset($_POST['senhafunc']) ? $_POST['senhafunc'] : null;
-
-    if(!$mailclie || !$senhaclie){
-        $_SESSION['mensagem'] = "Email e Senha devem ser Preenchidos";
+    $email = isset($_POST['email']) ? $_POST['email'] : null;
+    $senha = isset($_POST['senha']) ? $_POST['senha'] : null;
+    $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : null;
+    
+    if(!$email || !$senha){
+        $_SESSION['mensagem'] = "Email e Senha do cliente devem ser Preenchidos";
         header('Location:../public/index.php');
         return 0;
     }
-    $controller = new ClienteController();
-    $cliente = new Cliente();
-    $cliente = $controller->buscarPorEmail($mailclie);
-
-    if($mailclie && $senhaclie == $cliente->getSenha()){
-        $_SESSION['tipo'] = "cliente";
-        $_SESSION['usuario'] = $cliente->getEmail();
+    if($mailclie && $senhaclie){
+        $_SESSION['mensagem'] = "Cliente Incerido com sucesso.";
+        header('Location:./login.cliente.php');
     }
-    
 ?>
