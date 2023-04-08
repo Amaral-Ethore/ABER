@@ -29,7 +29,7 @@
                                 <form id="myDropdown" class="dropdown-menu p-4 login-form" method="POST" action="../controller/login.controller.php">
                                     <div class="mb-3">
                                         <label for="mail" class="form-label">Email </label>
-                                        <input type="email" class="form-control" id="email" name="mail"
+                                        <input type="email" class="form-control" id="email" name="email"
                                             placeholder="email@examplo.com">
                                     </div>
                                     <div class="mb-3">
@@ -39,7 +39,7 @@
                                     </div>
                                     
                                     <div>
-                                        <input type="hidden" id="tipo" name="">
+                                        <input type="hidden" id="tipo" name="tipo" value="">
                                         <input type="checkbox" name="funcionario" id="chkfunc">
                                         <label for="funcionario">funcionario</label>
                                     </div><br>

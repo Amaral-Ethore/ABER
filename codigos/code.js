@@ -15,10 +15,10 @@ function getchk(){
 function alteraName(obj){
         let tipo = document.getElementById('tipo');
         if (obj == "cliente") {
-                tipo.setAttribute('name', "cliente");
+                tipo.setAttribute('value', "cliente");
         }
         if(obj == "funcionario"){
-                tipo.setAttribute('name', "funcionario");      
+                tipo.setAttribute('value', "funcionario");      
         }
 }
 window.addEventListener('load',() => {
