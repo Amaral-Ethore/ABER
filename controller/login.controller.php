@@ -1,6 +1,4 @@
 <?php
-// require_once('../classes/cliente.class.php');
-// require_once('../controller/cliente.controller.php');
 require_once('./login.cliente.php');
 require_once('./login.funcionario.php');
 session_start();
@@ -15,8 +13,10 @@ if ($email && $senha) {
     $_SESSION['mensagem'] = "Email e Senha Informado com Sucesso";
     if ($_POST && $_POST['tipo'] && $_POST['tipo'] == "cliente") {
         buscaCliente($email, $senha);
+        header('Location:../public/index.php');
     }
     if ($_POST && $_POST['tipo'] && $_POST['tipo'] == "funcionario") {
         buscaFuncionario($email, $senha);
+        header('Location:../public/index.php');
     }
 }
