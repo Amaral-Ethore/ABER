@@ -13,10 +13,10 @@ if ($email && $senha) {
     $_SESSION['mensagem'] = "Email e Senha Informado com Sucesso";
     if ($_POST && $_POST['tipo'] && $_POST['tipo'] == "cliente") {
         buscaCliente($email, $senha);
-        header('Location:../public/index.php');
+        
     }
     if ($_POST && $_POST['tipo'] && $_POST['tipo'] == "funcionario") {
         buscaFuncionario($email, $senha);
-        header('Location:../public/index.php');
+        
     }
 }

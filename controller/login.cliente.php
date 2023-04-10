@@ -8,6 +8,6 @@ function buscaCliente($mailclie, $senhaclie){
     if($mailclie && $senhaclie == $cliente->getSenha()){
         $_SESSION['tipo'] = "cliente";
         $_SESSION['usuario'] = $cliente->getEmail();
-        var_dump($cliente);
+        echo($_SESSION['usuario']);
     }
 }

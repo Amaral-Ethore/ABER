@@ -8,6 +8,6 @@ function buscaFuncionario($mailfuncionario, $senhafuncionario){
     if($mailfuncionario && $senhafuncionario == $funcionario->getSenha()){
         $_SESSION['tipo'] = "funcionario";
         $_SESSION['usuario'] = $funcionario->getEmail();
-        var_dump($funcionario);
+        echo($_SESSION['usuario']);
     }
 }
