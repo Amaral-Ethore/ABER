@@ -1,64 +1,79 @@
 <?php
 
-class Cliente {
+class Cliente
+{
     private $id;
     private $nome;
     private $email;
     private $senha;
     private $endereco;
     private $telefone;
-    private $cpf_cnpj;
+    private $cpfcnpj;
 
-    public function setId($id) {
+    public function setId($id)
+    {
         $this->id = $id;
     }
 
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
-    public function setNome($nome) {
+    public function setNome($nome)
+    {
         $this->nome = $nome;
     }
 
-    public function getNome() {
+    public function getNome()
+    {
         return $this->nome;
     }
-    public function setEmail($email) {
+    public function setEmail($email)
+    {
         $this->email = $email;
     }
 
-    public function getEmail() {
+    public function getEmail()
+    {
         return $this->email;
     }
-    public function setSenha($senha) {
+    public function setSenha($senha)
+    {
         $this->senha = $senha;
     }
 
-    public function getSenha() {
+    public function getSenha()
+    {
         return $this->senha;
     }
-    public function setEndereco($endereco) {
+    public function setEndereco($endereco)
+    {
         $this->endereco = $endereco;
     }
 
-    public function getEndereco() {
+    public function getEndereco()
+    {
         return $this->endereco;
     }
 
-    public function setCpfCnpj($cpfCnpj) {
-        $this->cpf_cnpj = $cpfCnpj;
+    public function setCpfCnpj($cpfCnpj)
+    {
+        $this->cpfcnpj = $cpfCnpj;
     }
 
-    public function getCpfCnpj() {
-        return $this->cpf_cnpj;
+    public function getCpfCnpj()
+    {
+        return $this->cpfcnpj;
     }
 
-    public function setTelefone($telefone) {
+    public function setTelefone($telefone)
+    {
         $this->telefone = $telefone;
     }
 
-    public function getTelefone() {
+    public function getTelefone()
+    {
         return $this->telefone;
     }
 }
