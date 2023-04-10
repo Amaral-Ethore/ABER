@@ -10,7 +10,7 @@ if (!$email || !$senha)/*Unica Maneira que funcionou "!isset não funcionou pois
     unset($_SESSION['usuario']);
     header("Location:../public/index.php");
 }
-if (isset($email) && isset($senha)) {
+if ($email && $senha) {
     $_SESSION['mensagem'] = "Email e Senha Informado com Sucesso";
     if ($_POST && $_POST['tipo'] && $_POST['tipo'] == "cliente") {
         $_SESSION['mensagem'] = "Entrando como cliente.";
