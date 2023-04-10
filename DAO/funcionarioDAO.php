@@ -2,30 +2,28 @@
 require_once(str_replace('\\', '/', dirname(__FILE__, 2)). '/config/functions.php');
 require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'/classes/funcionario.class.php');
 
-class ClienteDAO
+class FuncionarioDAO
 {
-
     public function buscarTodos()
     {
         $pdo = conectDb();
         try {
-            $stmt = $pdo->prepare("SELECT * FROM clientes;");
+            $stmt = $pdo->prepare("SELECT * FROM funcionarios;");
             $stmt->execute();
-            $cliente = new Cliente();
+            $funcionario = new funcionario();
             $retorno = array();
             while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
-                $cliente->setId($rs->id);
-                $cliente->setNome(($rs->nome));
-                $cliente->setEndereco(($rs->endereco));
-                $cliente->setSenha(($rs->senha));
-                $cliente->setEmail(($rs->email));
-                $cliente->setCpfCnpj($rs->cpfcnpj);
-                $cliente->setTelefone($rs->telefone);
-                $retorno[] = clone $cliente;
+                $funcionario->setId($rs->id);
+                $funcionario->setNome(($rs->nome));
+                $funcionario->setEmail(($rs->email));
+                $funcionario->setSenha(($rs->senha));
+                $funcionario->setTelefone($rs->telefone);
+                $funcionario->setAtivo($rs->ativo);
+                $retorno[] = clone $funcionario;
             }
             return $retorno;
         } catch (PDOException $ex) {
-            echo "Erro ao buscar cliente: " . $ex->getMessage();
+            echo "Erro ao buscar funcionario: " . $ex->getMessage();
             die();
         }
     }
@@ -34,22 +32,21 @@ class ClienteDAO
     {
         $pdo = conectDb();
         try {
-            $stmt = $pdo->prepare("SELECT * FROM clientes WHERE id = :id;");
+            $stmt = $pdo->prepare("SELECT * FROM funcionarios WHERE id = :id;");
             $stmt->bindValue(":id", $id);
             $stmt->execute();
-            $cliente = new Cliente();
+            $funcionario = new Funcionario();
             while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
-                $cliente->setId($rs->id);
-                $cliente->setNome(($rs->nome));
-                $cliente->setEndereco(($rs->endereco));
-                $cliente->setSenha(($rs->senha));
-                $cliente->setEmail(($rs->email));
-                $cliente->setCpfCnpj($rs->cpfcnpj);
-                $cliente->setTelefone($rs->telefone);
+                $funcionario->setId($rs->id);
+                $funcionario->setNome(($rs->nome));
+                $funcionario->setEmail(($rs->email));
+                $funcionario->setSenha(($rs->senha));
+                $funcionario->setTelefone($rs->telefone);
+                $funcionario->setAtivo($rs->ativo);
             }
-            return $cliente;
+            return $funcionario;
         } catch (PDOException $ex) {
-            echo "Erro ao buscar cliente: " . $ex->getMessage();
+            echo "Erro ao buscar funcionario: " . $ex->getMessage();
             die();
         }
     }
@@ -58,32 +55,31 @@ class ClienteDAO
     {
         $pdo = conectDb();
         try {
-            $stmt = $pdo->prepare("SELECT * FROM clientes WHERE email = :email;");
+            $stmt = $pdo->prepare("SELECT * FROM funcionarios WHERE email = :email;");
             $stmt->bindValue(":email", $mail);
             $stmt->execute();
-            $cliente = new Cliente();
+            $funcionario = new funcionario();
             while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
-                $cliente->setId($rs->id);
-                $cliente->setNome(($rs->nome));
-                $cliente->setEndereco(($rs->endereco));
-                $cliente->setSenha(($rs->senha));
-                $cliente->setEmail(($rs->email));
-                $cliente->setCpfCnpj($rs->cpfcnpj);
-                $cliente->setTelefone($rs->telefone);
+                $funcionario->setId($rs->id);
+                $funcionario->setNome(($rs->nome));
+                $funcionario->setSenha(($rs->senha));
+                $funcionario->setEmail(($rs->email));
+                $funcionario->setAtivo($rs->ativo);
+                $funcionario->setTelefone($rs->telefone);
             }
-            return $cliente;
+            return $funcionario;
         } catch (PDOException $ex) {
-            echo "Erro ao buscar cliente: " . $ex->getMessage();
+            echo "Erro ao buscar funcionario: " . $ex->getMessage();
             die();
         }
     }
 
-    public function removeCliente($id)
+    public function removeFuncionario($id)
     {
         $pdo = conectDb();
         $pdo->beginTransaction();
         try {
-            $stmt = $pdo->prepare('DELETE FROM clientes WHERE id = :id');
+            $stmt = $pdo->prepare('DELETE FROM funcionarios WHERE id = :id');
             $stmt->bindValue(":id", $id);
             $stmt->execute();
             if ($stmt->rowCount()) {
@@ -91,24 +87,23 @@ class ClienteDAO
             }
             return $stmt->rowCount();
         } catch (PDOException $ex) {
-            echo "Erro ao excluir cliente: " . $ex->getMessage();
+            echo "Erro ao excluir funcionario: " . $ex->getMessage();
             $pdo->rollBack();
             die();
         }
     }
 
-    public function inserirCliente(Cliente $cliente)
+    public function inserirFuncionario(Funcionario $funcionario)
     {
         $pdo = conectDb();
         $pdo->beginTransaction();
         try {
-            $stmt = $pdo->prepare("INSERT INTO clientes (nome,email,senha,endreco, cpfcnpj, telefone) VALUES (:nome,:email, :senha, :endereco, :cpf, :tel)");
-            $stmt->bindValue(":nome", $cliente->getNome());
-            $stmt->bindValue(":email", $cliente->getEmail());
-            $stmt->bindValue(":senha", $cliente->getSenha());
-            $stmt->bindValue(":endereco", $cliente->getEndereco());
-            $stmt->bindValue(":cpf", $cliente->getCpfCnpj());
-            $stmt->bindValue(":tel", $cliente->getTelefone());
+            $stmt = $pdo->prepare("INSERT INTO funcionarios (nome, email, senha, telefone, ativo) VALUES (:nome,:email, :senha, :tel, :ativo)");
+            $stmt->bindValue(":nome", $funcionario->getNome());
+            $stmt->bindValue(":email", $funcionario->getEmail());
+            $stmt->bindValue(":senha", $funcionario->getSenha());
+            $stmt->bindValue(":tel", $funcionario->getTelefone());
+            $stmt->bindValue(":ativo", $funcionario->getAtivo());
             $stmt->execute();
             if ($stmt->rowCount()) {
                 $pdo->commit();
@@ -116,24 +111,23 @@ class ClienteDAO
             }
             return FALSE;
         } catch (PDOException $ex) {
-            echo "Erro ao inserir cliente: " . $ex->getMessage();
+            echo "Erro ao inserir funcionario: " . $ex->getMessage();
             $pdo->rollBack();
             die();
         }
     }
 
-    public function atualizaCliente(Cliente $cliente)
+    public function atualizaFuncionario(Funcionario $funcionario)
     {
         $pdo = conectDb();
         $pdo->beginTransaction();
         try {
-            $stmt = $pdo->prepare("UPDATE clientes SET nome = :nome, email = :email, senha = :senha, endereco = :endereco, cpfcnpj = :cpf, telefone = :tel WHERE id = :id");
-            $stmt->bindValue(":nome", $cliente->getNome());
-            $stmt->bindValue(":email", $cliente->getEmail());
-            $stmt->bindValue(":senha", $cliente->getSenha());
-            $stmt->bindValue(":endereco", $cliente->getEndereco());
-            $stmt->bindValue(":cpf", $cliente->getCpfCnpj());
-            $stmt->bindValue(":tel", $cliente->getTelefone());
+            $stmt = $pdo->prepare("UPDATE funcionarios SET nome = :nome, email = :email, senha = :senha, telefone = :tel, ativo = :ativo WHERE id = :id");
+            $stmt->bindValue(":nome", $funcionario->getNome());
+            $stmt->bindValue(":email", $funcionario->getEmail());
+            $stmt->bindValue(":senha", $funcionario->getSenha());
+            $stmt->bindValue(":tel", $funcionario->getTelefone());
+            $stmt->bindValue(":ativo", $funcionario->getAtivo());
             $stmt->execute();
             if ($stmt->rowCount()) {
                 $pdo->commit();
@@ -142,7 +136,7 @@ class ClienteDAO
             return FALSE;
         } catch (PDOException $ex) {
             $pdo->rollBack();
-            echo "Erro ao atualizar cliente: " . $ex->getMessage();
+            echo "Erro ao atualizar funcionario: " . $ex->getMessage();
             die();
         }
     }
