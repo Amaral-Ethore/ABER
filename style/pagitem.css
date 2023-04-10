@@ -1,0 +1,30 @@
+.topo{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+    gap: 100px;
+}
+
+.carousel {
+    border: 5px solid red;
+    height: 500px;
+    width: 550px;
+    background-color: green;
+}
+
+.bloco{
+    height: 500px;
+    width: 550px;
+    background-color: darkgray;
+    padding: 10px;
+}
+
+.bloco div{
+    margin-top: 10px;
+}
+
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}

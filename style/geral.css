@@ -9,12 +9,7 @@ body{
     padding: 0;
     margin: 0;
 }
-.container{
-    max-width: 1000px;
-}
-.main-container{
-    width: 1000px;
-}
+
 header{
     display: grid;
     grid-template-rows: 50px 25px;
@@ -61,20 +56,17 @@ a{
     position: relative;
 }
 .menu-input{
-    border-radius: 10px;
+    border-radius: 15px;
     border: 0;
     margin-right: 10px;
-    height: 20px;
-    width: 200px;
-    padding-block: 10px;
-    padding-left: 10px;
-    padding-right: 25px;
+    height: 18px;
+    width: 150px;
     background-image: url(); 
     border: 1px solid black;
 }
 .lupa{
     position: absolute;
-    top: 6px;
+    top: 7px;
     right: 20px;
     color: rgb(60, 60, 60);
     font-size: 0.8rem;
@@ -82,7 +74,7 @@ a{
 .h-2{
     display: grid;
     align-items: center;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 }
 .h-2 ul{
     margin: 0;
