@@ -16,9 +16,7 @@ if ($email && $senha) {
         echo $_SESSION['usuario'];
     }
     if ($_POST && $_POST['tipo'] && $_POST['tipo'] == "funcionario") {
-        echo $senha;
         buscaFuncionario($email, $senha);
-        echo $_SESSION['mensagem'];
         echo $_SESSION['usuario'];
     }
 }
