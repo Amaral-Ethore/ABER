@@ -7,14 +7,14 @@
 
 .carousel {
     border: 5px solid red;
-    height: 500px;
-    width: 550px;
+    height: 550px;
+    width: 600px;
     background-color: green;
 }
 
 .bloco{
-    height: 500px;
-    width: 550px;
+    height: 550px;
+    width: 600px;
     background-color: darkgray;
     padding: 10px;
 }
@@ -58,4 +58,9 @@
     padding: 10px;
     margin: 20px 0px;
     width: 200px;
+}
+
+.opcpagamento{
+    background-color: white;
+    height: 30px;
 }

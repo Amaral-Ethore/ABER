@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css">
-    <link rel="stylesheet" href="../style/geral.css">
-    <link rel="stylesheet" href="../style/pagitem.css">
-    <link rel="shortcut icon" href="imagens/aber-logo-zip-file/png/logo-no-background.png" type="image/x-icon">
-</head>
+<?php require_once('header.php')?>
+<head><link rel="stylesheet" href="../style/pagitem.css"></head>
 
 <body>
     <div class="container">
-        <?php require_once("nav.php") ?>
+        <?php require_once('nav.php') ?>
         <main>
             <div class="topo">
                 <div id="carouselItens" class="carousel slide">
@@ -85,8 +74,10 @@
                             <p>n de vezes + preço</p>
                             <p>n de vezes + preço</p>
                         </div>
+                    </div>
 
-
+                    <div class="opcpagamento flex-between">
+                        adsad
                     </div>
 
                 </div>
