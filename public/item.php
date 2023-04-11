@@ -25,13 +25,13 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="a" class="d-block w-100" alt="...">
+                            <img src="a" class="d-block w-100" alt="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
                         </div>
                         <div class="carousel-item">
-                            <img src="..." class="d-block w-100" alt="...">
+                            <img src="..." class="d-block w-100" alt="bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb">
                         </div>
                         <div class="carousel-item">
-                            <img src="..." class="d-block w-100" alt="...">
+                            <img src="..." class="d-block w-100" alt="ccccccccccccccccccccccccccccccc">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselItens" data-bs-slide="prev">
@@ -47,12 +47,48 @@
                 <div class="bloco">
                     <span>Nome do item Nome do item Nome do item Nome do item Nome do item Nome do item</span>
                     <div class="flex-between">
-                        <p>Estoque do item</p>  <span>Garantia: x meses</span>
+                        <p>Estoque do item</p> <span>Garantia: x meses</span>
                     </div>
+                    <div class="flex-between">
+                        <div class="preco">
+                            <span>Preço</span>
+                            <p>à vista com desconto</p>
+                        </div>
+                        <div class="compra">
+                            <button>Comprar</button>
+                            <br>
+                            <button>Carrinho</button>
+                        </div>
+                    </div>
+
                     <div>
-                        <p>Preço</p>
+                        <p>R$n no cartão</p>
+                        <p>até n vezes de n reais </p>
                     </div>
-                    
+
+                    <div>
+                        <p>------------------------------------------------------------------------------------</p>
+                    </div>
+
+                    <div class="flex-around">
+                        <div>
+                            <p>n de vezes + preço</p>
+                            <p>n de vezes + preço</p>
+                            <p>n de vezes + preço</p>
+                            <p>n de vezes + preço</p>
+                            <p>n de vezes + preço</p>
+                        </div>
+                        <div>
+                            <p>n de vezes + preço</p>
+                            <p>n de vezes + preço</p>
+                            <p>n de vezes + preço</p>
+                            <p>n de vezes + preço</p>
+                            <p>n de vezes + preço</p>
+                        </div>
+
+
+                    </div>
+
                 </div>
             </div>
 
