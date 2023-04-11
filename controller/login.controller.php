@@ -10,13 +10,15 @@ if (!$email || !$senha)/*Unica Maneira que funcionou "!isset não funcionou pois
     header("Location:../public/index.php");
 }
 if ($email && $senha) {
-    $_SESSION['mensagem'] = "Email e Senha Informado com Sucesso";
     if ($_POST && $_POST['tipo'] && $_POST['tipo'] == "cliente") {
         buscaCliente($email, $senha);
-        
+        echo $_SESSION['mensagem'];
+        echo $_SESSION['usuario'];
     }
     if ($_POST && $_POST['tipo'] && $_POST['tipo'] == "funcionario") {
+        echo $senha;
         buscaFuncionario($email, $senha);
-        
+        echo $_SESSION['mensagem'];
+        echo $_SESSION['usuario'];
     }
 }

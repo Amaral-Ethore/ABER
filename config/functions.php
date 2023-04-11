@@ -18,7 +18,7 @@ function conectDb() {
 }
 
 function verificaSessao() {
-    if (!isset($_SESSION) || !isset($_SESSION['usuario_email'])) {
+    if (!isset($_SESSION) || !isset($_SESSION['usuario'])) {
         $_SESSION['mensagem'] = "Você deve se autenticar.";
         header("Location:../public/index.php");
     }

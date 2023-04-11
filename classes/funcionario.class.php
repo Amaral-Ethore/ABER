@@ -5,6 +5,7 @@
         private string $email;
         private string $senha;
         private string $telefone;
+        private string $privilegio;
         private bool $ativo;
 
         public function getId(){
@@ -36,6 +37,12 @@
         }
         public function setTelefone($telefone){
             $this->telefone = $telefone;
+        }
+        public function getPrivilegio(){
+            return $this->privilegio;
+        }
+        public function setPrivilegio($privilegio){
+            $this->privilegio = $privilegio;
         }
         public function getAtivo(){
             return $this->telefone;

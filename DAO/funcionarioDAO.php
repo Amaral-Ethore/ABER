@@ -18,6 +18,7 @@ class FuncionarioDAO
                 $funcionario->setEmail(($rs->email));
                 $funcionario->setSenha(($rs->senha));
                 $funcionario->setTelefone($rs->telefone);
+                $funcionario->setPrivilegio($rs->privilegios);
                 $funcionario->setAtivo($rs->ativo);
                 $retorno[] = clone $funcionario;
             }
@@ -42,6 +43,7 @@ class FuncionarioDAO
                 $funcionario->setEmail(($rs->email));
                 $funcionario->setSenha(($rs->senha));
                 $funcionario->setTelefone($rs->telefone);
+                $funcionario->setPrivilegio($rs->privilegios);
                 $funcionario->setAtivo($rs->ativo);
             }
             return $funcionario;
@@ -58,16 +60,19 @@ class FuncionarioDAO
             $stmt = $pdo->prepare("SELECT * FROM funcionarios WHERE email = :email;");
             $stmt->bindValue(":email", $mail);
             $stmt->execute();
-            $funcionario = new funcionario();
+            $result = null;
             while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
+                $funcionario = new funcionario();
                 $funcionario->setId($rs->id);
                 $funcionario->setNome(($rs->nome));
                 $funcionario->setSenha(($rs->senha));
                 $funcionario->setEmail(($rs->email));
                 $funcionario->setAtivo($rs->ativo);
                 $funcionario->setTelefone($rs->telefone);
+                $funcionario->setPrivilegio($rs->privilegios);
+                $result = clone $funcionario;
             }
-            return $funcionario;
+            return $result;
         } catch (PDOException $ex) {
             echo "Erro ao buscar funcionario: " . $ex->getMessage();
             die();
@@ -98,12 +103,13 @@ class FuncionarioDAO
         $pdo = conectDb();
         $pdo->beginTransaction();
         try {
-            $stmt = $pdo->prepare("INSERT INTO funcionarios (nome, email, senha, telefone, ativo) VALUES (:nome,:email, :senha, :tel, :ativo)");
+            $stmt = $pdo->prepare("INSERT INTO funcionarios (nome, email, senha, telefone, privilegios, ativo) VALUES (:nome,:email, :senha, :tel, :privilegios, :ativo)");
             $stmt->bindValue(":nome", $funcionario->getNome());
             $stmt->bindValue(":email", $funcionario->getEmail());
             $stmt->bindValue(":senha", $funcionario->getSenha());
             $stmt->bindValue(":tel", $funcionario->getTelefone());
             $stmt->bindValue(":ativo", $funcionario->getAtivo());
+            $stmt->bindValue(":privilegios", $funcionario->getPrivilegio());
             $stmt->execute();
             if ($stmt->rowCount()) {
                 $pdo->commit();
@@ -122,11 +128,12 @@ class FuncionarioDAO
         $pdo = conectDb();
         $pdo->beginTransaction();
         try {
-            $stmt = $pdo->prepare("UPDATE funcionarios SET nome = :nome, email = :email, senha = :senha, telefone = :tel, ativo = :ativo WHERE id = :id");
+            $stmt = $pdo->prepare("UPDATE funcionarios SET nome = :nome, email = :email, senha = :senha, telefone = :tel, privilegios = :privilegios, ativo = :ativo WHERE id = :id");
             $stmt->bindValue(":nome", $funcionario->getNome());
             $stmt->bindValue(":email", $funcionario->getEmail());
             $stmt->bindValue(":senha", $funcionario->getSenha());
             $stmt->bindValue(":tel", $funcionario->getTelefone());
+            $stmt->bindValue(":privilegios", $funcionario->getPrivilegio());
             $stmt->bindValue(":ativo", $funcionario->getAtivo());
             $stmt->execute();
             if ($stmt->rowCount()) {
