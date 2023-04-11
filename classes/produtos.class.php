@@ -8,6 +8,7 @@ class Produtos {
     private $marca;
     private $validade;
     private $setor;
+    private $imagem;
 
     public function setid($id) {
         $this->id = $id;
@@ -64,5 +65,12 @@ class Produtos {
 
     public function getSetor() {
         return $this->setor;
+    }
+    public function setImagem($imagem) {
+        $this->imagem = $imagem;
+    }
+
+    public function getImagem() {
+        return $this->imagem;
     }
 }
