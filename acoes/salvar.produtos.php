@@ -15,21 +15,25 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
     $validade   = addslashes(filter_input(INPUT_POST, 'validade'));
     $setor   = addslashes(filter_input(INPUT_POST, 'setor'));
     $codebar   = addslashes(filter_input(INPUT_POST, 'codebar'));
-    var_dump($descricao);
+    //Codigo upload e verificação imagem e mudar  nome, para então sentar na $imagem; 
+    $imagem   = $_FILES['imagem']['name'];
 
-    if (empty($nome) || empty($descricao)) {
+    var_dump($imagem);
+
+    if (empty($nome) || empty($descricao) || empty($imagem)) {
         $_SESSION['mensagem'] = "Obrigatório informar Nome e Descrição2";
         $_SESSION['sucesso'] = false;
         header('Location:../public/cad_produto.php?key=' . $id);
         die();
     }
-    $produto->setId($rs->id);
-    $produto->setNome(($rs->nome));
-    $produto->setDescricao($rs->descricao);
-    $produto->setMarca($rs->marca);
-    $produto->setValidade($rs->validade);
-    $produto->setSetor($rs->setor);
-    $produto->setCodebar($rs->codebar);
+    $produto->setId($id);
+    $produto->setNome(($nome));
+    $produto->setDescricao($descricao);
+    $produto->setMarca($marca);
+    $produto->setValidade($validade);
+    $produto->setSetor($setor);
+    $produto->setCodebar($codebar);
+    $produto->setImagem($imagem);
 
 
 

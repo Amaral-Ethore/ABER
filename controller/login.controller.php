@@ -12,11 +12,22 @@ if (!$email || !$senha)/*Unica Maneira que funcionou "!isset não funcionou pois
 if ($email && $senha) {
     if ($_POST && $_POST['tipo'] && $_POST['tipo'] == "cliente") {
         buscaCliente($email, $senha);
-        echo $_SESSION['mensagem'];
-        echo $_SESSION['usuario'];
+        if (isset($_SESSION['usuario']) && isset($_SESSION['mensagem']) && $_SESSION['mensagem'] == "sucesso") {
+            echo $_SESSION['mensagem'];
+            echo $_SESSION['usuario'];
+        } else {
+            echo $_SESSION['mensagem'];
+        }
     }
     if ($_POST && $_POST['tipo'] && $_POST['tipo'] == "funcionario") {
         buscaFuncionario($email, $senha);
-        echo $_SESSION['usuario'];
+        if (isset($_SESSION['usuario']) && isset($_SESSION['mensagem']) && $_SESSION['mensagem'] == "sucesso") {
+            echo $_SESSION['usuario'];
+            echo $_SESSION['privilegio'];
+            echo $_SESSION['mensagem'];
+        } else {
+            echo $_SESSION['mensagem'];
+        }
+        
     }
 }

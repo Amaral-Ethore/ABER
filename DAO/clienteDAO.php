@@ -62,6 +62,7 @@ class ClienteDAO
             $stmt->bindValue(":email", $mail);
             $stmt->execute();
             $cliente = new Cliente();
+            $result = null;
             while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                 $cliente->setId($rs->id);
                 $cliente->setNome(($rs->nome));
@@ -70,8 +71,9 @@ class ClienteDAO
                 $cliente->setEmail(($rs->email));
                 $cliente->setCpfCnpj($rs->cpfcnpj);
                 $cliente->setTelefone($rs->telefone);
+                $result = clone $cliente;
             }
-            return $cliente;
+            return $result;
         } catch (PDOException $ex) {
             echo "Erro ao buscar cliente: " . $ex->getMessage();
             die();
