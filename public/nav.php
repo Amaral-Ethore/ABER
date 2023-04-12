@@ -54,8 +54,8 @@
                 <div class="menu-2">
                     <ul>
                         <li>
-                            <a href="">
-                                Ofertas
+                            <a href="./cad_produto.php">
+                                Cadastro Produto
                             </a>
                         </li>
                         <li>

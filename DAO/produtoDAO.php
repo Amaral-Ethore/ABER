@@ -81,13 +81,14 @@ class ProdutoDAO
         $pdo = conectDb();
         $pdo->beginTransaction();
         try {
-            $stmt = $pdo->prepare("INSERT INTO produtos (nome, descricao, codebar, marca, setor, validade) VALUES (:nome, :descricao,:codebar,:marca,:setor, :validade)");
+            $stmt = $pdo->prepare("INSERT INTO produtos (nome, descricao, codebar, marca, setor, validade, imagem) VALUES (:nome, :descricao,:codebar,:marca,:setor, :validade, :img)");
             $stmt->bindValue(":nome", $produto->getNome());
             $stmt->bindValue(":descricao", $produto->getDescricao());
             $stmt->bindValue(":codebar", $produto->getCodebar());
             $stmt->bindValue(":marca", $produto->getMarca());
             $stmt->bindValue(":setor", $produto->getSetor());
             $stmt->bindValue(":validade", $produto->getValidade());
+            $stmt->bindValue(":img", $produto->getImagem());
             $stmt->execute();
             if ($stmt->rowCount()) {
                 $pdo->commit();
@@ -106,7 +107,7 @@ class ProdutoDAO
         $pdo = conectDb();
         $pdo->beginTransaction();
         try {
-            $stmt = $pdo->prepare("UPDATE produtos SET nome = :nome, descricao = :descricao,codigo_barras = :codigo_barras, qtde_estoque = :qtde_estoque WHERE id = :id");
+            $stmt = $pdo->prepare("UPDATE produtos SET nome = :nome, descricao = :descricao, codigo_barras = :codigo_barras, qtde_estoque = :qtde_estoque, imagem = :img WHERE id = :id");
             $stmt->bindValue(":nome", $produto->getNome());
             $stmt->bindValue(":descricao", $produto->getDescricao());
             $stmt->bindValue(":codebar", $produto->getCodebar());
@@ -114,6 +115,7 @@ class ProdutoDAO
             $stmt->bindValue(":setor", $produto->getSetor());
             $stmt->bindValue(":validade", $produto->getValidade());
             $stmt->bindValue(":id", $produto->getId());
+            $stmt->bindValue(":img", $produto->getImagem());
             $stmt->execute();
             if ($stmt->rowCount()) {
                 $pdo->commit();
