@@ -1,5 +1,8 @@
-<?php require_once('header.php')?>
-<head><link rel="stylesheet" href="../style/pagitem.css"></head>
+<?php require_once('header.php') ?>
+
+<head>
+    <link rel="stylesheet" href="../style/pagitem.css">
+</head>
 
 <body>
     <div class="container">
@@ -44,9 +47,9 @@
                             <p>à vista com desconto</p>
                         </div>
                         <div class="compra">
-                            <button>Comprar</button>
+                            <button class="btn_comprar">Comprar</button>
                             <br>
-                            <button>Carrinho</button>
+                            <button class="btn_carrinho">Carrinho</button>
                         </div>
                     </div>
 
@@ -55,8 +58,8 @@
                         <p>até n vezes de n reais </p>
                     </div>
 
-                    <div>
-                        <p>------------------------------------------------------------------------------------</p>
+                    <div class="divisao">
+                        <p></p>
                     </div>
 
                     <div class="flex-around">
@@ -80,18 +83,22 @@
                         adsad
                     </div>
 
+                    <div class="divisao">
+                        <p></p>
+                    </div>
+
                 </div>
             </div>
 
 
-            <div class="accordion" id="accordionDetalhes">
+            <div class="accordion accordion-flush" id="accordionDetalhes">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                             Descrição Geral
                         </button>
                     </h2>
-                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse bs-warning-bg-subtle collapse show">
                         <div class="accordion-body">
                             <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                         </div>
@@ -111,11 +118,11 @@
                 </div>
             </div>
         </main>
-        <?php require_once('footer.php')?>
+        <?php require_once('footer.php') ?>
 
     </div>
 
-    
+
 </body>
 
 </html>

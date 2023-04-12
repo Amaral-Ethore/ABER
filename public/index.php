@@ -73,7 +73,8 @@
                 </div>
 
             </div>
+            <?php require_once('footer.php');
+    ?>
         </main>
     </div>
-    <?php require_once('footer.php');
-    ?>
+    

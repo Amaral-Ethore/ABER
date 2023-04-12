@@ -6,7 +6,8 @@
 }
 
 .carousel {
-    border: 5px solid red;
+    border: 2px solid darkgray;
+    border-radius: 5px;
     height: 550px;
     width: 600px;
     background-color: green;
@@ -58,6 +59,11 @@
     padding: 10px;
     margin: 20px 0px;
     width: 200px;
+}
+
+.divisao{
+    background-color: black;
+    height: 2px;
 }
 
 .opcpagamento{
