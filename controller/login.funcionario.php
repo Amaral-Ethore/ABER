@@ -17,10 +17,9 @@ function buscaFuncionario($mail, $senha)
         }
         if($funcionario->getPrivilegio() == "func"){
             $_SESSION['usuario'] = $funcionario->getEmail();
-            $_SESSION['privilegio'] = "admin";
+            $_SESSION['privilegio'] = "func";
         }
     } else {
-        $_SESSION['usuario'] = "invalido";
         $_SESSION['mensagem'] = "Funcionario Não Encontrado";
     }
 }

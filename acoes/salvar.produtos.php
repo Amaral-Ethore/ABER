@@ -55,8 +55,6 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
     
 
     if ($nome && $descricao) {
-
-        $produto->setId($rs->id);
         $produto->setNome(($rs->nome));
         $produto->setDescricao($rs->descricao);
         $produto->setMarca($rs->marca);

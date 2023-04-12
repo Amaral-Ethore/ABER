@@ -6,9 +6,14 @@ function buscaCliente($mailclie, $senhaclie)
     $controller = new ClienteController();
     $cliente = new Cliente();
     $cliente = $controller->buscarPorEmail($mailclie);
-    if ($mailclie && $senhaclie == $cliente->getSenha()) {
+    var_dump($cliente);
+    if (isset($cliente) && $senhaclie == $cliente->getSenha()) {
         $_SESSION['tipo'] = "cliente";
         $_SESSION['usuario'] = $cliente->getEmail();
-        echo ($_SESSION['usuario']);
+        $_SESSION['mensagem'] = "sucesso";
+    }
+    else{
+        $_SESSION['usuario'] = "invalido";
+        $_SESSION['mensagem'] = "Cliente não encontrado";
     }
 }
