@@ -15,13 +15,14 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
     $validade   = addslashes(filter_input(INPUT_POST, 'validade'));
     $setor   = addslashes(filter_input(INPUT_POST, 'setor'));
     $codebar   = addslashes(filter_input(INPUT_POST, 'codebar'));
-    //Codigo upload e verificação imagem e mudar  nome, para então sentar na $imagem; 
-    $imagem   = $_FILES['imagem']['name'];
-
+    $imagem = function () {
+        $imagem   = $_FILES['imagem']['name'];
+    }
+    //Codigo upload e verificação imagem e mudar  nome, para então sentar na $imagem;
     var_dump($imagem);
 
     if (empty($nome) || empty($descricao) || empty($imagem)) {
-        $_SESSION['mensagem'] = "Obrigatório informar Nome e Descrição2";
+        $_SESSION['mensagem'] = "Obrigatório informar Nome, Descrição2 e Imagem";
         $_SESSION['sucesso'] = false;
         header('Location:../public/cad_produto.php?key=' . $id);
         die();
