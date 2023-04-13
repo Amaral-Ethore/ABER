@@ -3,28 +3,24 @@
 require_once('./header.php');
 /* require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'/acoes/verifica_sessao.php'); */
 require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'../controller/produto.controller.php');
-
 $controller = new ProdutoController();
 $produto = $controller->buscarTodos();
-
-// SELECT cp.*, p.nome FROM `compra_produto` as cp INNER JOIN produtos as p ON p.id = cp.produto;
 
 ?>
 <div class="container">
     <?php require_once('nav.php'); ?>
 
-    <h1>Lista de Produtos</h1>
-    <a class="btn btn-primary" href="">Novo Produto</a>
-    <table class="table table-striped">
+    <h1>Carrinho</h1>
+
+    <table class="table table-striped table-hover" >
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Descricao</th>
-                <th scope="col">Marca</th>
-                <th scope="col">Validade</th>
-                <th scope="col">Setor</th>
-                <th scope="col">Codigo de Barras</th>
+                <th scope="col">Compra</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Preço</th>
+                
                 <th>Ações</th>
             </tr>
         </thead>
@@ -32,19 +28,16 @@ $produto = $controller->buscarTodos();
             <?php
             foreach ($produto as $p) :
             ?>
-                <tr>
+            <!--     <tr>
                     <td><?= $p->getId(); ?></td>
-                    <td><?= $p->getNome(); ?></td>
-                    <td><?= $p->getDescricao(); ?></td>
-                    <td><?= $p->getMarca(); ?></td>
-                    <td><?= $p->getValidade(); ?></td>
-                    <td><?= $p->getSetor(); ?></td>
-                    <td><?= $p->getCodeBar(); ?></td>
+                    <td><?= $p->getCompra(); ?></td>
+                    <td><?= $p->getProduto(); ?></td>
+                    <td><?= $p->getQuantpro(); ?></td>
+                    <td><?= $p->getPreco(); ?></td>
                     <td>
-                        <a class="btn btn-light" href="./cad_produto.php?key=<?=$p->getId()?>">Editar</a>
                         <a class="btn btn-link" href="../acoes/excluir.produtos.php?key=<?=$p->getId()?>">Excluir</a>
                     </td>
-                </tr>
+                </tr> -->
             <?php
             endforeach;
             ?>

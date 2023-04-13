@@ -9,6 +9,7 @@ function buscaCliente($mailclie, $senhaclie)
     if ($mailclie && $senhaclie == $cliente->getSenha()) {
         $_SESSION['tipo'] = "cliente";
         $_SESSION['usuario'] = $cliente->getEmail();
+        $_SESSION['usuario_id'] = $cliente->getId(); 
         echo ($_SESSION['usuario']);
     }
 }

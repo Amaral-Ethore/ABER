@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+/* require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . './acoes/verifica_sessao.php'); */
 require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../classes/cliente.class.php");
 require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../controller/cliente.controller.php");
 
