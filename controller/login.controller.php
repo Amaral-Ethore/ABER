@@ -28,6 +28,5 @@ if ($email && $senha) {
         } else {
             echo $_SESSION['mensagem'];
         }
-        
     }
 }
