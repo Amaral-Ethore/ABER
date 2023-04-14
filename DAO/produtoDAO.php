@@ -1,6 +1,6 @@
 <?php
-require_once(str_replace('\\', '/', dirname(__FILE__, 2)). '/config/functions.php');
-require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'/classes/produtos.class.php');
+require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '/config/functions.php');
+require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '/classes/produtos.class.php');
 
 class ProdutoDAO
 {
@@ -47,8 +47,6 @@ class ProdutoDAO
                 $produto->setValidade($rs->validade);
                 $produto->setSetor($rs->setor);
                 $produto->setCodebar($rs->codebar);
-                
-              
             }
             return $produto;
         } catch (PDOException $ex) {

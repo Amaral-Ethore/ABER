@@ -59,8 +59,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                Moda
+                            <a href="./home_compra.php">
+                                Carrinho
                             </a>
                         </li>
                         <li>

@@ -7,6 +7,8 @@ require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'../controller/produt
 $controller = new ProdutoController();
 $produto = $controller->buscarTodos();
 
+// SELECT cp.*, p.nome FROM `compra_produto` as cp INNER JOIN produtos as p ON p.id = cp.produto;
+
 ?>
 <div class="container">
     <?php require_once('nav.php'); ?>
@@ -40,7 +42,7 @@ $produto = $controller->buscarTodos();
                     <td><?= $p->getCodeBar(); ?></td>
                     <td>
                         <a class="btn btn-light" href="./cad_produto.php?key=<?=$p->getId()?>">Editar</a>
-                        <a class="btn btn-link" href="../acoes/excluir_produto.php?key=<?=$p->getId()?>">Excluir</a>
+                        <a class="btn btn-link" href="../acoes/excluir.produtos.php?key=<?=$p->getId()?>">Excluir</a>
                     </td>
                 </tr>
             <?php
