@@ -1,0 +1,72 @@
+.topo{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+    gap: 100px;
+}
+
+.carousel {
+    border: 2px solid darkgray;
+    border-radius: 5px;
+    height: 550px;
+    width: 600px;
+    background-color: green;
+}
+
+.bloco{
+    height: 550px;
+    width: 600px;
+    background-color: darkgray;
+    padding: 10px;
+}
+
+.bloco div{
+    margin-top: 10px;
+}
+
+.bloco p{
+    font-size: 11px;
+    margin-bottom: 5px;    
+}
+
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.flex-around{
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+}
+
+.preco{
+    margin: 20px 0px;
+    align-self: center;
+}
+
+.preco span{
+    font-size: 50px;
+    color: green;
+}
+
+.compra{
+    align-self: center;
+}
+
+.compra button{
+    padding: 10px;
+    margin: 20px 0px;
+    width: 200px;
+}
+
+.divisao{
+    background-color: black;
+    height: 2px;
+}
+
+.opcpagamento{
+    background-color: white;
+    height: 30px;
+}
