@@ -29,11 +29,13 @@
                 include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../classes/produtos.class.php");
                 include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../controller/produto.controller.php");
                 $controller = new ProdutoController();
-                $produto = $controller->buscarPorId();
+                $produto = $controller->buscarTodos();
                 foreach ($produto as $p) {
+                    ?>
                     <div class="card">
                         
                     </div>
+                    <?php
                 }
                 ?>
             </div>
