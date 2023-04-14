@@ -59,8 +59,9 @@
                 <div class="card"></div>
             </div>
 
-        </div>
-    </main>
-</div>
-<?php require_once('./footer.php');
-?>
+            </div>
+            <?php require_once('footer.php');
+    ?>
+        </main>
+    </div>
+    
