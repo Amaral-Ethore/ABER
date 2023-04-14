@@ -115,7 +115,7 @@ CREATE TABLE `funcionarios` (
   `ativo` tinyint(1) DEFAULT NULL,
   `privilegios` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +124,6 @@ CREATE TABLE `funcionarios` (
 
 LOCK TABLES `funcionarios` WRITE;
 /*!40000 ALTER TABLE `funcionarios` DISABLE KEYS */;
-INSERT INTO `funcionarios` VALUES (1,'teste','teste@funcionario.com','senha123','55999999999',1,'admin');
 /*!40000 ALTER TABLE `funcionarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,9 +142,8 @@ CREATE TABLE `produtos` (
   `validade` varchar(10) DEFAULT NULL,
   `setor` varchar(30) DEFAULT NULL,
   `codebar` varchar(20) DEFAULT NULL,
-  `imagem` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,7 +152,6 @@ CREATE TABLE `produtos` (
 
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-INSERT INTO `produtos` VALUES (1,'nome','descricao','marca','validade','setor','codebar','Imagem'),(2,'Coca Cola','Gelada','CocacOLA','2023-04-21','Bebidas','123',''),(3,'Coca Cola','Gelada','CocacOLA','2023-04-21','Bebidas','123',''),(4,'hamburguer','Bovino','SuperBurguer','2023-04-15','Lanches','123',''),(5,'Bicicleta','Caloi','Oceano','','esportes','435626',''),(6,'sdfhds','sdhsdfh','dsfhsdh','2023-04-21','dsfhs','sdfhsdf','bce6a997d14342fd837bc6ac9b5ac659.png'),(7,'sdfhds','sdhsdfh','dsfhsdh','2023-04-21','dsfhs','sdfhsdf','0ab6dc3b9a75cfdb923bac686ef704d3.png'),(8,'burguer','Combo super','SuperBurguer','2023-04-20','dfhsdfh','joasdgh','ad81ac4df6c4133aa670916b5ea2b994.png');
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -167,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-13 19:26:11
+-- Dump completed on 2023-04-08  2:11:30

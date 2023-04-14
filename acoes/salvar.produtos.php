@@ -68,6 +68,8 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
             $_SESSION['sucesso'] = false;
         }
     }
+    header('Location:../public/cad_produto.php');
+
 } else {
     $nome = isset($_POST['nome']) ? $_POST['nome'] : null;
     $descricao = isset($_POST['descricao']) ? $_POST['descricao'] : null;
