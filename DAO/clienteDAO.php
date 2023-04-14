@@ -1,6 +1,6 @@
 <?php
-require_once(str_replace('\\', '/', dirname(__FILE__, 2)). '/config/functions.php');
-require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'/classes/cliente.class.php');
+require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '/config/functions.php');
+require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '/classes/cliente.class.php');
 
 class ClienteDAO
 {
@@ -62,6 +62,7 @@ class ClienteDAO
             $stmt->bindValue(":email", $mail);
             $stmt->execute();
             $cliente = new Cliente();
+            $result = null;
             while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                 $cliente->setId($rs->id);
                 $cliente->setNome(($rs->nome));
@@ -70,8 +71,9 @@ class ClienteDAO
                 $cliente->setEmail(($rs->email));
                 $cliente->setCpfCnpj($rs->cpfcnpj);
                 $cliente->setTelefone($rs->telefone);
+                $result = clone $cliente;
             }
-            return $cliente;
+            return $result;
         } catch (PDOException $ex) {
             echo "Erro ao buscar cliente: " . $ex->getMessage();
             die();
@@ -102,7 +104,7 @@ class ClienteDAO
         $pdo = conectDb();
         $pdo->beginTransaction();
         try {
-            $stmt = $pdo->prepare("INSERT INTO clientes (nome,email,senha,endreco, cpfcnpj, telefone) VALUES (:nome,:email, :senha, :endereco, :cpf, :tel)");
+            $stmt = $pdo->prepare("INSERT INTO clientes (nome,email,senha,endereco, cpfcnpj, telefone) VALUES (:nome,:email, :senha, :endereco, :cpf, :tel)");
             $stmt->bindValue(":nome", $cliente->getNome());
             $stmt->bindValue(":email", $cliente->getEmail());
             $stmt->bindValue(":senha", $cliente->getSenha());

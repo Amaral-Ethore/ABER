@@ -51,28 +51,23 @@
         <div class="menu-2">
             <ul>
                 <li>
+                    <a href="./cad_produto.php">
+                        Cadastro Produto
+                    </a>
+                </li>
+                <li>
+                    <a href="./home_compra.php">
+                        Carrinho
+                    </a>
+                </li>
+                <li>
                     <a href="item.php">
-                        Ofertas
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        Moda
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        Mais Acessados
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        Vender
+                        Item
                     </a>
                 </li>
                 <li>
                     <a href="./cad_cliente.php">
-                        Contato
+                        Cadastro Cliente
                     </a>
                 </li>
             </ul>
