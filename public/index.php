@@ -30,8 +30,8 @@
                 include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../controller/produto.controller.php");
                 $controller = new ProdutoController();
                 $produto = $controller->buscarTodos();
-                foreach ($produto as $p) {
-                    ?>
+                foreach ($produto as $p) { ?>
+                    
                     <div class="card">
                         
                     </div>
