@@ -2,9 +2,9 @@
 
 require_once('./header.php');
 /* require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'/acoes/verifica_sessao.php'); */
-require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'../controller/produto.controller.php');
-$controller = new ProdutoController();
-$produto = $controller->buscarTodos();
+require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'../controller/carrinho.controller.php');
+$controller = new CarrinhoController();
+$carrinho = $controller->buscarTodos();
 
 ?>
 <div class="container">
@@ -20,24 +20,25 @@ $produto = $controller->buscarTodos();
                 <th scope="col">Produto</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Preço</th>
+              
                 
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             <?php
-            foreach ($produto as $p) :
+            foreach ($carrinho as $c) :
             ?>
-            <!--     <tr>
-                    <td><?= $p->getId(); ?></td>
-                    <td><?= $p->getCompra(); ?></td>
-                    <td><?= $p->getProduto(); ?></td>
-                    <td><?= $p->getQuantpro(); ?></td>
-                    <td><?= $p->getPreco(); ?></td>
+                <tr>
+                    <td><?= $c->getId(); ?></td>
+                    <td><?= $c->getCompra(); ?></td>
+                    <td><?= $controller->buscarNome($c->getProduto()); ?></td>
+                    <td><?= $c->getQuantprod(); ?></td>
+                    <td><?= $c->getPreco(); ?></td>
                     <td>
-                        <a class="btn btn-link" href="../acoes/excluir.produtos.php?key=<?=$p->getId()?>">Excluir</a>
+                        <a class="btn btn-link" href="../acoes/excluir.produtos.php?key=<?=$c->getId()?>">Excluir</a>
                     </td>
-                </tr> -->
+                </tr>
             <?php
             endforeach;
             ?>

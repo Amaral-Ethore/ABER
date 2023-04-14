@@ -1,6 +1,7 @@
 <?php
 
-class Produtos {
+class Produtos
+{
     private $id;
     private $nome;
     private $descricao;
@@ -8,61 +9,84 @@ class Produtos {
     private $marca;
     private $validade;
     private $setor;
+    private $imagem;
 
-    public function setid($id) {
+    public function setid($id)
+    {
         $this->id = $id;
     }
 
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
-    public function setNome($nome) {
+    public function setNome($nome)
+    {
         $this->nome = $nome;
     }
 
-    public function getNome() {
+    public function getNome()
+    {
         return $this->nome;
     }
 
-    public function setDescricao($descricao) {
+    public function setDescricao($descricao)
+    {
         $this->descricao = $descricao;
     }
 
-    public function getDescricao() {
+    public function getDescricao()
+    {
         return $this->descricao;
     }
 
-    public function setCodebar($codebar) {
+    public function setCodebar($codebar)
+    {
         $this->codebar = $codebar;
     }
 
-    public function getCodebar() {
+    public function getCodebar()
+    {
         return $this->codebar;
     }
 
-    
-    public function setMarca($marca) {
+    public function setMarca($marca)
+    {
         $this->marca = $marca;
     }
 
-    public function getMarca() {
+    public function getMarca()
+    {
         return $this->marca;
     }
-    
-    public function setValidade($validade) {
+
+    public function setValidade($validade)
+    {
         $this->validade = $validade;
     }
 
-    public function getValidade() {
+    public function getValidade()
+    {
         return $this->validade;
     }
 
-    public function setSetor($setor) {
+    public function setSetor($setor)
+    {
         $this->setor = $setor;
     }
 
-    public function getSetor() {
+    public function getSetor()
+    {
         return $this->setor;
+    }
+    public function setImagem($imagem)
+    {
+        $this->imagem = $imagem;
+    }
+
+    public function getImagem()
+    {
+        return $this->imagem;
     }
 }

@@ -1,28 +1,3 @@
-@font-face {
-    font-family: 'darkcrystal';
-    src: url(../fontes/dark_crystal/dc_s.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'base 2';
-    src: url(../fontes/base_02/Base\ 02.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'aerosol';
-    src: url(../fontes/aerosol/Aerosol.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'maytra';
-    src: url(../fontes/maytra/Maytra.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'slayer';
-    src: url(../fontes/slayer_movie/Slayer\ movie.ttf) format('truetype');
-}
-
 * {
     user-select: none;
 }

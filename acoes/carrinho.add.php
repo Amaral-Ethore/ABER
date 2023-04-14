@@ -6,7 +6,11 @@ $compra = new Carrinho();
 
 if (isset($_GET) && isset($_GET['id']) && !empty($_GET['id'])) {
     $id = intval(addslashes(filter_input(INPUT_GET, 'id')));
+    $controller = new CarrinhoController();
 
+    $controller-> buscarNome($id);
+
+    
     
 }
 

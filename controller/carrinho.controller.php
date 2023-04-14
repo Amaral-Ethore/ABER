@@ -1,7 +1,7 @@
 <?php
 require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../DAO/carrinhoDAO.php");
 require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../classes/carrinho.class.php");
-require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../classes/compra.class.php");
+require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../classes/compra.php");
 
 class CarrinhoController
 {
@@ -21,6 +21,11 @@ class CarrinhoController
     {
         $dao = new CarrinhoDAO();
         return $dao->inserirCompra($compra);
+    }
+    public function buscarNome($id) {
+        $dao = new CarrinhoDAO();
+        $carrinho = $dao->buscarNome($id);
+        return $carrinho->getNome();
     }
 
 }
