@@ -27,12 +27,14 @@ class ClienteController
         return $dao->inserirCliente($cliente);
     }
 
-    public function atualizarCliente(Cliente $cliente) {
+    public function atualizarCliente(Cliente $cliente)
+    {
         $dao = new ClienteDAO();
         return $dao->atualizaCliente($cliente);
     }
 
-    public function removeCliente(int $id) {
+    public function removeCliente(int $id)
+    {
         $dao  = new ClienteDAO();
         return $dao->removeCliente($id);
     }

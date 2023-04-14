@@ -27,12 +27,14 @@ class FuncionarioController
         return $dao->inserirFuncionario($funcionario);
     }
 
-    public function atualizarFuncionario(Funcionario $funcionario) {
+    public function atualizarFuncionario(Funcionario $funcionario)
+    {
         $dao = new FuncionarioDAO();
         return $dao->atualizaFuncionario($funcionario);
     }
 
-    public function removeFuncionario(int $id) {
+    public function removeFuncionario(int $id)
+    {
         $dao  = new FuncionarioDAO();
         return $dao->removeFuncionario($id);
     }

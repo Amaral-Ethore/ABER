@@ -23,12 +23,14 @@ class ProdutoController
         return $dao->inserirProduto($produto);
     }
 
-   public function atualizarProduto(Produtos $produto) {
+    public function atualizarProduto(Produtos $produto)
+    {
         $dao = new ProdutoDAO();
         return $dao->atualizaProduto($produto);
     }
 
-    public function removeProduto(int $id) {
+    public function removeProduto(int $id)
+    {
         $dao  = new ProdutoDAO();
         return $dao->removeProduto($id);
     }
