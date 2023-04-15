@@ -1,8 +1,8 @@
 <?php
-include_once('./header.php');
+include_once('header.php');
 ?>
 <div class="container">
-  <?php include_once('./nav.php'); 
+  <?php include_once('nav.php'); 
 /*   require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '../acoes/verifica_sessao.php'); */
   require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../classes/cliente.class.php");
    $cliente = new Cliente();
@@ -57,5 +57,5 @@ include_once('./header.php');
 </div>
 
 <?php
-require_once('./footer.php');
+require_once('footer.php');
 

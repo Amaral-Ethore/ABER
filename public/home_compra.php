@@ -1,6 +1,6 @@
 <?php
 
-require_once('./header.php');
+require_once('header.php');
 /* require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'/acoes/verifica_sessao.php'); */
 require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'../controller/carrinho.controller.php');
 $controller = new CarrinhoController();
@@ -64,7 +64,7 @@ unset($_SESSION['sucesso'], $_SESSION['mensagem']);
 ?>
 
 <?php
-require_once('./footer.php');
+require_once('footer.php');
 ?>   
     </main>
 
