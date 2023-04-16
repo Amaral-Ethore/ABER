@@ -33,7 +33,14 @@
                 foreach ($produto as $p) { ?>
                     
                     <div class="card">
-                        
+                        <div class="img">
+                            <?php
+                                
+                            ?>
+                        </div>
+                        <div class="info">
+                            
+                        </div>
                     </div>
                     <?php
                 }
