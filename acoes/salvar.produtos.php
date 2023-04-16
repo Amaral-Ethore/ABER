@@ -83,7 +83,6 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
     if ($extensao == "png" || $extensao == "jpeg" || $extensao == "jpg") {
         $imgname = md5(time()) . "." . "$extensao";
         if ($nome && $descricao && $imgname) {
-            move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio . $imgname);
             $produto->setNome($nome);
             $produto->setDescricao($descricao);
             $produto->setMarca($marca);
@@ -94,6 +93,7 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
             $dao = new ProdutoController();
             $resultado = $dao->criarProduto($produto);
             if ($resultado) {
+                move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio . $imgname);
                 $_SESSION['mensagem'] = "Criado com sucesso";
                 $_SESSION['sucesso'] = true;
             } else {

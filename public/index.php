@@ -28,21 +28,20 @@
                 <?php
                 include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../classes/produtos.class.php");
                 include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../controller/produto.controller.php");
+                include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../config/config.php");
                 $controller = new ProdutoController();
                 $produto = $controller->buscarTodos();
-                foreach ($produto as $p) { ?>
-                    
+                var_dump($produto);
+                foreach ($produto as $p) {
+                ?>
                     <div class="card">
                         <div class="img">
-                            <?php
-                                
-                            ?>
+                            <img src="../imagens/uploads/<?php $p->getImagem(); ?>" alt="Imagem">
                         </div>
                         <div class="info">
-                            
                         </div>
                     </div>
-                    <?php
+                <?php
                 }
                 ?>
             </div>
@@ -68,9 +67,8 @@
                 <div class="card"></div>
             </div>
 
-            </div>
-            <?php require_once('footer.php');
-    ?>
-        </main>
-    </div>
-    
+        </div>
+        <?php require_once('footer.php');
+        ?>
+    </main>
+</div>
