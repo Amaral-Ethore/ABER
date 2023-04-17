@@ -5,10 +5,10 @@
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class=" bnrs carousel-inner">
                 <div class="b b1 carousel-item active" data-bs-interval="2000">
-                    <img src="../imagens/banners/0500346001598558021.png" class="d-block w-100 b b1" alt="...">
+                    <img src="../imagens/banners/0500346001598558021.png" class="d-block w-100 b b1" alt="Banner1">
                 </div>
                 <div class="b b2 carousel-item" data-bs-interval="2000">
-                    <img src="../imagens/banners/0882329001595854637.png" class="d-block w-100 b b2" alt="...">
+                    <img src="../imagens/banners/0882329001595854637.png" class="d-block w-100 b b2" alt="Banner2">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -24,26 +24,27 @@
             <h2>
                 Promoções
             </h2>
+            <?php
+            include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../classes/produtos.class.php");
+            include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../controller/produto.controller.php");
+            include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../config/config.php");
+            $controller = new ProdutoController();
+            $produto = $controller->buscarTodos();
+            ?>
             <div class="cards">
                 <?php
-                include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../classes/produtos.class.php");
-                include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../controller/produto.controller.php");
-                include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../config/config.php");
-                $controller = new ProdutoController();
-                $produto = $controller->buscarTodos();
-                var_dump($produto);
                 foreach ($produto as $p) {
                 ?>
-                    <div class="card">
-                        <div class="img">
-                            <img src="../imagens/uploads/<?php $p->getImagem(); ?>" alt="Imagem">
-                        </div>
-                        <div class="info">
+                    <div class="card h-100 border">
+                        <img src="../imagens/uploads/<?= $p->getImagem(); ?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $p->getNome() ?></h5>
+                            <p class="card-text"><?= $p->getMarca(); ?></p>
+                            <p class="card-text"><?= $p->getDescricao(); ?></p>
                         </div>
                     </div>
                 <?php
-                }
-                ?>
+                } ?>
             </div>
             <div class="btns">
                 <div class="btn1">
@@ -53,22 +54,7 @@
                     <a href="">Ofertas da Semana</a>
                 </div>
             </div>
-            <h2>Mais Vendidos</h2>
-            <div class="cards">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-            </div>
-
         </div>
-        <?php require_once('footer.php');
-        ?>
+        <?php require_once('footer.php'); ?>
     </main>
 </div>

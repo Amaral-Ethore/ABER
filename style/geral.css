@@ -1,4 +1,4 @@
-body{
+body {
     display: flex;
     justify-content: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -10,14 +10,15 @@ body{
     padding: 0;
     margin: 0;
 }
-
-header{
+img{
+    user-select: none;
+}
+header {
     display: grid;
     grid-template-rows: 50px 25px;
 }
 
-
-footer{
+footer {
     position: relative;
     bottom: 0;
     margin-top: 3rem;
@@ -29,40 +30,45 @@ footer{
     background-color: darkgray;
 }
 
-footer ul{
+footer ul {
     display: flex;
     flex-direction: column;
 }
 
-.container{
-    min-height: 100vh;
+.container {
+    min-height: 1000px;
 }
 
-.h-1{
+.h-1 {
     align-items: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.logo{
+
+.logo {
     position: relative;
     left: 10px;
     height: 45px;
     width: fit-content;
 }
-.logo-footer{
+
+.logo-footer {
     position: relative;
     left: 10px;
     height: 100px;
     width: fit-content;
 }
-.hover{
+
+.hover {
     cursor: pointer;
 }
-img{
+
+img {
     height: 100%;
 }
-ul{
+
+ul {
     display: flex;
     list-style: none;
     list-style: none;
@@ -70,55 +76,62 @@ ul{
     margin-right: 25px;
     gap: 10px;
 }
-li{
+
+li {
     display: inline;
 }
-li img{
+
+li img {
     height: 20px;
 }
-i{
+
+i {
     color: black;
 }
-a{
+
+a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
-.search{
+
+.search {
     position: relative;
 }
-.menu-input{
+
+.menu-input {
     border-radius: 15px;
     border: 0;
     margin-right: 10px;
     height: 18px;
     width: 150px;
-    background-image: url(); 
+    background-image: url();
     border: 1px solid black;
 }
-.lupa{
+
+.lupa {
     position: absolute;
     top: 7px;
     right: 20px;
     color: rgb(60, 60, 60);
     font-size: 0.8rem;
 }
-.h-2{
+
+.h-2 {
     display: grid;
     align-items: center;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
 }
-.h-2 ul{
+
+.h-2 ul {
     margin: 0;
     display: flex;
     justify-content: space-around;
     padding: 0;
 }
-.h-2 li{
+
+.h-2 li {
     font-size: 0.8rem;
     margin: 0;
     padding: 0;
     border: 0;
 }
-
-
-

@@ -11,7 +11,7 @@ class ProdutoDAO
             $stmt = $pdo->prepare("SELECT * FROM produtos;");
             $stmt->execute();
             $produto = new Produtos();
-            $retorno = array();
+            $retorno = null;
             while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                 $produto->setId($rs->id);
                 $produto->setNome(($rs->nome));
@@ -20,7 +20,7 @@ class ProdutoDAO
                 $produto->setValidade($rs->validade);
                 $produto->setSetor($rs->setor);
                 $produto->setCodebar($rs->codebar);
-
+                $produto->setImagem($rs->imagem);
                 $retorno[] = clone $produto;
             }
             return $retorno;
@@ -38,6 +38,7 @@ class ProdutoDAO
             $stmt->bindValue(":id", $id);
             $stmt->execute();
             $produto = new Produtos();
+            $retorno = null;
             while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                 $produto->setId($rs->id);
                 $produto->setNome(($rs->nome));
@@ -46,6 +47,8 @@ class ProdutoDAO
                 $produto->setValidade($rs->validade);
                 $produto->setSetor($rs->setor);
                 $produto->setCodebar($rs->codebar);
+                $produto->setImagem($rs->imagem);
+                $retorno[] = clone $produto;
             }
             return $produto;
         } catch (PDOException $ex) {

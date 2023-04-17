@@ -24,7 +24,7 @@
                 <li class="hover">
                     <div class="dropdown">
                         <i id="dropbtn" class="fa-solid fa-user" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"></i>
-                        </button>
+
                         <form id="myDropdown" class="dropdown-menu p-4 login-form" method="POST" action="../controller/login.controller.php">
                             <div class="mb-3">
                                 <label for="mail" class="form-label">Email </label>
@@ -74,4 +74,3 @@
         </div>
     </div>
 </header>
-<script src="../codigos/code.js"></script>

@@ -1,5 +1,5 @@
 * {
-    user-select: none;
+    
 }
 
 html,
@@ -24,31 +24,29 @@ main {
     align-items: center;
     flex-direction: column;
 }
-
-.cards {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-auto-flow: column;
-    overflow: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    width: 730px;
+.cards{
+    display: flex;
+    gap: 30px 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-
-.card {
-    scroll-snap-align: end;
-    background-color: rgb(255, 255, 255);
-    height: 200px;
-    width: 130px;
+.card{
+    flex-basis: 140px;
 }
-
+.card-body{
+    flex-basis: 230px;
+}
+.card img{
+    flex-basis: 140px;
+    aspect-ratio: 1 / 1;
+    
+}
 .btns {
     display: flex;
     margin-top: 30px;
     width: 100%;
     justify-content: space-around;
 }
-
 .btn1 {
     display: flex;
     width: 200px;
@@ -69,18 +67,5 @@ main {
 }
 
 @media (max-width: 900px) {
-    .cards {
-        display: grid;
-        grid-template-rows: 1fr;
-    }
-}
 
-@media (max-width: 750px) {
-    .cards {
-        width: 600px;
-    }
-}
-
-@media(max-width: 666){
-    
 }

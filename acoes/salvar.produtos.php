@@ -81,7 +81,7 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
     $extensao = strtolower(pathinfo($file, PATHINFO_EXTENSION));
     $diretorio = CAMINHO;
     if ($extensao == "png" || $extensao == "jpeg" || $extensao == "jpg") {
-        $imgname = md5(time()) . "." . "$extensao";
+        $imgname = md5(time()) . "." . $extensao;
         if ($nome && $descricao && $imgname) {
             $produto->setNome($nome);
             $produto->setDescricao($descricao);
@@ -106,6 +106,7 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
         }
     } else {
         $_SESSION['mensagem'] = "Extenção Invalida";
+        $_SESSION['sucesso'] = false;
     }
     header('Location:../public/cad_produto.php');
 }
