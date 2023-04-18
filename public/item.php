@@ -43,6 +43,8 @@
                     </div>
                     <div class="flex-between">
                         <div class="preco">
+                            <del>Preço original</del>
+                            <br>
                             <span>Preço</span>
                             <p>à vista com desconto</p>
                         </div>
@@ -61,27 +63,29 @@
                     <div class="divisao">
                         <p></p>
                     </div>
-
-                    <div class="flex-around">
-                        <div>
-                            <p>n de vezes + preço</p>
-                            <p>n de vezes + preço</p>
-                            <p>n de vezes + preço</p>
-                            <p>n de vezes + preço</p>
-                            <p>n de vezes + preço</p>
+                    <div class="pagamento">
+                        <div class="flex-around">
+                            <div>
+                                <p>n de vezes + preço</p>
+                                <p>n de vezes + preço</p>
+                                <p>n de vezes + preço</p>
+                                <p>n de vezes + preço</p>
+                                <p>n de vezes + preço</p>
+                            </div>
+                            <div>
+                                <p>n de vezes + preço</p>
+                                <p>n de vezes + preço</p>
+                                <p>n de vezes + preço</p>
+                                <p>n de vezes + preço</p>
+                                <p>n de vezes + preço</p>
+                            </div>
                         </div>
-                        <div>
-                            <p>n de vezes + preço</p>
-                            <p>n de vezes + preço</p>
-                            <p>n de vezes + preço</p>
-                            <p>n de vezes + preço</p>
-                            <p>n de vezes + preço</p>
+
+                        <div class="opcpagamento flex-between">
+                            adsad
                         </div>
                     </div>
 
-                    <div class="opcpagamento flex-between">
-                        adsad
-                    </div>
 
                     <div class="divisao">
                         <p></p>
@@ -119,11 +123,11 @@
                 </div>
             </div>
         </main>
-        <?php require_once('footer.php') ?>
+
 
     </div>
 
-
+    <?php require_once('footer.php') ?>
 </body>
 
 </html>

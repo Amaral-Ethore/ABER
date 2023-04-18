@@ -63,11 +63,11 @@ if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == f
 unset($_SESSION['sucesso'], $_SESSION['mensagem']);
 ?>
 
-<?php
-require_once('footer.php');
-?>   
+  
     </main>
-
+    <?php
+require_once('footer.php');
+?> 
 
 
 </div>

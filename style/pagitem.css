@@ -10,22 +10,22 @@ main{
 }
 
 .carousel {
+    display: flex;
+    flex: 1;
     border: 2px solid darkgray;
     border-radius: 5px;
-    height: 550px;
-    width: 600px;
     background-color: green;
 }
 
 .bloco{
-    height: 550px;
-    width: 600px;
+    flex: 1;
+    flex-direction: column;
     background-color: darkgray;
     padding: 10px;
 }
 
 .bloco div{
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .bloco p{
@@ -70,7 +70,24 @@ main{
     height: 2px;
 }
 
+.pagamento{
+    display: flex;
+    flex-direction: column;
+}
+
 .opcpagamento{
     background-color: white;
     height: 30px;
+}
+
+@media screen and (max-width: 767px){
+    .topo{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pagamento{
+        flex-direction: column-reverse;
+    }
+    
 }
