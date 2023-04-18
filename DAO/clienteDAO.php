@@ -24,7 +24,8 @@ class ClienteDAO
                 $retorno[] = clone $cliente;
             }
             return $retorno;
-        } catch (PDOException $ex) {
+        } 
+        catch (PDOException $ex) {
             echo "Erro ao buscar cliente: " . $ex->getMessage();
             die();
         }
@@ -48,7 +49,8 @@ class ClienteDAO
                 $cliente->setTelefone($rs->telefone);
             }
             return $cliente;
-        } catch (PDOException $ex) {
+        } 
+        catch (PDOException $ex) {
             echo "Erro ao buscar cliente: " . $ex->getMessage();
             die();
         }
@@ -74,7 +76,8 @@ class ClienteDAO
                 $result = clone $cliente;
             }
             return $result;
-        } catch (PDOException $ex) {
+        } 
+        catch (PDOException $ex) {
             echo "Erro ao buscar cliente: " . $ex->getMessage();
             die();
         }
@@ -92,7 +95,8 @@ class ClienteDAO
                 $pdo->commit();
             }
             return $stmt->rowCount();
-        } catch (PDOException $ex) {
+        } 
+        catch (PDOException $ex) {
             echo "Erro ao excluir cliente: " . $ex->getMessage();
             $pdo->rollBack();
             die();
@@ -117,7 +121,8 @@ class ClienteDAO
                 return TRUE;
             }
             return FALSE;
-        } catch (PDOException $ex) {
+        } 
+        catch (PDOException $ex) {
             echo "Erro ao inserir cliente: " . $ex->getMessage();
             $pdo->rollBack();
             die();
@@ -142,7 +147,8 @@ class ClienteDAO
                 return TRUE;
             }
             return FALSE;
-        } catch (PDOException $ex) {
+        } 
+        catch (PDOException $ex) {
             $pdo->rollBack();
             echo "Erro ao atualizar cliente: " . $ex->getMessage();
             die();

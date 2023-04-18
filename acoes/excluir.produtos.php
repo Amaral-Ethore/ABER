@@ -14,15 +14,14 @@ if (isset($_GET) && isset($_GET['key'])) {
 
 
 
-$resultado = $controller->removeProduto($id);
+    $resultado = $controller->removeProduto($id);
 
-if ($resultado) {
-    $_SESSION['mensagem'] = "Removido com sucesso";
-    $_SESSION['sucesso'] = true;
-} else {
-    $_SESSION['mensagem'] = "Erro ao remover";
-    $_SESSION['sucesso'] = false;
-
-}
+    if ($resultado) {
+        $_SESSION['mensagem'] = "Removido com sucesso";
+        $_SESSION['sucesso'] = true;
+    } else {
+        $_SESSION['mensagem'] = "Erro ao remover";
+        $_SESSION['sucesso'] = false;
+    }
 }
 header('Location:../public/home.produtos.php');

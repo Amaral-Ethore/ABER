@@ -1,11 +1,12 @@
 <?php
 
-class Compra {
+class Compra
+{
 
     private $id;
     private $cliente;
 
-    
+
     public function setId($id)
     {
         $this->id = $id;
@@ -15,7 +16,7 @@ class Compra {
     {
         return $this->id;
     }
-    
+
     public function setCliente($cliente)
     {
         $this->cliente = $cliente;

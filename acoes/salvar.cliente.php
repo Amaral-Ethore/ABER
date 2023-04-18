@@ -58,7 +58,7 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
         $cliente->setEmail(($email));
         $cliente->setCpfCnpj($cpfcnpj);
         $cliente->setTelefone($telefone);
-
+        
         $dao = new ClienteController();
         $resultado = $dao->criarCliente($cliente);
         if ($resultado) {

@@ -16,11 +16,13 @@ class FuncionarioController
         $dao = new FuncionarioDAO();
         return $dao->buscarUm($id);
     }
+
     public function buscarPorEmail($mail)
     {
         $dao = new FuncionarioDAO();
         return $dao->buscarPorEmail($mail);
     }
+    
     public function criarFuncionario(Funcionario $funcionario)
     {
         $dao = new FuncionarioDAO();

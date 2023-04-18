@@ -4,7 +4,6 @@ require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "/classes/produtos.c
 
 class ProdutoController
 {
-
     public function buscarTodos()
     {
         $dao = new ProdutoDAO();

@@ -1,29 +1,27 @@
-document.getElementById('dropbtn').addEventListener('click',() =>{
-        let dropdown = document.getElementById('myDropdown');
-        dropdown.style.transform = "translate(-145px, 40px)";
-}); 
-
 chkfunc = document.getElementById('chkfunc');
-function getchk(){
-        if(chkfunc.checked){
+function getchk() {
+        if (chkfunc.checked) {
                 return "funcionario";
         }
-        else{
+        else {
                 return "cliente";
         }
 }
-function alteraName(obj){
+
+function alteraName(obj) {
         let tipo = document.getElementById('tipo');
         if (obj == "cliente") {
                 tipo.setAttribute('value', "cliente");
         }
-        if(obj == "funcionario"){
-                tipo.setAttribute('value', "funcionario");      
+        if (obj == "funcionario") {
+                tipo.setAttribute('value', "funcionario");
         }
 }
-window.addEventListener('load',() => {
+
+window.addEventListener('load', () => {
         alteraName(getchk());
 })
-chkfunc.addEventListener('click',() => {
+
+chkfunc.addEventListener('click', () => {
         alteraName(getchk());
 })

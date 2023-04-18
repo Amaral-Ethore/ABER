@@ -23,7 +23,8 @@ class FuncionarioDAO
                 $retorno[] = clone $funcionario;
             }
             return $retorno;
-        } catch (PDOException $ex) {
+        } 
+        catch (PDOException $ex) {
             echo "Erro ao buscar funcionario: " . $ex->getMessage();
             die();
         }
@@ -47,7 +48,8 @@ class FuncionarioDAO
                 $funcionario->setAtivo($rs->ativo);
             }
             return $funcionario;
-        } catch (PDOException $ex) {
+        } 
+        catch (PDOException $ex) {
             echo "Erro ao buscar funcionario: " . $ex->getMessage();
             die();
         }
@@ -73,7 +75,8 @@ class FuncionarioDAO
                 $result = clone $funcionario;
             }
             return $result;
-        } catch (PDOException $ex) {
+        } 
+        catch (PDOException $ex) {
             echo "Erro ao buscar funcionario: " . $ex->getMessage();
             die();
         }
@@ -91,7 +94,8 @@ class FuncionarioDAO
                 $pdo->commit();
             }
             return $stmt->rowCount();
-        } catch (PDOException $ex) {
+        } 
+        catch (PDOException $ex) {
             echo "Erro ao excluir funcionario: " . $ex->getMessage();
             $pdo->rollBack();
             die();
@@ -116,7 +120,8 @@ class FuncionarioDAO
                 return TRUE;
             }
             return FALSE;
-        } catch (PDOException $ex) {
+        } 
+        catch (PDOException $ex) {
             echo "Erro ao inserir funcionario: " . $ex->getMessage();
             $pdo->rollBack();
             die();
@@ -141,7 +146,8 @@ class FuncionarioDAO
                 return TRUE;
             }
             return FALSE;
-        } catch (PDOException $ex) {
+        } 
+        catch (PDOException $ex) {
             $pdo->rollBack();
             echo "Erro ao atualizar funcionario: " . $ex->getMessage();
             die();

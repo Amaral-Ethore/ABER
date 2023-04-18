@@ -15,7 +15,8 @@ if ($email && $senha) {
         if (isset($_SESSION['usuario']) && isset($_SESSION['mensagem']) && $_SESSION['mensagem'] == "sucesso") {
             echo $_SESSION['mensagem'];
             echo $_SESSION['usuario'];
-        } else {
+        } 
+        else {
             echo $_SESSION['mensagem'];
         }
     }
@@ -25,7 +26,8 @@ if ($email && $senha) {
             echo $_SESSION['usuario'];
             echo $_SESSION['privilegio'];
             echo $_SESSION['mensagem'];
-        } else {
+        } 
+        else {
             echo $_SESSION['mensagem'];
         }
     }

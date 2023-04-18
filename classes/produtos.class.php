@@ -80,6 +80,7 @@ class Produtos
     {
         return $this->setor;
     }
+    
     public function setImagem($imagem)
     {
         $this->imagem = $imagem;

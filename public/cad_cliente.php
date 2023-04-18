@@ -2,14 +2,14 @@
 include_once('header.php');
 ?>
 <div class="container">
-  <?php include_once('nav.php'); 
-/*   require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '../acoes/verifica_sessao.php'); */
+  <?php include_once('nav.php');
+  /*   require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '../acoes/verifica_sessao.php'); */
   require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../classes/cliente.class.php");
-   $cliente = new Cliente();
+  $cliente = new Cliente();
   ?>
 
   <h1>Cadastro Cliente</h1>
-  <form method="Post"  action="../acoes/salvar.cliente.php">
+  <form method="Post" action="../acoes/salvar.cliente.php">
     <div class="mb-3">
       <label for="nome" class="form-label"> Nome </label>
       <input type="text" class="form-control" id="nome" name="nome" value="<?= $cliente->getNome() ?>">
@@ -37,25 +37,24 @@ include_once('header.php');
     </div>
     <button type="submit" class="btn btn-primary">Salvar</button>
   </form> <?php
-    if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == TRUE) {
-    ?>
-        <div class="alert alert-success" role="alert">
-            <?= $_SESSION['mensagem']; ?>
-        </div>
-    <?php
-    }
-    if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == false) {
-    ?>
-        <div class="alert alert-danger" role="alert">
-            <?= $_SESSION['mensagem']; ?>
-        </div>
-    <?php
-    }
-    unset($_SESSION['sucesso'], $_SESSION['mensagem']);
-    ?>
+          if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == TRUE) {
+          ?>
+    <div class="alert alert-success" role="alert">
+      <?= $_SESSION['mensagem']; ?>
+    </div>
+  <?php
+          }
+          if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == false) {
+  ?>
+    <div class="alert alert-danger" role="alert">
+      <?= $_SESSION['mensagem']; ?>
+    </div>
+  <?php
+          }
+          unset($_SESSION['sucesso'], $_SESSION['mensagem']);
+  ?>
 
 </div>
 
 <?php
 require_once('footer.php');
-

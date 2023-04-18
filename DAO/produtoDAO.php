@@ -95,7 +95,8 @@ class ProdutoDAO
                 return TRUE;
             }
             return FALSE;
-        } catch (PDOException $ex) {
+        } 
+        catch (PDOException $ex) {
             echo "Erro ao inserir produto: " . $ex->getMessage();
             $pdo->rollBack();
             die();
@@ -122,7 +123,8 @@ class ProdutoDAO
                 return TRUE;
             }
             return FALSE;
-        } catch (PDOException $ex) {
+        } 
+        catch (PDOException $ex) {
             $pdo->rollBack();
             echo "Erro ao atualizar produto: " . $ex->getMessage();
             die();

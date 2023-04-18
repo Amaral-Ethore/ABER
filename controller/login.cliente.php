@@ -1,6 +1,7 @@
 <?php
 require_once('../classes/cliente.class.php');
 require_once('../controller/cliente.controller.php');
+
 function buscaCliente($mail, $senha)
 {
     $controller = new ClienteController();

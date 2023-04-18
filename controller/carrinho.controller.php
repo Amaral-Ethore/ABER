@@ -22,10 +22,10 @@ class CarrinhoController
         $dao = new CarrinhoDAO();
         return $dao->inserirCompra($compra);
     }
-    public function buscarNome($id) {
+    public function buscarNome($id)
+    {
         $dao = new CarrinhoDAO();
         $carrinho = $dao->buscarNome($id);
         return $carrinho->getNome();
     }
-
 }

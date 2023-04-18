@@ -8,7 +8,7 @@ class Carrinho
     private $quantprod;
     private $preco;
     private $nome;
-   
+
 
     public function setId($id)
     {
@@ -29,6 +29,7 @@ class Carrinho
     {
         return $this->compra;
     }
+    
     public function setProduto($produto)
     {
         $this->produto = $produto;
@@ -38,6 +39,7 @@ class Carrinho
     {
         return $this->produto;
     }
+
     public function setQuantprod($quantprod)
     {
         $this->quantprod = $quantprod;
@@ -47,6 +49,7 @@ class Carrinho
     {
         return $this->quantprod;
     }
+
     public function setPreco($preco)
     {
         $this->preco = $preco;
