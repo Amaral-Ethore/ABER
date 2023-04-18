@@ -10,12 +10,14 @@ body {
     padding: 0;
     margin: 0;
 }
-img{
+
+img {
     user-select: none;
 }
+
 header {
     display: grid;
-    grid-template-rows: 50px 25px;
+    grid-template-rows: 60px 25px;
 }
 
 footer {
@@ -40,10 +42,14 @@ footer ul {
 }
 
 .h-1 {
-    align-items: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.h-1 li {
+    display: flex;
+    align-items: center;
 }
 
 .logo {
@@ -62,6 +68,10 @@ footer ul {
 
 .hover {
     cursor: pointer;
+}
+
+.h-1 span {
+    font-size: 0.8rem;
 }
 
 img {
@@ -87,6 +97,7 @@ li img {
 
 i {
     color: black;
+    font-size: 1.3rem;
 }
 
 a {
@@ -98,12 +109,17 @@ a {
     position: relative;
 }
 
+.drop-login form {
+    transform: translate(0, 50px) !important;
+    width: 230px !important;
+}
+
 .menu-input {
     border-radius: 15px;
     border: 0;
     margin-right: 10px;
-    height: 18px;
-    width: 150px;
+    height: 25px;
+    width: 250px;
     background-image: url();
     border: 1px solid black;
 }

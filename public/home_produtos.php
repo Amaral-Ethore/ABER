@@ -2,7 +2,7 @@
 
 require_once('./header.php');
 /* require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'/acoes/verifica_sessao.php'); */
-require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'../controller/produto.controller.php');
+require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '../controller/produto.controller.php');
 
 $controller = new ProdutoController();
 $produto = $controller->buscarTodos();
@@ -41,8 +41,8 @@ $produto = $controller->buscarTodos();
                     <td><?= $p->getSetor(); ?></td>
                     <td><?= $p->getCodeBar(); ?></td>
                     <td>
-                        <a class="btn btn-light" href="./cad_produto.php?key=<?=$p->getId()?>">Editar</a>
-                        <a class="btn btn-link" href="../acoes/excluir.produtos.php?key=<?=$p->getId()?>">Excluir</a>
+                        <a class="btn btn-light" href="./cad_produto.php?key=<?= $p->getId() ?>">Editar</a>
+                        <a class="btn btn-link" href="../acoes/excluir.produtos.php?key=<?= $p->getId() ?>">Excluir</a>
                     </td>
                 </tr>
             <?php

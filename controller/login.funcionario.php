@@ -16,12 +16,14 @@ function buscaFuncionario($mail, $senha)
             $_SESSION['usuario'] = $funcionario->getEmail();
             $_SESSION['privilegio'] = "admin";
         }
+        
         if ($funcionario->getPrivilegio() == "func") {
             $_SESSION['mensagem'] = "Logado como Funcionario";
             $_SESSION['usuario'] = $funcionario->getEmail();
             $_SESSION['privilegio'] = "func";
         }
-    } else {
+    } 
+    else {
         $_SESSION['mensagem'] = "Funcionario não encontrado";
         unset($_SESSION['usuario']);
         unset($_SESSION['tipo']);

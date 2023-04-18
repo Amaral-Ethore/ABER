@@ -11,11 +11,13 @@ function conectDb()
         PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     );
+
     try {
         $conexao = new PDO($dns, USER, PASS, $opcoes);
         $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $conexao;
-    } catch (PDOException $ex) {
+    } 
+    catch (PDOException $ex) {
         echo 'Erro ao conectar ao banco: ' . $ex->getMessage();
     }
 }

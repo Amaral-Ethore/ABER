@@ -41,24 +41,25 @@ include_once('header.php');
             </div>
             <button type="submit" class="btn btn-primary">Salvar</button>
         </form> <?php
-        if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso']) {
-        ?>
+                if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso']) {
+                ?>
             <div class="alert alert-success" role="alert">
                 <?= $_SESSION['mensagem']; ?>
             </div>
         <?php
-            }
-        if (isset($_SESSION) && isset($_SESSION['sucesso']) && !$_SESSION['sucesso']) {
+                }
+                if (isset($_SESSION) && isset($_SESSION['sucesso']) && !$_SESSION['sucesso']) {
         ?>
             <div class="alert alert-danger" role="alert">
                 <?= $_SESSION['mensagem']; ?>
             </div>
         <?php
-        }
-            unset($_SESSION['sucesso'], $_SESSION['mensagem']);
+                }
+                unset($_SESSION['sucesso'], $_SESSION['mensagem']);
         ?>
-        <?php
-        require_once('footer.php');
-        ?>
+
     </main>
 </div>
+<?php
+require_once('footer.php');
+?>

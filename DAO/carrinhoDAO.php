@@ -50,7 +50,7 @@ class CarrinhoDAO
         }
     }
 
-     function inserirCompra(Compra $compra)
+    function inserirCompra(Compra $compra)
     {
         $pdo = conectDb();
         $pdo->beginTransaction();
@@ -69,20 +69,20 @@ class CarrinhoDAO
             die();
         }
     }
-    
+
     function buscarNome($id)
     {
         $pdo = conectDb();
         try {
-            $stmt = $pdo->prepare("SELECT cp.*, p.nome FROM `carrinho` as cp INNER JOIN produtos as p ON p.id = " . $id );
-           /*  $stmt->bindValue(":cp.produto", $id); */
+            $stmt = $pdo->prepare("SELECT cp.*, p.nome FROM `carrinho` as cp INNER JOIN produtos as p ON p.id = " . $id);
+            /*  $stmt->bindValue(":cp.produto", $id); */
             $stmt->execute();
             $compra = new Carrinho();
             while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                 $compra->setNome(($rs->nome));
                 $retorno = clone $compra;
             }
-           
+
             return $retorno;
         } catch (PDOException $ex) {
             echo "Erro ao buscar compra: " . $ex->getMessage();

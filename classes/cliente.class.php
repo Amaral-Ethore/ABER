@@ -29,6 +29,7 @@ class Cliente
     {
         return $this->nome;
     }
+    
     public function setEmail($email)
     {
         $this->email = $email;
@@ -38,6 +39,7 @@ class Cliente
     {
         return $this->email;
     }
+
     public function setSenha($senha)
     {
         $this->senha = $senha;

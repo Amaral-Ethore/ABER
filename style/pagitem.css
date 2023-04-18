@@ -1,8 +1,8 @@
-main{
+main {
     height: auto;
 }
 
-.topo{
+.topo {
     display: flex;
     justify-content: space-between;
     margin: 10px 0px;
@@ -17,60 +17,60 @@ main{
     background-color: green;
 }
 
-.bloco{
+.bloco {
     height: 550px;
     width: 600px;
     background-color: darkgray;
     padding: 10px;
 }
 
-.bloco div{
+.bloco div {
     margin-top: 10px;
 }
 
-.bloco p{
+.bloco p {
     font-size: 11px;
-    margin-bottom: 5px;    
+    margin-bottom: 5px;
 }
 
-.flex-between{
+.flex-between {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
 }
 
-.flex-around{
+.flex-around {
     display: flex;
     justify-content: space-around;
     font-size: 12px;
 }
 
-.preco{
+.preco {
     margin: 20px 0px;
     align-self: center;
 }
 
-.preco span{
+.preco span {
     font-size: 50px;
     color: green;
 }
 
-.compra{
+.compra {
     align-self: center;
 }
 
-.compra button{
+.compra button {
     padding: 10px;
     margin: 20px 0px;
     width: 200px;
 }
 
-.divisao{
+.divisao {
     background-color: black;
     height: 2px;
 }
 
-.opcpagamento{
+.opcpagamento {
     background-color: white;
     height: 30px;
 }

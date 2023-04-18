@@ -16,11 +16,13 @@ class ClienteController
         $dao = new ClienteDAO();
         return $dao->buscarUm($id);
     }
+    
     public function buscarPorEmail($mail)
     {
         $dao = new ClienteDAO();
         return $dao->buscarPorEmail($mail);
     }
+
     public function criarCliente(Cliente $cliente)
     {
         $dao = new ClienteDAO();
