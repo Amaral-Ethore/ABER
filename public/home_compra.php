@@ -65,10 +65,8 @@ unset($_SESSION['sucesso'], $_SESSION['mensagem']);
 
   
     </main>
-    <?php
-require_once('footer.php');
-?> 
+
 
 
 </div>
-
+<?php require_once('footer.php'); ?> 

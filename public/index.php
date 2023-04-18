@@ -43,8 +43,8 @@
                             <p class="card-text"><?= $p->getDescricao(); ?></p>
                         </div>
                     </div>
-                <?php
-                } ?>
+                
+             <?php } ?>
             </div>
             <div class="btns">
                 <div class="btn1">
