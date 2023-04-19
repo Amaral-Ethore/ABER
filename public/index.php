@@ -31,21 +31,24 @@
             $controller = new ProdutoController();
             $produto = $controller->buscarTodos();
             ?>
+
             <div class="cards">
                 <?php
                 foreach ($produto as $p) {
                 ?>
                     <div class="card h-100 border">
-                        <img src="../imagens/uploads/<?= $p->getImagem(); ?>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $p->getNome() ?></h5>
-                            <p class="card-text"><?= $p->getMarca(); ?></p>
-                            <p class="card-text"><?= $p->getDescricao(); ?></p>
-                        </div>
+                        <a href="item.php?key=<?= $p->getId() ?>">
+                            <img src="../imagens/uploads/<?= $p->getImagem(); ?>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $p->getNome() ?></h5>
+                                <p class="card-text"><?= $p->getMarca(); ?></p>
+                                <p class="card-text"><?= $p->getDescricao(); ?></p>
+                            </div>
+                        </a>
                     </div>
-                <?php
-                } ?>
+                <?php } ?>
             </div>
+
             <div class="btns">
                 <div class="btn1">
                     <a href="http://">Ofertas do dia</a>

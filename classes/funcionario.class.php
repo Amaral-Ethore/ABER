@@ -1,13 +1,13 @@
 <?php
 class Funcionario
 {
-    private int $id;
-    private string $nome;
-    private string $email;
-    private string $senha;
-    private string $telefone;
-    private string $privilegio;
-    private bool $ativo;
+    private int $id = 0;
+    private string $nome = "";
+    private string $email = "";
+    private string $senha ="";
+    private string $telefone="";
+    private string $privilegio="";
+    private bool $ativo= true;
 
     public function getId()
     {
@@ -71,7 +71,7 @@ class Funcionario
 
     public function getAtivo()
     {
-        return $this->telefone;
+        return $this->ativo;
     }
 
     public function setAtivo($ativo)

@@ -16,6 +16,7 @@ class ProdutoDAO
                 $produto->setId($rs->id);
                 $produto->setNome(($rs->nome));
                 $produto->setDescricao($rs->descricao);
+                $produto->setPreco($rs->preco);
                 $produto->setMarca($rs->marca);
                 $produto->setValidade($rs->validade);
                 $produto->setSetor($rs->setor);
@@ -38,17 +39,17 @@ class ProdutoDAO
             $stmt->bindValue(":id", $id);
             $stmt->execute();
             $produto = new Produtos();
-            $retorno = null;
+            
             while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                 $produto->setId($rs->id);
                 $produto->setNome(($rs->nome));
                 $produto->setDescricao($rs->descricao);
+                $produto->setPreco($rs->preco);
                 $produto->setMarca($rs->marca);
                 $produto->setValidade($rs->validade);
                 $produto->setSetor($rs->setor);
                 $produto->setCodebar($rs->codebar);
                 $produto->setImagem($rs->imagem);
-                $retorno[] = clone $produto;
             }
             return $produto;
         } catch (PDOException $ex) {
@@ -81,9 +82,10 @@ class ProdutoDAO
         $pdo = conectDb();
         $pdo->beginTransaction();
         try {
-            $stmt = $pdo->prepare("INSERT INTO produtos (nome, descricao, codebar, marca, setor, validade, imagem) VALUES (:nome, :descricao,:codebar,:marca,:setor, :validade, :img)");
+            $stmt = $pdo->prepare("INSERT INTO produtos (nome, descricao, preco, codebar, marca, setor, validade, imagem) VALUES (:nome, :descricao, :preco, :codebar,:marca,:setor, :validade, :img)");
             $stmt->bindValue(":nome", $produto->getNome());
             $stmt->bindValue(":descricao", $produto->getDescricao());
+            $stmt->bindValue(":preco", $produto->getPreco());
             $stmt->bindValue(":codebar", $produto->getCodebar());
             $stmt->bindValue(":marca", $produto->getMarca());
             $stmt->bindValue(":setor", $produto->getSetor());
@@ -111,6 +113,7 @@ class ProdutoDAO
             $stmt = $pdo->prepare("UPDATE produtos SET nome = :nome, descricao = :descricao, codigo_barras = :codigo_barras, qtde_estoque = :qtde_estoque, imagem = :img WHERE id = :id");
             $stmt->bindValue(":nome", $produto->getNome());
             $stmt->bindValue(":descricao", $produto->getDescricao());
+            $stmt->bindValue(":preco", $produto->getPreco());
             $stmt->bindValue(":codebar", $produto->getCodebar());
             $stmt->bindValue(":marca", $produto->getMarca());
             $stmt->bindValue(":setor", $produto->getSetor());
