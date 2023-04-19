@@ -134,6 +134,7 @@ class FuncionarioDAO
         $pdo->beginTransaction();
         try {
             $stmt = $pdo->prepare("UPDATE funcionarios SET nome = :nome, email = :email, senha = :senha, telefone = :tel, privilegios = :privilegios, ativo = :ativo WHERE id = :id");
+            $stmt->bindValue(":id", $funcionario->getId());
             $stmt->bindValue(":nome", $funcionario->getNome());
             $stmt->bindValue(":email", $funcionario->getEmail());
             $stmt->bindValue(":senha", $funcionario->getSenha());

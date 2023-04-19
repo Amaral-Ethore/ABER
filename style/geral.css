@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: white;
@@ -21,13 +22,16 @@ header {
 }
 
 footer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
     position: relative;
     bottom: 0;
     margin-top: 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
+    justify-content: space-between;
     height: 300px;
+    max-width: 100%;
     padding: 3rem;
     background-color: darkgray;
 }
@@ -150,4 +154,10 @@ a {
     margin: 0;
     padding: 0;
     border: 0;
+}
+
+@media screen and (max-width: 767px) {
+    footer {
+        font-size: 0.5rem;
+    }
 }
