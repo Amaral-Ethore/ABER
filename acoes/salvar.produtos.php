@@ -68,7 +68,7 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
             $_SESSION['sucesso'] = false;
         }
     }
-    header('Location:../public/cad_produto.php');
+    header('Location:../public/home_produtos');
 } else {
     $nome = isset($_POST['nome']) ? $_POST['nome'] : null;
     $descricao = isset($_POST['descricao']) ? $_POST['descricao'] : null;
@@ -107,5 +107,5 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
         $_SESSION['mensagem'] = "Extenção Invalida";
         $_SESSION['sucesso'] = false;
     }
-    header('Location:../public/cad_produto.php');
+    header('Location:../public/home_produtos');
 }

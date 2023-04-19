@@ -2,19 +2,17 @@
 
 require_once('./header.php');
 /* require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'/acoes/verifica_sessao.php'); */
+require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '../classes/produtos.class.php');
 require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '../controller/produto.controller.php');
 
 $controller = new ProdutoController();
 $produto = $controller->buscarTodos();
-
-// SELECT cp.*, p.nome FROM `compra_produto` as cp INNER JOIN produtos as p ON p.id = cp.produto;
-
 ?>
 <div class="container">
     <?php require_once('nav.php'); ?>
 
     <h1>Lista de Produtos</h1>
-    <a class="btn btn-primary" href="">Novo Produto</a>
+    <a class="btn btn-primary" href="./cad_produto.php">Novo Produto</a>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -22,6 +20,7 @@ $produto = $controller->buscarTodos();
                 <th scope="col">Nome</th>
                 <th scope="col">Descricao</th>
                 <th scope="col">Marca</th>
+                <th scope="col">Preço</th>
                 <th scope="col">Validade</th>
                 <th scope="col">Setor</th>
                 <th scope="col">Codigo de Barras</th>
@@ -29,14 +28,13 @@ $produto = $controller->buscarTodos();
             </tr>
         </thead>
         <tbody>
-            <?php
-            foreach ($produto as $p) :
-            ?>
+            <?php foreach ($produto as $p) { ?>
                 <tr>
                     <td><?= $p->getId(); ?></td>
                     <td><?= $p->getNome(); ?></td>
                     <td><?= $p->getDescricao(); ?></td>
                     <td><?= $p->getMarca(); ?></td>
+                    <td><?= $p->getPreco() ?></td>
                     <td><?= $p->getValidade(); ?></td>
                     <td><?= $p->getSetor(); ?></td>
                     <td><?= $p->getCodeBar(); ?></td>
@@ -45,9 +43,7 @@ $produto = $controller->buscarTodos();
                         <a class="btn btn-link" href="../acoes/excluir.produtos.php?key=<?= $p->getId() ?>">Excluir</a>
                     </td>
                 </tr>
-            <?php
-            endforeach;
-            ?>
+            <?php } ?>
         </tbody>
     </table>
 

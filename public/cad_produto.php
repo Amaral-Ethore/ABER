@@ -24,6 +24,10 @@ include_once('header.php');
                 <input type="text" class="form-control" id="codebar" name="codebar" value="<?= $produto->getCodebar() ?>">
             </div>
             <div class="mb-3">
+                <label for="codebar" class="form-label"> Preço </label>
+                <input type="number" class="form-control" id="preco" name="preco" value="<?= $produto->getPreco() ?>">
+            </div>
+            <div class="mb-3">
                 <label for="marca" class="form-label"> Marca </label>
                 <input type="text" class="form-control" id="marca" name="marca" value="<?= $produto->getMarca() ?>">
             </div>

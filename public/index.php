@@ -33,9 +33,7 @@
             ?>
 
             <div class="cards">
-                <?php
-                foreach ($produto as $p) {
-                ?>
+                <?php foreach ($produto as $p) { ?>
                     <div class="card h-100 border">
                         <a href="item.php?key=<?= $p->getId() ?>">
                             <img src="../imagens/uploads/<?= $p->getImagem(); ?>" class="card-img-top" alt="...">

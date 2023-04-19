@@ -41,29 +41,50 @@
                         </div>
                     </li>
                 <?php } ?>
-                <?php if (isset($_SESSION) && isset($_SESSION['tipo']) && $_SESSION['tipo'] == "cliente") { ?>
-                    <li>
-                        <a href="./home_produtos.php">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </a>
-                    </li>
+
+                <?php if ($_SESSION['tipo'] == "cliente") { ?>
                     <li class="hover">
                         <div class="dropdown">
                             <i class="fa-solid fa-user"></i>
                         </div>
                     </li>
                 <?php } ?>
+
+                <?php if (!isset($_SESSION) || !isset($_SESSION['tipo'])) { ?>
+                <?php } ?>
+
                 <?php if (isset($_SESSION) && isset($_SESSION['tipo']) && $_SESSION['tipo'] == "func") { ?>
-                    <li>
-                        <a href="./home_produtos.php">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </a>
-                    </li>
-                    <li class="hover">
-                        <div class="dropdown">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                    </li>
+                    <?php if (isset($_SESSION['privilegio']) && $_SESSION['privilegio'] = "func") { ?>
+                        <li>
+                            <a href="./home_produtos.php">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </li>
+                        <li class="hover">
+                            <div class="dropdown">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                        </li>
+                    <?php } ?>
+
+                    <?php if (isset($_SESSION['privilegio']) && $_SESSION['privilegio'] = "admin") { ?>
+                        <li>
+                            <a href="./home_produtos.php">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./home_func.php">
+                                Lançamentos
+                            </a>
+                        </li>
+                        <li class="hover">
+                            <div class="dropdown">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                        </li>
+                        
+                    <?php } ?>
                 <?php } ?>
             </ul>
         </div>
@@ -76,18 +97,16 @@
                 ?>
 
                     <li>
-                        <a href="index.php">
+                        <a href="">
                             DEPARTAMENTOS
                         </a>
                     </li>
                     <li>
-                        <a href="./index.php">
+                        <a href="">
                             Carrinho
                         </a>
                     </li>
-                    <li>
-                        Lançamentos
-                    </li>
+
                     <li>
                         PC Gamer
                     </li>

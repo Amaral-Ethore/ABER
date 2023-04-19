@@ -51,6 +51,10 @@ footer ul {
     justify-content: space-between;
 }
 
+.logoimg {
+    height: 100%;
+}
+
 .h-1 li {
     display: flex;
     align-items: center;
@@ -76,10 +80,6 @@ footer ul {
 
 .h-1 span {
     font-size: 0.8rem;
-}
-
-img {
-    height: 100%;
 }
 
 ul {
