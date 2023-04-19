@@ -7,7 +7,7 @@
         </div>
         <div class="menu">
             <ul>
-                <?php if (!isset($_SESSION) || !isset($_SESSION['tipo'])) { ?>
+                <?php if (!isset($_SESSION) || !isset($_SESSION['tipo']) || !$_SESSION['tipo']) { ?>
                     <li>
                         <div class="search">
                             <input id="search" class="menu-input" type="text">
@@ -42,15 +42,15 @@
                     </li>
                 <?php } ?>
 
-                <?php if ($_SESSION['tipo'] == "cliente") { ?>
+                <?php if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == "cliente") { ?>
+                    <li>
+                        <?php echo $_SESSION['usuario'] ?>
+                    </li>
                     <li class="hover">
                         <div class="dropdown">
                             <i class="fa-solid fa-user"></i>
                         </div>
                     </li>
-                <?php } ?>
-
-                <?php if (!isset($_SESSION) || !isset($_SESSION['tipo'])) { ?>
                 <?php } ?>
 
                 <?php if (isset($_SESSION) && isset($_SESSION['tipo']) && $_SESSION['tipo'] == "func") { ?>
@@ -59,6 +59,9 @@
                             <a href="./home_produtos.php">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </a>
+                        </li>
+                        <li>
+                            <?php echo $_SESSION['usuario'] ?>
                         </li>
                         <li class="hover">
                             <div class="dropdown">
@@ -78,12 +81,15 @@
                                 Lançamentos
                             </a>
                         </li>
+                        <li>
+                            <?php echo $_SESSION['usuario'] ?>
+                        </li>
                         <li class="hover">
                             <div class="dropdown">
                                 <i class="fa-solid fa-user"></i>
                             </div>
                         </li>
-                        
+
                     <?php } ?>
                 <?php } ?>
             </ul>
@@ -106,16 +112,14 @@
                             Carrinho
                         </a>
                     </li>
-
                     <li>
-                        PC Gamer
+                        <a href="">PC Gamer</a>
                     </li>
                     <li>
-                        TV
+                        <a href="">TV</a>
                     </li>
                     <li>
-
-                        Oferta do Dia
+                        <a href="">Oferta do Dia</a>
                     </li>
                 <?php
                 }

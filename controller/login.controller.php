@@ -16,6 +16,7 @@ if ($email && $senha) {
             echo $_SESSION['mensagem'];
             echo $_SESSION['usuario'];
             $_SESSION['sucesso'] = true;
+            header('Location:../public/index.php');
         } else {
             $_SESSION['sucesso'] = false;
             echo $_SESSION['mensagem'];
@@ -24,6 +25,7 @@ if ($email && $senha) {
     if ($_POST && $_POST['tipo'] && $_POST['tipo'] == "funcionario") {
         buscaFuncionario($email, $senha);
         if (isset($_SESSION['usuario']) && isset($_SESSION['mensagem']) && $_SESSION['mensagem'] == "sucesso") {
+            header('Location:../public/index.php');
         } else {
             echo $_SESSION['mensagem'];
         }
