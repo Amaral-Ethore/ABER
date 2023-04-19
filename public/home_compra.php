@@ -63,12 +63,10 @@ $carrinho = $controller->buscarTodos();
         unset($_SESSION['sucesso'], $_SESSION['mensagem']);
         ?>
 
-        <?php
-
-        ?>
+  
     </main>
 
 
 
 </div>
-<?php require_once('footer.php'); ?>
+<?php require_once('footer.php'); ?> 

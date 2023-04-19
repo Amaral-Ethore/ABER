@@ -3,7 +3,7 @@ include_once('header.php');
 ?>
 <div class="container">
     <?php include_once('nav.php');
-    require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "./classes/produtos.class.php");
+    require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "/classes/produtos.class.php");
     $produto = new Produtos();
     ?>
 
@@ -54,12 +54,9 @@ include_once('header.php');
                 <?= $_SESSION['mensagem']; ?>
             </div>
         <?php
-                }
-                unset($_SESSION['sucesso'], $_SESSION['mensagem']);
+        }
+            unset($_SESSION['sucesso'], $_SESSION['mensagem']);
         ?>
-
     </main>
 </div>
-<?php
-require_once('footer.php');
-?>
+<?php require_once('footer.php'); ?>

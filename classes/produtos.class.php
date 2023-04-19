@@ -5,6 +5,7 @@ class Produtos
     private $id;
     private $nome;
     private $descricao;
+    private $preco;
     private $codebar;
     private $marca;
     private $validade;
@@ -39,6 +40,16 @@ class Produtos
     public function getDescricao()
     {
         return $this->descricao;
+    }
+
+    public function setPreco($preco)
+    {
+        $this->preco = $preco;
+    }
+
+    public function getPreco()
+    {
+        return $this->preco;
     }
 
     public function setCodebar($codebar)
