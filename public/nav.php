@@ -56,21 +56,28 @@
     <div class="h-2">
         <div class="menu-2">
             <ul>
-                <li>
-                    <a href="./cad_produto.php">
-                        Cadastro Produto
-                    </a>
-                </li>
-                <li>
-                    <a href="./home_compra.php">
-                        Carrinho
-                    </a>
-                </li>
-                <li>
-                    <a href="item.php">
-                        Item
-                    </a>
-                </li>
+
+                <?php
+                if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == "cliente") {
+                ?>
+                    <li>
+                        <a href="./cad_produto.php">
+                            Cadastro Produto
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./home_compra.php">
+                            Carrinho
+                        </a>
+                    </li>
+                    <li>
+                        <a href="item.php">
+                            Item
+                        </a>
+                    </li>
+                <?php
+                }
+                ?>
             </ul>
         </div>
     </div>

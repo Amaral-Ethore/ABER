@@ -15,19 +15,16 @@ if ($email && $senha) {
         if (isset($_SESSION['usuario']) && isset($_SESSION['mensagem']) && $_SESSION['mensagem'] == "sucesso") {
             echo $_SESSION['mensagem'];
             echo $_SESSION['usuario'];
-        } 
-        else {
+            $_SESSION['sucesso'] = true;
+        } else {
+            $_SESSION['sucesso'] = false;
             echo $_SESSION['mensagem'];
         }
     }
     if ($_POST && $_POST['tipo'] && $_POST['tipo'] == "funcionario") {
         buscaFuncionario($email, $senha);
         if (isset($_SESSION['usuario']) && isset($_SESSION['mensagem']) && $_SESSION['mensagem'] == "sucesso") {
-            echo $_SESSION['usuario'];
-            echo $_SESSION['privilegio'];
-            echo $_SESSION['mensagem'];
-        } 
-        else {
+        } else {
             echo $_SESSION['mensagem'];
         }
     }
