@@ -1,4 +1,18 @@
-<?php require_once('header.php') ?>
+<?php 
+require_once('header.php');
+
+include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../classes/produtos.class.php");
+include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../controller/produto.controller.php");
+include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../config/config.php");
+
+$produto = new Produtos();
+
+if (isset($_GET) && isset($_GET['key'])) {
+    $id = filter_input(INPUT_GET, 'key');
+    $controller = new ProdutoController();
+    $produto = $controller->buscarPorId($id);
+}
+?>
 
 <head>
     <link rel="stylesheet" href="../style/pagitem.css">
@@ -17,7 +31,7 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="a" class="d-block w-100" alt="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
+                            <img src="../imagens/uploads/<?= $produto->getImagem(); ?>" class="d-block w-100" alt="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
                         </div>
                         <div class="carousel-item">
                             <img src="..." class="d-block w-100" alt="bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb">
@@ -35,17 +49,21 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-
+                
                 <div class="bloco">
-                    <span>Nome do item Nome do item Nome do item Nome do item Nome do item Nome do item</span>
+                    <form action="../acoes/carrinho.add.php" method="post">
+
+                    <span class="nome"> <?= $produto->getNome() ?> </span>
+
                     <div class="flex-between">
-                        <p>Estoque do item</p> <span>Garantia: x meses</span>
+                        <p>Marca: <?= $produto->getMarca() ?> </p> <span>Garantia: x meses</span>
                     </div>
+
                     <div class="flex-between">
                         <div class="preco">
                             <del>Preço original</del>
                             <br>
-                            <span>Preço</span>
+                            <span> R$<?= $produto->getPreco() ?></span>
                             <p>à vista com desconto</p>
                         </div>
                         <div class="compra">
@@ -63,6 +81,7 @@
                     <div class="divisao">
                         <p></p>
                     </div>
+                    
                     <div class="pagamento">
                         <div class="flex-around">
                             <div>
@@ -90,12 +109,13 @@
                     <div class="divisao">
                         <p></p>
                     </div>
+                    </form>
 
                 </div>
             </div>
 
 
-            <div class="accordion accordion-flush" id="accordionDetalhes">
+            <div class="accordion" id="accordionDetalhes">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
@@ -104,8 +124,7 @@
                     </h2>
                     <div id="panelsStayOpen-collapseOne" class="accordion-collapse bs-warning-bg-subtle collapse show">
                         <div class="accordion-body">
-                            <strong>Isso aqui ainda aceita formatação do HTML.</strong>
-                            <p>Tipo parágrafos, <span>spans,</span> e todo o resto.</p>
+                            <?= $produto->getDescricao()?>
                         </div>
                     </div>
                 </div>
