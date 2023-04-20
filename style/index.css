@@ -1,4 +1,3 @@
-* {}
 
 html,
 body {
@@ -38,7 +37,7 @@ main {
     flex-basis: 230px;
 }
 
-.card img {
+.card img.card-img-top {
     flex-basis: 140px;
     aspect-ratio: 1 / 1;
 }
