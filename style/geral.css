@@ -12,13 +12,17 @@ body {
     margin: 0;
 }
 
-img {
-    user-select: none;
+.container {
+    min-height: 1000px;
 }
 
 header {
     display: grid;
     grid-template-rows: 60px 25px;
+}
+
+img {
+    user-select: none;
 }
 
 footer {
@@ -39,10 +43,6 @@ footer {
 footer ul {
     display: flex;
     flex-direction: column;
-}
-
-.container {
-    min-height: 1000px;
 }
 
 .h-1 {

@@ -1,4 +1,7 @@
 <?php require_once('header.php'); ?>
+<head>
+    <link rel="stylesheet" href="../style/index.css">
+</head>
 <div class="container">
     <?php require_once('nav.php') ?>
     <main>

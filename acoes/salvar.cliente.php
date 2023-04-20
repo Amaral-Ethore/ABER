@@ -64,7 +64,6 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
         if ($resultado) {
             $_SESSION['mensagem'] = "Criado com sucesso";
             $_SESSION['sucesso'] = true;
-            echo $_SESSION['mensagem'];
         } else {
             $_SESSION['mensagem'] = "Erro ao criar";
             $_SESSION['sucesso'] = false;
@@ -73,5 +72,6 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
         $_SESSION['mensagem'] = "Obrigatório informar Nome e CPF/CNPJ";
         $_SESSION['sucesso'] = false;
     }
-    header('Location:../public/cad_cliente.php');
+    
+    // header('Location:../public/cad_cliente.php');
 }

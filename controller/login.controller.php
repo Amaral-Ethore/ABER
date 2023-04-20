@@ -13,22 +13,19 @@ if ($email && $senha) {
     if ($_POST && $_POST['tipo'] && $_POST['tipo'] == "cliente") {
         buscaCliente($email, $senha);
         if (isset($_SESSION['usuario']) && isset($_SESSION['mensagem']) && $_SESSION['mensagem'] == "sucesso") {
-            echo $_SESSION['mensagem'];
-            echo $_SESSION['usuario'];
+            header("Location:../public/index.php");
         } 
         else {
-            echo $_SESSION['mensagem'];
+            header("Location:../public/index.php");
         }
     }
     if ($_POST && $_POST['tipo'] && $_POST['tipo'] == "funcionario") {
         buscaFuncionario($email, $senha);
         if (isset($_SESSION['usuario']) && isset($_SESSION['mensagem']) && $_SESSION['mensagem'] == "sucesso") {
-            echo $_SESSION['usuario'];
-            echo $_SESSION['privilegio'];
-            echo $_SESSION['mensagem'];
+            header("Location:../public/index.php");
         } 
         else {
-            echo $_SESSION['mensagem'];
+            header("Location:../public/index.php");
         }
     }
 }
