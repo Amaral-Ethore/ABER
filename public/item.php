@@ -6,6 +6,7 @@ include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../controller/produ
 include_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../config/config.php");
 
 $produto = new Produtos();
+$perc = 90;
 
 if (isset($_GET) && isset($_GET['key'])) {
     $id = filter_input(INPUT_GET, 'key');
@@ -53,15 +54,19 @@ if (isset($_GET) && isset($_GET['key'])) {
                 <div class="bloco">
                     <form action="../acoes/carrinho.add.php" method="post">
 
-                    <span class="nome"> <?= $produto->getNome() ?> </span>
+                    <strong class="nome"> <?= $produto->getNome() ?> </strong>
 
                     <div class="flex-between">
                         <p>Marca: <?= $produto->getMarca() ?> </p> <span>Garantia: x meses</span>
                     </div>
 
+                    <div class="divisao">
+                        <p></p>
+                    </div>
+
                     <div class="flex-between">
                         <div class="preco">
-                            <del>Preço original</del>
+                            <del>R$<?= round(($produto->getPreco() * $perc) / 30, 2); ?></del>
                             <br>
                             <span> R$<?= $produto->getPreco() ?></span>
                             <p>à vista com desconto</p>
@@ -74,8 +79,8 @@ if (isset($_GET) && isset($_GET['key'])) {
                     </div>
 
                     <div>
-                        <p>R$n no cartão</p>
-                        <p>até n vezes de n reais </p>
+                        <p>R$<?= round(($produto->getPreco() * $perc) / 80, 2); ?> no cartão</p>
+                        <p>até 12x de R$<?= round($produto->getPreco() / 12, 2); ?>   </p>
                     </div>
 
                     <div class="divisao">
@@ -85,18 +90,18 @@ if (isset($_GET) && isset($_GET['key'])) {
                     <div class="pagamento">
                         <div class="flex-around">
                             <div>
-                                <p>n de vezes + preço</p>
-                                <p>n de vezes + preço</p>
-                                <p>n de vezes + preço</p>
-                                <p>n de vezes + preço</p>
-                                <p>n de vezes + preço</p>
+                                <p>2x de R$<?= round($produto->getPreco() / 2, 2); ?></p>
+                                <p>3x de R$<?= round($produto->getPreco() / 3, 2); ?></p>
+                                <p>4x de R$<?= round($produto->getPreco() / 4, 2); ?></p>
+                                <p>5x de R$<?= round($produto->getPreco() / 5, 2); ?></p>
+                                <p>6x de R$<?= round($produto->getPreco() / 6, 2); ?></p>
                             </div>
                             <div>
-                                <p>n de vezes + preço</p>
-                                <p>n de vezes + preço</p>
-                                <p>n de vezes + preço</p>
-                                <p>n de vezes + preço</p>
-                                <p>n de vezes + preço</p>
+                                <p>7x de R$<?= round($produto->getPreco() / 7, 2); ?></p>
+                                <p>8x de R$<?= round($produto->getPreco() / 8, 2); ?></p>
+                                <p>9x de R$<?= round($produto->getPreco() / 9, 2); ?></p>
+                                <p>10x de R$<?= round($produto->getPreco() / 10, 2); ?></p>
+                                <p>11x de R$<?= round($produto->getPreco() / 11, 2); ?></p>
                             </div>
                         </div>
 

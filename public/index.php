@@ -40,7 +40,8 @@
                             <div class="card-body">
                                 <h5 class="card-title"><?= $p->getNome() ?></h5>
                                 <p class="card-text"><?= $p->getMarca(); ?></p>
-                                <p class="card-text"><?= $p->getDescricao(); ?></p>
+                                <!-- <p class="card-text"><?= $p->getDescricao(); ?></p> -->
+                                <a href=""> <button>Comprar</button></a>
                             </div>
                         </a>
                     </div>

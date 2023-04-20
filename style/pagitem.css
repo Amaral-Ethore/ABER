@@ -8,9 +8,15 @@
 .carousel {
     display: flex;
     flex: 1;
-    border: 2px solid darkgray;
-    border-radius: 5px;
-    background-color: green;
+    background-color: purple;
+}
+
+.carousel-control-next-icon{
+    background-color: black;
+}
+
+.carousel-control-prev-icon{
+    background-color: black;
 }
 
 .carousel img{
@@ -20,8 +26,7 @@
 .bloco {
     flex: 1;
     flex-direction: column;
-    background-color: darkgray;
-    padding: 10px;
+    background-color: white;
 }
 
 .bloco div{
@@ -29,24 +34,22 @@
 }
 
 .bloco .nome{
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .bloco p {
-    font-size: 11px;
+    font-size: 13px;
     margin-bottom: 5px;
 }
 
 .flex-between {
     display: flex;
     justify-content: space-between;
-    font-size: 12px;
 }
 
 .flex-around {
     display: flex;
     justify-content: space-around;
-    font-size: 12px;
 }
 
 .preco {
@@ -67,6 +70,19 @@
     padding: 10px;
     margin: 20px 0px;
     width: 200px;
+    color: white;
+}
+
+.btn_comprar{
+    border: none;
+    border-radius: 10px;
+    background-color: green;
+}
+
+.btn_carrinho{
+    border: none;
+    border-radius: 10px;
+    background-color: black;
 }
 
 .divisao {
@@ -77,10 +93,11 @@
 .pagamento{
     display: flex;
     flex-direction: column;
+    background-color: lightgrey;
 }
 
 .opcpagamento {
-    background-color: white;
+    background-color: lightgrey;
     height: 30px;
 }
 
