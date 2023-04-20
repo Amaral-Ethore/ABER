@@ -40,7 +40,8 @@ include_once('header.php');
           if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == TRUE) {
           ?>
     <div class="alert alert-success" role="alert">
-      <?= $_SESSION['mensagem']; ?>
+      <?= $_SESSION['mensagem']; 
+      header('Location:../public/index.php');?>
     </div>
   <?php
           }

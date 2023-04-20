@@ -51,6 +51,7 @@
                         </ul>
                     </li>
                 <?php } ?>
+
                 <?php if (isset($_SESSION) && isset($_SESSION['tipo']) && $_SESSION['tipo'] == "func") { ?>
                     <li>
                         <a href="./home_produtos.php">
@@ -70,8 +71,8 @@
                     <?php } ?>
                     <?php if (isset($_SESSION) && isset($_SESSION['privilegio']) && $_SESSION['privilegio'] == "admin") { ?>
                         <li>
-                            <a href="./home.func.php">
-                                <i class="fa-solid fa-cart-shopping"></i>
+                            <a href="./home_func.php">
+                                <i class="fa-solid fa-user"></i>
                             </a>
                         </li>
                     <?php } ?>
@@ -82,29 +83,25 @@
     <div class="h-2">
         <div class="menu-2">
             <ul>
-                <li>
-                    <a href="index.php">
-                        DEPARTAMENTOS
-                    </a>
-                </li>
-                <li>
-                    <a href="./index.php">
-                        Carrinho
-                    </a>
-                </li>
-                <li>
-                    Lançamentos
-                </li>
-                <li>
-                    PC Gamer
-                </li>
-                <li>
-                    TV
-                </li>
-                <li>
-
-                    Oferta do Dia
-                </li>
+                    <li>
+                        <a href="">
+                            DEPARTAMENTOS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Carrinho
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">PC Gamer</a>
+                    </li>
+                    <li>
+                        <a href="">TV</a>
+                    </li>
+                    <li>
+                        <a href="">Oferta do Dia</a>
+                    </li>
             </ul>
         </div>
     </div>

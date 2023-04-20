@@ -11,10 +11,10 @@ class ProdutoDAO
             $stmt = $pdo->prepare("SELECT * FROM produtos;");
             $stmt->execute();
             $produto = new Produtos();
-            $retorno = null;
+            $retorno = array();
             while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                 $produto->setId($rs->id);
-                $produto->setNome(($rs->nome));
+                $produto->setNome($rs->nome);
                 $produto->setDescricao($rs->descricao);
                 $produto->setPreco($rs->preco);
                 $produto->setMarca($rs->marca);
@@ -42,7 +42,7 @@ class ProdutoDAO
             
             while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                 $produto->setId($rs->id);
-                $produto->setNome(($rs->nome));
+                $produto->setNome($rs->nome);
                 $produto->setDescricao($rs->descricao);
                 $produto->setPreco($rs->preco);
                 $produto->setMarca($rs->marca);

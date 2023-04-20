@@ -10,7 +10,7 @@ function buscaFuncionario($mail, $senha)
     var_dump($funcionario);
 
     if (isset($funcionario) && $senha == $funcionario->getSenha()) {
-        $_SESSION['tipo'] = "funcionario";
+        $_SESSION['tipo'] = "func";
         if ($funcionario->getPrivilegio() == "admin") {
             $_SESSION['mensagem'] = "Logado como Administrador";
             $_SESSION['usuario'] = $funcionario->getEmail();

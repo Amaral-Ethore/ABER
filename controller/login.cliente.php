@@ -11,8 +11,10 @@ function buscaCliente($mail, $senha)
         $_SESSION['tipo'] = "cliente";
         $_SESSION['mensagem'] = "Logado como Cliente";
         $_SESSION['usuario'] = $cliente->getEmail();
+        $_SESSION['sucesso'] = true; 
     } else {
         $_SESSION['mensagem'] = "Cliente não Encontrado";
+        $_SESSION['sucesso'] = false;
         unset($_SESSION['usuario']);
         unset($_SESSION['tipo']);
         unset($_SESSION['privilegio']);

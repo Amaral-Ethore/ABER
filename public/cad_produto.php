@@ -4,7 +4,10 @@ include_once('header.php');
 <div class="container">
     <?php include_once('nav.php');
     require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "/classes/produtos.class.php");
-    $produto = new Produtos();
+    require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../controller/produto.controller.php");
+    $controller = new ProdutoController();
+    $produto = $controller->buscarPorId($_GET['key']);
+
     ?>
 
     <main>
@@ -22,6 +25,10 @@ include_once('header.php');
             <div class="mb-3">
                 <label for="codebar" class="form-label"> Codigo de Barras </label>
                 <input type="text" class="form-control" id="codebar" name="codebar" value="<?= $produto->getCodebar() ?>">
+            </div>
+            <div class="mb-3">
+                <label for="codebar" class="form-label"> Preço </label>
+                <input type="number" step="any" step=".01" class="form-control" id="preco" name="preco" value="<?= $produto->getPreco() ?>">
             </div>
             <div class="mb-3">
                 <label for="marca" class="form-label"> Marca </label>
