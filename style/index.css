@@ -36,9 +36,11 @@ main {
 .card-body {
     flex-basis: 230px;
 }
-
-.card img.card-img-top {
-    flex-basis: 140px;
+.a-card-img-top{
+    margin: 10px;
+}
+.card-img-top {
+    flex-basis: 130px;
     aspect-ratio: 1 / 1;
 }
 
