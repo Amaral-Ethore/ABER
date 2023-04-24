@@ -1,6 +1,6 @@
 <?php
-require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "./DAO/funcionarioDAO.php");
-require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "./classes/funcionario.class.php");
+require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "/DAO/funcionarioDAO.php");
+require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "/classes/funcionario.class.php");
 
 class FuncionarioController
 {

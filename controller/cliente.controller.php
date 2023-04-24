@@ -1,6 +1,6 @@
 <?php
-require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "./DAO/ClienteDAO.php");
-require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "./classes/cliente.class.php");
+require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "/DAO/ClienteDAO.php");
+require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "/classes/cliente.class.php");
 
 class ClienteController
 {
