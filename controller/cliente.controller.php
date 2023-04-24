@@ -15,6 +15,7 @@ class ClienteController
     {
         $dao = new ClienteDAO();
         return $dao->buscarUm($id);
+        
     }
     
     public function buscarPorEmail($mail)

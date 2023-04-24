@@ -9,16 +9,16 @@ class ClienteDAO
     {
         $pdo = conectDb();
         try {
-            $stmt = $pdo->prepare("SELECT * FROM clientes;");
+            $stmt = $pdo->prepare("SELECT * FROM clientes ORDER BY id asc;");
             $stmt->execute();
             $cliente = new Cliente();
             $retorno = array();
             while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                 $cliente->setId($rs->id);
-                $cliente->setNome(($rs->nome));
-                $cliente->setEndereco(($rs->endereco));
-                $cliente->setSenha(($rs->senha));
-                $cliente->setEmail(($rs->email));
+                $cliente->setNome($rs->nome);
+                $cliente->setEndereco($rs->endereco);
+                $cliente->setSenha($rs->senha);
+                $cliente->setEmail($rs->email);
                 $cliente->setCpfCnpj($rs->cpfcnpj);
                 $cliente->setTelefone($rs->telefone);
                 $retorno[] = clone $cliente;
@@ -35,16 +35,16 @@ class ClienteDAO
     {
         $pdo = conectDb();
         try {
-            $stmt = $pdo->prepare("SELECT * FROM clientes WHERE id = :id;");
-            $stmt->bindValue(":id", $id);
+            $stmt = $pdo->prepare("SELECT * FROM clientes WHERE id = ?;");
+            $stmt->bindValue(1, $id);
             $stmt->execute();
             $cliente = new Cliente();
             while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
                 $cliente->setId($rs->id);
-                $cliente->setNome(($rs->nome));
-                $cliente->setEndereco(($rs->endereco));
-                $cliente->setSenha(($rs->senha));
-                $cliente->setEmail(($rs->email));
+                $cliente->setNome($rs->nome);
+                $cliente->setEndereco($rs->endereco);
+                $cliente->setSenha($rs->senha);
+                $cliente->setEmail($rs->email);
                 $cliente->setCpfCnpj($rs->cpfcnpj);
                 $cliente->setTelefone($rs->telefone);
             }
@@ -141,6 +141,7 @@ class ClienteDAO
             $stmt->bindValue(":endereco", $cliente->getEndereco());
             $stmt->bindValue(":cpf", $cliente->getCpfCnpj());
             $stmt->bindValue(":tel", $cliente->getTelefone());
+            $stmt->bindValue(":id", $cliente->getId());
             $stmt->execute();
             if ($stmt->rowCount()) {
                 $pdo->commit();

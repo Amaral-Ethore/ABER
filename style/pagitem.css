@@ -1,26 +1,27 @@
 .topo {
-    display: flex;
+    display: grid;
+    grid-template-columns: 60% 40%;
     justify-content: space-between;
     margin: 10px 0px;
-    gap: 100px;
 }
 
 .carousel {
     display: flex;
     flex: 1;
-    background-color: purple;
+    height: 100%;
 }
-
+.carousel_item{
+    position: sticky;
+    top: 0;
+    height: 400px;
+    width: 400px;
+}
 .carousel-control-next-icon{
     background-color: black;
 }
 
 .carousel-control-prev-icon{
     background-color: black;
-}
-
-.carousel img{
-    aspect-ratio: 1/1;
 }
 
 .bloco {
@@ -43,8 +44,7 @@
 }
 
 .flex-between {
-    display: flex;
-    justify-content: space-between;
+
 }
 
 .flex-around {
@@ -53,17 +53,22 @@
 }
 
 .preco {
-    margin: 20px 0px;
-    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: flex-end;
+    align-self: flex-end;
 }
-
+.preco del{
+    align-self: flex-start;
+}
 .preco span {
     font-size: 36px;
     color: green;
 }
 
 .compra {
-    align-self: center;
+    align-self: flex-end;
 }
 
 .compra button {
@@ -77,17 +82,18 @@
     border: none;
     border-radius: 10px;
     background-color: green;
+    margin: 0 !important;
 }
 
 .btn_carrinho{
     border: none;
     border-radius: 10px;
     background-color: black;
-}
+    }
 
 .divisao {
     background-color: black;
-    height: 2px;
+    height: 1px;
 }
 
 .pagamento{
@@ -105,10 +111,16 @@
     .topo{
         display: flex;
         flex-direction: column;
+        align-self: center;
     }
 
     .pagamento{
         flex-direction: column-reverse;
     }
-    
+    .carousel_item{
+        position: relative;
+        top: 0;
+        height: 400px;
+        width: 400px;
+    }
 }

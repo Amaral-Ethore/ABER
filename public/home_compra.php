@@ -6,9 +6,9 @@ require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '../controller/carri
 $controller = new CarrinhoController();
 $carrinho = $controller->buscarTodos();
 
-?>
+require_once('nav.php'); ?>
 <div class="container">
-    <?php require_once('nav.php'); ?>
+    
     <main>
         <h1>Carrinho</h1>
 
@@ -36,7 +36,7 @@ $carrinho = $controller->buscarTodos();
                         <td><?= $c->getQuantprod(); ?></td>
                         <td><?= $c->getPreco(); ?></td>
                         <td>
-                            <a class="btn btn-link" href="../acoes/excluir.produtos.php?key=<?= $c->getId() ?>">Excluir</a>
+                            <a class="btn btn-link" href="../acoes/excluir.produtos.php?key=<?= $c->getId() ?>"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                 <?php

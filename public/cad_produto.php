@@ -1,14 +1,18 @@
 <?php
 include_once('header.php');
 ?>
+<?php include_once('nav.php'); ?>
 <div class="container">
-    <?php include_once('nav.php');
+    <?php
     require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "/classes/produtos.class.php");
     require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../controller/produto.controller.php");
-    $controller = new ProdutoController();
-    $produto = $controller->buscarPorId($_GET['key']);
-
-    ?>
+    
+    $produto = new Produtos();
+    if (isset($_GET) && isset($_GET['key'])) {
+        $id = filter_input(INPUT_GET, 'key');
+        $controller = new ProdutoController();
+        $produto = $controller->buscarPorId($id);
+    } ?>
 
     <main>
         <h1>Cadastro Produto</h1>
