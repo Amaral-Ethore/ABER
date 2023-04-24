@@ -1,4 +1,3 @@
-
 html,
 body {
     margin: 0;
@@ -36,9 +35,11 @@ main {
 .card-body {
     flex-basis: 230px;
 }
-.a-card-img-top{
+
+.a-card-img-top {
     margin: 10px;
 }
+
 .card-img-top {
     flex-basis: 130px;
     aspect-ratio: 1 / 1;
@@ -70,6 +71,4 @@ main {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-@media (max-width: 900px) {
-    
-}
+@media (max-width: 900px) {}
