@@ -1,9 +1,8 @@
 <?php
 include_once('header.php');
-?>
+?><?php include_once('nav.php'); ?>
 <div class="container">
-    <?php include_once('nav.php');
-    /*   require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '../acoes/verifica_sessao.php'); */
+    <?php
     require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../classes/funcionario.class.php");
     require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../controller/funcionario.controller.php");
     $funcionario = new Funcionario();
@@ -50,8 +49,7 @@ include_once('header.php');
             if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == TRUE) {
             ?>
         <div class="alert alert-success" role="alert">
-            <?= $_SESSION['mensagem']; 
-            header('Location:../public/index.php');?>
+            <?= $_SESSION['mensagem']; ?>
         </div>
     <?php
             }

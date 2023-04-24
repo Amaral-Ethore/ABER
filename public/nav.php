@@ -7,14 +7,14 @@
         </div>
         <div class="menu">
             <ul>
-                <li>
+                <li class="search-li">
                     <div class="search">
                         <input id="search" class="menu-input" type="text">
                         <i class=" lupa fa-solid fa-magnifying-glass"></i>
                     </div>
                 </li>
                 <?php if (!isset($_SESSION) || !isset($_SESSION['tipo'])) { ?>
-                    <li>
+                    <li class="h-li">
                         <div class="dropdown drop-login">
                             <span>Faça
                                 <span id="dropbtn" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" class="hover">
@@ -42,8 +42,13 @@
                     </li>
                 <?php } ?>
                 <?php if (isset($_SESSION) && isset($_SESSION['tipo']) && $_SESSION['tipo'] == "cliente") { ?>
+                    <li>
+                        <a href="./carrinho.php">
+                            <i class="fa-solid fa-cart-shopping fa-flip-horizontal"></i>
+                        </a>
+                    </li>
                     <li class="dropdown">
-                        <i class="fa-solid fa-user btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                        <i class="fa-solid fa-user" type="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -54,28 +59,20 @@
 
                 <?php if (isset($_SESSION) && isset($_SESSION['tipo']) && $_SESSION['tipo'] == "func") { ?>
                     <li>
-                        <a href="./home_produtos.php">
-                            <i class="fa-solid fa-cart-shopping"></i>
+                        <a href="./gerenciamento.php">
+                            <i class="fa-solid fa-address-book align-middle"></i>
                         </a>
                     </li>
                     <li class="dropdown">
-                        <i class="fa-solid fa-user btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                        <i class="fa-solid fa-user align-middle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><a class="dropdown-item" href="../acoes/logout.php">Sair</a></li>
                         </ul>
                     </li>
-                    <?php if (isset($_SESSION) && isset($_SESSION['privilegio']) && $_SESSION['privilegio'] == "func") { ?>
 
-                    <?php } ?>
-                    <?php if (isset($_SESSION) && isset($_SESSION['privilegio']) && $_SESSION['privilegio'] == "admin") { ?>
-                        <li>
-                            <a href="./home_func.php">
-                                <i class="fa-solid fa-user"></i>
-                            </a>
-                        </li>
-                    <?php } ?>
+
                 <?php } ?>
             </ul>
         </div>
@@ -83,25 +80,25 @@
     <div class="h-2">
         <div class="menu-2">
             <ul>
-                    <li>
-                        <a href="">
-                            DEPARTAMENTOS
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            Carrinho
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">PC Gamer</a>
-                    </li>
-                    <li>
-                        <a href="">TV</a>
-                    </li>
-                    <li>
-                        <a href="">Oferta do Dia</a>
-                    </li>
+                <li>
+                    <a href="">
+                        DEPARTAMENTOS
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Carrinho
+                    </a>
+                </li>
+                <li>
+                    <a href="">PC Gamer</a>
+                </li>
+                <li>
+                    <a href="">TV</a>
+                </li>
+                <li>
+                    <a href="">Oferta do Dia</a>
+                </li>
             </ul>
         </div>
     </div>

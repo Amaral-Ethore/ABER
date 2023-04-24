@@ -39,7 +39,7 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
         $_SESSION['mensagem'] = "Erro ao atualizar";
         $_SESSION['sucesso'] = false;
     }
-    header('Location:../public/home.func.php');
+    header('Location:../public/home_func.php');
 } else {
 
     $id = isset($_POST['id']) ? $_POST['id'] : null;

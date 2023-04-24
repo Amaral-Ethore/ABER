@@ -13,18 +13,21 @@ function buscaFuncionario($mail, $senha)
         $_SESSION['tipo'] = "func";
         if ($funcionario->getPrivilegio() == "admin") {
             $_SESSION['mensagem'] = "Logado como Administrador";
+            $_SESSION['sucesso'] = true;
             $_SESSION['usuario'] = $funcionario->getEmail();
             $_SESSION['privilegio'] = "admin";
         }
         
         if ($funcionario->getPrivilegio() == "func") {
             $_SESSION['mensagem'] = "Logado como Funcionario";
+            $_SESSION['sucesso'] = true;
             $_SESSION['usuario'] = $funcionario->getEmail();
             $_SESSION['privilegio'] = "func";
         }
     } 
     else {
         $_SESSION['mensagem'] = "Funcionario não encontrado";
+        $_SESSION['sucesso'] = false;
         unset($_SESSION['usuario']);
         unset($_SESSION['tipo']);
         unset($_SESSION['privilegio']);

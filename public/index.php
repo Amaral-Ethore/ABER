@@ -1,9 +1,8 @@
-<?php require_once('header.php'); ?>
-<head>
-    <link rel="stylesheet" href="../style/index.css">
-</head>
+<?php
+require_once('header.php');
+require_once('nav.php') ?>
 <div class="container">
-    <?php require_once('nav.php') ?>
+
     <main>
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class=" bnrs carousel-inner">
@@ -37,14 +36,14 @@
 
             <div class="cards">
                 <?php foreach ($produto as $p) { ?>
-                    <div class="card h-100 border">
-                        <a class="a-card-img-top" href="item.php?key=<?= $p->getId() ?>">
+                    <div class="card h-100 border-0">
+                        <a href="item.php?key=<?= $p->getId() ?>">
                             <img src="../imagens/uploads/<?= $p->getImagem(); ?>" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $p->getNome() ?></h5>
                                 <p class="card-text"><?= $p->getMarca(); ?></p>
-                                <!-- <p class="card-text"><?= $p->getDescricao(); ?></p> -->
-                                <a href=""> <button>Comprar</button></a>
+                                <p class="card-text"><?= $p->getDescricao(); ?></p>
+                                <a href="home_compra.php">Comprar</a>
                             </div>
                         </a>
                     </div>
@@ -62,4 +61,5 @@
         </div>
     </main>
 </div>
+<?php unset($_SESSION['mensagem']); ?>
 <?php require_once('footer.php'); ?>

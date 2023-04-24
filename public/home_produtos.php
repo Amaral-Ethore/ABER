@@ -7,9 +7,9 @@ require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '../controller/produ
 
 $controller = new ProdutoController();
 $produto = $controller->buscarTodos();
-?>
+
+require_once('nav.php'); ?>
 <div class="container">
-    <?php require_once('nav.php'); ?>
 
     <h1>Lista de Produtos</h1>
     <a class="btn btn-primary" href="./cad_produto.php">Novo Produto</a>
@@ -33,15 +33,15 @@ $produto = $controller->buscarTodos();
                     <td><?= $p->getId(); ?></td>
                     <td><?= $p->getNome(); ?></td>
                     <td><?= $p->getDescricao(); ?></td>
+                    <td><?= $p->getMarca(); ?></td>/
                     <td><?= $p->getPreco(); ?></td>
-                    <td><?= $p->getMarca(); ?></td>
-                    <td><?= $p->getPreco() ?></td>
                     <td><?= $p->getValidade(); ?></td>
                     <td><?= $p->getSetor(); ?></td>
                     <td><?= $p->getCodeBar(); ?></td>
                     <td>
-                        <a class="btn btn-light" href="./cad_produto.php?key=<?= $p->getId() ?>">Editar</a>
-                        <a class="btn btn-link" href="../acoes/excluir.produtos.php?key=<?= $p->getId() ?>">Excluir</a>
+                        <a class="btn btn-light" href="./cad_produto.php?key=<?= $p->getId() ?>"><i class="fa-solid fa-pen-clip"></i></a>
+                        <a class="btn btn-light " href="../acoes/excluir.produto.php?key=<?= $p->getId(); ?>">
+                            <i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -49,14 +49,14 @@ $produto = $controller->buscarTodos();
     </table>
 
     <?php
-    if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == TRUE) {
+    if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == TRUE && isset($_SESSION['mensagem'])) {
     ?>
         <div class="alert alert-success" role="alert">
             <?= $_SESSION['mensagem']; ?>
         </div>
     <?php
     }
-    if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == false) {
+    if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == false && isset($_SESSION['mensagem'])) {
     ?>
         <div class="alert alert-danger" role="alert">
             <?= $_SESSION['mensagem']; ?>
