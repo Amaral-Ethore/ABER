@@ -14,6 +14,11 @@ if (isset($_GET) && isset($_GET['key'])) {
     $produto = $controller->buscarPorId($id);
 }
 ?>
+
+<head>
+
+</head>
+
     <?php require_once('nav.php') ?>
     <div class="container">
         
