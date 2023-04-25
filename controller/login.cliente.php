@@ -1,6 +1,6 @@
 <?php
-require_once('../classes/cliente.class.php');
-require_once('../controller/cliente.controller.php');
+require_once( (str_replace('\\', '/', dirname(__FILE__, 2))) . '../classes/cliente.class.php');
+require_once( (str_replace('\\', '/', dirname(__FILE__, 2))) .'../controller/cliente.controller.php');
 
 function buscaCliente($mail, $senha)
 {

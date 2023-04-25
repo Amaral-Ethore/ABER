@@ -1,6 +1,6 @@
 <?php
-require_once('../classes/funcionario.class.php');
-require_once('../controller/funcionario.controller.php');
+require_once( (str_replace('\\', '/', dirname(__FILE__, 2))) .'../classes/funcionario.class.php');
+require_once( (str_replace('\\', '/', dirname(__FILE__, 2))) .'../controller/funcionario.controller.php');
 function buscaFuncionario($mail, $senha)
 {
     $controller = new FuncionarioController();
