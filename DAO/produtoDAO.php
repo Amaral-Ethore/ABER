@@ -110,7 +110,7 @@ class ProdutoDAO
         $pdo = conectDb();
         $pdo->beginTransaction();
         try {
-            $stmt = $pdo->prepare("UPDATE produtos SET nome = :nome, descricao = :descricao, codigo_barras = :codigo_barras, qtde_estoque = :qtde_estoque, imagem = :img WHERE id = :id");
+            $stmt = $pdo->prepare("UPDATE produtos SET nome = :nome, descricao = :descricao, preco = :preco, codebar = :codebar, marca = :marca, setor = :setor, validade = :validade, imagem = :img WHERE id = :id");
             $stmt->bindValue(":nome", $produto->getNome());
             $stmt->bindValue(":descricao", $produto->getDescricao());
             $stmt->bindValue(":preco", $produto->getPreco());
@@ -118,8 +118,8 @@ class ProdutoDAO
             $stmt->bindValue(":marca", $produto->getMarca());
             $stmt->bindValue(":setor", $produto->getSetor());
             $stmt->bindValue(":validade", $produto->getValidade());
-            $stmt->bindValue(":id", $produto->getId());
             $stmt->bindValue(":img", $produto->getImagem());
+            $stmt->bindValue(":id", $produto->getId());
             $stmt->execute();
             if ($stmt->rowCount()) {
                 $pdo->commit();
