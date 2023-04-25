@@ -56,15 +56,15 @@ if (isset($_GET) && isset($_GET['key'])) {
 
                         <strong class="nome"> <?= $produto->getNome() ?> </strong>
 
-                        <div class="flex-between">
+                        <div class="flex-between espaco">
                             <p>Marca: <?= $produto->getMarca() ?> </p> <span>Garantia: x meses</span>
                         </div>
 
-                        <div class="divisao">
+                        <div class="divisao espaco">
                             <p></p>
                         </div>
 
-                        <div class="flex-between">
+                        <div class="flex-between espaco">
                             <div class="preco">
                                 <del>R$<?= round(($produto->getPreco() * $perc) / 30, 2); ?></del>
                                 <br>
@@ -78,12 +78,12 @@ if (isset($_GET) && isset($_GET['key'])) {
                             </div>
                         </div>
 
-                        <div>
+                        <div espaco>
                             <p>R$<?= round(($produto->getPreco() * $perc) / 80, 2); ?> no cartão</p>
                             <p>até 12x de R$<?= round($produto->getPreco() / 12, 2); ?> </p>
                         </div>
 
-                        <div class="divisao">
+                        <div class="divisao espaco">
                             <p></p>
                         </div>
 
