@@ -1,6 +1,6 @@
 <?php
-require_once('./login.cliente.php');
-require_once('./login.funcionario.php');
+require_once('login.cliente.php');
+require_once('login.funcionario.php');
 
 session_start();
 $email = isset($_POST['email']) ? $_POST['email'] : null;
