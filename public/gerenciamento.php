@@ -4,7 +4,7 @@ include_once("./header.php");
 include_once("./nav.php");
 ?>
 <div class="container">
-    <h2>Administração</h2>
+    <h2 class="ger-h2">Administração</h2>
     <div class="container-ger">
         <?php if (isset($_SESSION) && isset($_SESSION['tipo']) && $_SESSION['tipo'] == "func") { ?>
             <?php if (isset($_SESSION) && isset($_SESSION['privilegio']) && $_SESSION['privilegio'] == "admin") { ?>
