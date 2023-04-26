@@ -12,6 +12,7 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
     $nome       = addslashes(filter_input(INPUT_POST, 'nome'));
     $descricao    = addslashes(filter_input(INPUT_POST, 'descricao'));
     $marca   = addslashes(filter_input(INPUT_POST, 'marca'));
+    $preco   = addslashes(filter_input(INPUT_POST, 'preco'));
     $validade   = addslashes(filter_input(INPUT_POST, 'validade'));
     $setor   = addslashes(filter_input(INPUT_POST, 'setor'));
     $codebar   = addslashes(filter_input(INPUT_POST, 'codebar'));
@@ -21,28 +22,29 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
     if ($extensao == "png" || $extensao == "jpeg" || $extensao == "jpg") {
         $imgname = md5(time()) . "." . "$extensao";
         if ($nome && $descricao && $imgname) {
-            move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio . $imgname);
+            
             $produto->setId($id);
             $produto->setNome($nome);
             $produto->setDescricao($descricao);
             $produto->setMarca($marca);
+            $produto->setPreco($preco);
             $produto->setValidade($validade);
             $produto->setSetor($setor);
             $produto->setCodebar($codebar);
-            $produto->setImagem($imgname);
-
+            $produto->setImagem($file);
             $controller = new ProdutoController();
             $resultado = $controller->atualizarproduto($produto);
 
             if ($resultado) {
+                move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio . $imgname);
                 $_SESSION['mensagem'] = "Atualizado com sucesso";
                 $_SESSION['sucesso'] = true;
             } else {
-                $_SESSION['mensagem'] = "Erro ao atualizar";
+                $_SESSION['mensagem'] = "Erro ao atualizar 1";
                 $_SESSION['sucesso'] = false;
             }
         }
-        if (empty($nome) || empty($descricao) || $imagem) {
+        if (empty($nome) || empty($descricao) || empty($file)) {
             $_SESSION['mensagem'] = "Obrigatório informar Nome, Descrição e imagem";
             $_SESSION['sucesso'] = false;
             header('Location:../public/cad_produto.php?key=' . $id);
@@ -55,18 +57,19 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
         $produto->setValidade($validade);
         $produto->setSetor($setor);
         $produto->setCodebar($codebar);
-        $produto->setImagem($imagem);
+        $produto->setImagem($file);
 
         $controller = new ProdutoController();
-        $resultado = $controller->atualizarproduto($produto);
+        $resultado = $controller->atualizarProduto($produto);
 
         if ($resultado) {
             $_SESSION['mensagem'] = "Atualizado com sucesso";
             $_SESSION['sucesso'] = true;
         } else {
-            $_SESSION['mensagem'] = "Erro ao atualizar";
+            $_SESSION['mensagem'] = "Erro ao atualizar 2";
             $_SESSION['sucesso'] = false;
         }
+        var_dump($produto);
     }
     header('Location:../public/home_produtos');
 } else {
@@ -90,7 +93,7 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
             $produto->setValidade($validade);
             $produto->setSetor($setor);
             $produto->setCodebar($codebar);
-            $produto->setImagem($imgname);
+            $produto->setImagem($file);
             $dao = new ProdutoController();
             $resultado = $dao->criarProduto($produto);
             if ($resultado) {

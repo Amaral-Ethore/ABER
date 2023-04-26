@@ -42,9 +42,10 @@ require_once('nav.php') ?>
                             <div class="card-body">
                                 <h5 class="card-title"><?= $p->getNome() ?></h5>
                                 <p class="card-text"><?= $p->getMarca(); ?></p>
-                                <button href="home_compra.php">Comprar</button>
+                                
                             </div>
                         </a>
+                        <a class="btncard" href="home_compra.php">Comprar</a>
                     </div>
                 <?php } ?>
             </div>
