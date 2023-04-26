@@ -1,21 +1,27 @@
 .topo {
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 55% 45%;
     justify-content: space-between;
     margin: 10px 0px;
+    gap: 20px;
 }
 
 .carousel {
     display: flex;
     flex: 1;
     height: 100%;
+    margin-right: 10px;
 }
-.carousel_item{
-    position: sticky;
-    top: 0;
-    height: 400px;
-    width: 400px;
+
+.carousel-item{
+    height: 100%;
 }
+
+.carousel img{
+    height: 100%;
+    max-width: 100%;
+}
+
 .carousel-control-next-icon{
     background-color: black;
 }
@@ -30,7 +36,7 @@
     background-color: white;
 }
 
-.bloco div{
+.bloco .espaco{
     margin-top: 15px;
 }
 
@@ -43,6 +49,11 @@
     margin-bottom: 5px;
 }
 
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
 .flex-around {
     display: flex;
     justify-content: space-around;
@@ -53,7 +64,7 @@
     flex-direction: column;
     margin: 0;
     justify-content: flex-end;
-    align-self: flex-end;
+    align-self: center;
 }
 .preco del{
     align-self: flex-start;
@@ -64,13 +75,13 @@
 }
 
 .compra {
-    align-self: flex-end;
+    align-self: center;
 }
 
 .compra button {
-    padding: 10px;
+    padding: 5px;
     margin: 20px 0px;
-    width: 200px;
+    width: 150px;
     color: white;
 }
 
@@ -96,12 +107,15 @@
     display: flex;
     flex-direction: column;
     background-color: lightgrey;
+    padding: 10px;
 }
 
 .opcpagamento {
     background-color: lightgrey;
     height: 30px;
 }
+
+.accordion{}
 
 @media screen and (max-width: 767px){
     .topo{
