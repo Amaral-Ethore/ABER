@@ -43,10 +43,6 @@
     margin-bottom: 5px;
 }
 
-.flex-between {
-
-}
-
 .flex-around {
     display: flex;
     justify-content: space-around;
