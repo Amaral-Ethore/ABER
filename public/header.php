@@ -9,8 +9,9 @@
     <title>AberShop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css">
     <link rel="shortcut icon" href="../imagens/aber-logo-zip-file/png/logo-no-background.png" type="image/x-icon">
-    <link rel="stylesheet" href="../style/geral.css">
+    
     <link rel="stylesheet" href="../style/index.css">
     <link rel="stylesheet" href="../style/pagitem.css">
+    <link rel="stylesheet" href="../style/geral.css">
 </head>
 <body>
