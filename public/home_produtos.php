@@ -33,7 +33,7 @@ require_once('nav.php'); ?>
                     <td><?= $p->getId(); ?></td>
                     <td><?= $p->getNome(); ?></td>
                     <td><?= $p->getDescricao(); ?></td>
-                    <td><?= $p->getMarca(); ?></td>/
+                    <td><?= $p->getMarca(); ?></td>
                     <td><?= $p->getPreco(); ?></td>
                     <td><?= $p->getValidade(); ?></td>
                     <td><?= $p->getSetor(); ?></td>
