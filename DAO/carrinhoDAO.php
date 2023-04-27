@@ -50,26 +50,6 @@ class CarrinhoDAO
         }
     }
 
-    function inserirCompra(Compra $compra)
-    {
-        $pdo = conectDb();
-        $pdo->beginTransaction();
-        try {
-            $stmt = $pdo->prepare("INSERT INTO compra (cliente) VALUES (:cliente)");
-            $stmt->bindValue(":cliente", $compra->getCliente());
-            $stmt->execute();
-            if ($stmt->rowCount()) {
-                $pdo->commit();
-                return TRUE;
-            }
-            return FALSE;
-        } catch (PDOException $ex) {
-            echo "Erro ao inserir compra: " . $ex->getMessage();
-            $pdo->rollBack();
-            die();
-        }
-    }
-
     function buscarNome($id)
     {
         $pdo = conectDb();
@@ -86,6 +66,31 @@ class CarrinhoDAO
             return $retorno;
         } catch (PDOException $ex) {
             echo "Erro ao buscar compra: " . $ex->getMessage();
+            die();
+        }
+    }
+
+    function criarCarrinho(Carrinho $carrinho)
+    {
+        $pdo = conectDb();
+        $pdo->beginTransaction();
+        try {
+            $stmt = $pdo->prepare("INSERT INTO carrinho(compra, produto, quantprod, preco, total) VALUES(:compra, :prod, :qtd, :preco, :total)");
+            $stmt->bindValue(":compra", $carrinho->getCompra());
+            $stmt->bindValue(":prod", $carrinho->getProduto());
+            $stmt->bindValue(":qtd", $carrinho->getQuantprod());
+            $stmt->bindValue(":preco", $carrinho->getPreco());
+            $stmt->bindValue(":total", $carrinho->getPreco() * $carrinho->getQuantprod());
+
+            $stmt->execute();
+            $lastId = $pdo->lastInsertId();
+            if ($lastId > 0) {
+                $pdo->commit();
+            }
+            return $lastId;
+        } catch (PDOException $ex) {
+            echo "Erro ao buscar compra: " . $ex->getMessage();
+            $pdo->rollBack();
             die();
         }
     }

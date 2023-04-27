@@ -36,7 +36,7 @@ require_once('nav.php'); ?>
                         <td><?= $c->getQuantprod(); ?></td>
                         <td><?= $c->getPreco(); ?></td>
                         <td>
-                            <a class="btn btn-link" href="../acoes/excluir.produtos.php?key=<?= $c->getId() ?>"><i class="fa-solid fa-trash"></i></a>
+                            <a class="btn btn-link" href="../acoes/excluir.produto.php?key=<?= $c->getId() ?>"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                 <?php

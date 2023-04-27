@@ -79,7 +79,7 @@
 }
 
 .compra button {
-    padding: 5px;
+    padding: 10px;
     margin: 20px 0px;
     width: 150px;
     color: white;
@@ -114,8 +114,6 @@
     background-color: lightgrey;
     height: 30px;
 }
-
-.accordion{}
 
 @media screen and (max-width: 767px){
     .topo{

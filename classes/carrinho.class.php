@@ -7,7 +7,7 @@ class Carrinho
     private $produto;
     private $quantprod;
     private $preco;
-    private $nome;
+    private $nome; // virtual
 
     public function setId($id)
     {
