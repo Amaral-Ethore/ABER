@@ -1,7 +1,7 @@
 <?php
 require_once('header.php');
 require_once('nav.php') ?>
-<div class="container">
+<div class="container" style="height: 100%;">
 
     <main>
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -37,22 +37,22 @@ require_once('nav.php') ?>
             <div class="cards">
                 <?php foreach ($produto as $p) { ?>
                     <div class="card h-100 border-0">
-                        <a href="item.php?key=<?= $p->getId() ?>">
+                    <a class="" href="item.php?key=<?= $p->getId() ?>">
                             <img src="../imagens/uploads/<?= $p->getImagem(); ?>" class="card-img-top" alt="...">
+                            </a>
                             <div class="card-body">
                                 <h5 class="card-title"><?= $p->getNome() ?></h5>
                                 <p class="card-text"><?= $p->getMarca(); ?></p>
                                 
                             </div>
-                        </a>
-                        <a class="btncard" href="home_compra.php">Comprar</a>
+                        <a class="btncard" href="item.php?key=<?= $p->getId() ?>">Comprar</a>
                     </div>
                 <?php } ?>
             </div>
 
             <div class="btns">
                 <div class="btn1">
-                    <a href="http://">Ofertas do dia</a>
+                    <a href="http:">Ofertas do dia</a>
                 </div>
                 <div class="btn1">
                     <a href="">Ofertas da Semana</a>
