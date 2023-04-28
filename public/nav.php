@@ -50,8 +50,6 @@
                     <li class="dropdown">
                         <i class="fa-solid fa-user" type="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><a class="dropdown-item" href="../acoes/logout.php">Sair</a></li>
                         </ul>
                     </li>
@@ -66,14 +64,11 @@
                     <li class="dropdown">
                         <i class="fa-solid fa-user align-middle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><a class="dropdown-item" href="../acoes/logout.php">Sair</a></li>
                         </ul>
                     </li>
-
-
                 <?php } ?>
+                
             </ul>
         </div>
     </div>
@@ -87,7 +82,7 @@
                 </li>
                 <li>
                     <a href="">
-                        Carrinho
+                        ELETRODOMESTICOS
                     </a>
                 </li>
                 <li>
