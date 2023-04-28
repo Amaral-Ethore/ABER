@@ -46,7 +46,7 @@ include_once('header.php');
             <?= $_SESSION['mensagem']; ?>
         </div>
     <?php }
-    if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == false) { ?>
+    if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == false && isset($_SESSION['mensagem'])) { ?>
         <div class="alert alert-danger" role="alert">
             <?= $_SESSION['mensagem']; ?>
         </div>

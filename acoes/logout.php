@@ -1,5 +1,7 @@
 <?php
 session_start();
-unset($_SESSION['usuario'], $_SESSION['tipo'], $_SESSION['privilegio'], $_SESSION['sucesso']);
+$_SESSION['sucesso'] = false;
+$_SESSION['sucesso'] = "";
+unset($_SESSION['usuario'], $_SESSION['tipo'], $_SESSION['privilegio']);
 
 header("Location:../public/index.php");
