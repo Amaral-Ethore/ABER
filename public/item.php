@@ -72,8 +72,7 @@ if (isset($_GET) && isset($_GET['key'])) {
                             <p>à vista com desconto</p>
                         </div>
                         <div class="compra">
-                            <!-- <button class="btn_comprar">Comprar</button>
-                                <br> -->
+                            
                             <input type="hidden" name="id_produto" value="<?= $produto->getId(); ?>">
                             <input type="hidden" name="preco_produto" value="<?= $produto->getPreco(); ?>">
                             <button type="submit" class="btn_carrinho">Carrinho</button>

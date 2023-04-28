@@ -1,9 +1,21 @@
 <?php
 include_once('header.php');
+
+require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '../controller/carrinho.controller.php');
+require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '../controller/compra.controller.php');
+
+$carrinho = new Carrinho();
+
+if (isset($_GET) && isset($_GET['key'])) {
+  $id_usuario = filter_input(INPUT_GET, 'key');
+  $controller = new CarrinhoController();
+  $carrinho = $controller->buscarPorId($id_usuario);
+}
+
 ?>
 <div class="container">
   <?php include_once('nav.php');
-
+  
   ?>
 
 
@@ -49,7 +61,7 @@ include_once('header.php');
 
                 <div class="radio-input">
                   <input id="card" type="radio" class="inp-r-pagamento" name="payment">
-                  Pague R$20.99 no cartão de Credito
+                  Pague <?php var_dump($carrinho->getPreco()); $carrinho->getPreco() ?> no cartão de Credito
                 </div>
               </label>
 

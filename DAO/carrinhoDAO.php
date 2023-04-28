@@ -50,6 +50,30 @@ class CarrinhoDAO
         }
     }
 
+    public function buscarTodosPorCompra($id_compra)
+    {
+        $pdo = conectDb();
+        try {
+            $stmt = $pdo->prepare("SELECT * FROM carrinho WHERE compra = :id;");
+            $stmt->bindValue(":id", $id_compra);
+            $stmt->execute();
+            $compra = new Carrinho();
+            $retorno = array();
+            while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
+                $compra->setId($rs->id);
+                $compra->setCompra(($rs->compra));
+                $compra->setProduto(($rs->produto));
+                $compra->setQuantProd(($rs->quantprod));
+                $compra->setPreco(($rs->preco));
+                $retorno[] = clone $compra;
+            }
+            return  $retorno;
+        } catch (PDOException $ex) {
+            echo "Erro ao buscar compra 2: " . $ex->getMessage();
+            die();
+        }
+    }
+
     function buscarNome($id)
     {
         $pdo = conectDb();

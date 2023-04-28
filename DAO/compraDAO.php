@@ -47,7 +47,28 @@ class CompraDAO{
             die();
         }
     }
+
+    public function removeCompra($id)
+    {
+        $pdo = conectDb();
+        $pdo->beginTransaction();
+        try {
+            $stmt = $pdo->prepare('DELETE FROM carrinho WHERE id = :id');
+            $stmt->bindValue(":id", $id);
+            $stmt->execute();
+            if ($stmt->rowCount()) {
+                $pdo->commit();
+            }
+            return $stmt->rowCount();
+        } 
+        catch (PDOException $ex) {
+            echo "Erro ao excluir compra: " . $ex->getMessage();
+            $pdo->rollBack();
+            die();
+        }
+    }
 }
+
 ?>
 
 

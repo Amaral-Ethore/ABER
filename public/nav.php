@@ -43,7 +43,7 @@
                 <?php } ?>
                 <?php if (isset($_SESSION) && isset($_SESSION['tipo']) && $_SESSION['tipo'] == "cliente") { ?>
                     <li>
-                        <a href="./carrinho.php">
+                        <a href="./home_compra.php">
                             <i class="fa-solid fa-cart-shopping fa-flip-horizontal"></i>
                         </a>
                     </li>
