@@ -5,11 +5,17 @@ require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '../controller/carri
 require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '../controller/compra.controller.php');
 
 $carrinho = new Carrinho();
+$precoTotal = 0;
 
 if (isset($_GET) && isset($_GET['key'])) {
-  $id_usuario = filter_input(INPUT_GET, 'key');
+  $id_compra = filter_input(INPUT_GET, 'key');
   $controller = new CarrinhoController();
-  $carrinho = $controller->buscarPorId($id_usuario);
+  $carrinho = $controller->buscarTodosPorCompra($id_compra);
+}
+
+foreach ($carrinho as $c) {
+  $c->getPreco();
+  $precoTotal += $c->getPreco();
 }
 
 ?>
@@ -61,7 +67,7 @@ if (isset($_GET) && isset($_GET['key'])) {
 
                 <div class="radio-input">
                   <input id="card" type="radio" class="inp-r-pagamento" name="payment">
-                  Pague <?php var_dump($carrinho->getPreco()); $carrinho->getPreco() ?> no cartão de Credito
+                  Pague R$<?= str_replace(".", ",", strval($precoTotal)) ?> no cartão de Credito
                 </div>
               </label>
 
@@ -69,7 +75,7 @@ if (isset($_GET) && isset($_GET['key'])) {
                 <img src="https://designmodo.com/demo/checkout-panel/img/paypal_logo.png" />
                 <div class="radio-input">
                   <input id="paypal" type="radio" class="inp-r-pagamento" name="payment">
-                  Pague R$20.99 no PayPal
+                  Pague R$<?= str_replace(".", ",", strval($precoTotal)) ?> no PayPal
                 </div>
               </label>
               <label for="cardholder">Nome</label>

@@ -87,8 +87,9 @@
 
 .btn_comprar{
     border: none;
+    width: 200px;
     border-radius: 10px;
-    background-color: green;
+    background-color: red;
     margin: 0 !important;
 }
 
