@@ -12,5 +12,17 @@ class CompraController{
         }
         return $dao->inserirCompra($compra);
     }
+
+    public function removeCompra(int $id)
+    {
+        $dao  = new CompraDAO();
+        return $dao->removeCompra($id);
+    }
+    
+    public function buscarPorId($id)
+    {
+        $dao = new CarrinhoDAO();
+        return $dao->buscarUm($id);
+    }
 }
 ?>

@@ -11,6 +11,12 @@ class CarrinhoController
         return $dao->buscarTodos();
     }
 
+    public function buscarTodosPorCompra($id_compra)
+    {
+        $dao = new CarrinhoDAO();
+        return $dao->buscarTodosPorCompra($id_compra);
+    }
+
     public function buscarPorId($id)
     {
         $dao = new CarrinhoDAO();
