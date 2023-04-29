@@ -48,13 +48,13 @@ include_once("./nav.php");
                     </a>
                 </div>
                 <div class="cartao-gerenciamento">
-                    <a href="./home_func.php">
+                    <a href="./home_produtos.php">
                         <div class="cartao-gerenciamento-int">
 
-                            <i class="fa-solid fa-address-book"></i>
+                            <i class="fa-brands fa-product-hunt"></i>
 
-                            <h3>Gerenciamento de Funcionarios</h3>
-                            <p>Listagem, criação e alteração de funcionarios</p>
+                            <h3>Gerenciamento de Produtos</h3>
+                            <p>Listagem, criação e alteração de Produtos</p>
                         </div>
                     </a>
                 </div>

@@ -6,7 +6,7 @@ include_once('header.php');
     <?php
     require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "/classes/produtos.class.php");
     require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . "../controller/produto.controller.php");
-    
+
     $produto = new Produtos();
     if (isset($_GET) && isset($_GET['key'])) {
         $id = filter_input(INPUT_GET, 'key');
@@ -59,14 +59,14 @@ include_once('header.php');
             </div>
         <?php
                 }
-                if (isset($_SESSION) && isset($_SESSION['sucesso']) && !$_SESSION['sucesso']) {
+                if (isset($_SESSION) && isset($_SESSION['sucesso']) && isset($_SESSION['mensagem']) && !$_SESSION['sucesso']) {
         ?>
             <div class="alert alert-danger" role="alert">
                 <?= $_SESSION['mensagem']; ?>
             </div>
         <?php
-        }
-            unset($_SESSION['sucesso'], $_SESSION['mensagem']);
+                }
+                unset($_SESSION['sucesso'], $_SESSION['mensagem']);
         ?>
     </main>
 </div>

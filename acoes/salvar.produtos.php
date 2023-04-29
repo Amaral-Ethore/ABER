@@ -31,7 +31,7 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
             $produto->setValidade($validade);
             $produto->setSetor($setor);
             $produto->setCodebar($codebar);
-            $produto->setImagem($file);
+            $produto->setImagem($imgname);
             $controller = new ProdutoController();
             $resultado = $controller->atualizarproduto($produto);
 
@@ -50,26 +50,6 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
             header('Location:../public/cad_produto.php?key=' . $id);
             die();
         }
-        $produto->setId($id);
-        $produto->setNome($nome);
-        $produto->setDescricao($descricao);
-        $produto->setMarca($marca);
-        $produto->setValidade($validade);
-        $produto->setSetor($setor);
-        $produto->setCodebar($codebar);
-        $produto->setImagem($file);
-
-        $controller = new ProdutoController();
-        $resultado = $controller->atualizarProduto($produto);
-
-        if ($resultado) {
-            $_SESSION['mensagem'] = "Atualizado com sucesso";
-            $_SESSION['sucesso'] = true;
-        } else {
-            $_SESSION['mensagem'] = "Erro ao atualizar 2";
-            $_SESSION['sucesso'] = false;
-        }
-        var_dump($produto);
     }
     header('Location:../public/home_produtos');
 } else {
@@ -93,7 +73,7 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
             $produto->setValidade($validade);
             $produto->setSetor($setor);
             $produto->setCodebar($codebar);
-            $produto->setImagem($file);
+            $produto->setImagem($imgname);
             $dao = new ProdutoController();
             $resultado = $dao->criarProduto($produto);
             if ($resultado) {
