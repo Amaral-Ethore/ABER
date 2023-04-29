@@ -1,7 +1,7 @@
 <?php
 
 require_once('header.php');
-/* require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'/acoes/verifica_sessao.php'); */
+// require_once(str_replace('\\', '/', dirname(__FILE__, 2)) .'/acoes/verifica_sessao.php');
 require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '../controller/carrinho.controller.php');
 require_once(str_replace('\\', '/', dirname(__FILE__, 2)) . '../DAO/compraDAO.php');
 $id_cliente = $_SESSION['id_usuario'];
@@ -17,9 +17,6 @@ require_once('nav.php'); ?>
     
     <main>
         <h1>Carrinho</h1>
-        <?php
-        var_dump($compra);
-        ?>
 
         <table class="table table-striped table-hover">
             <thead>
@@ -50,9 +47,12 @@ require_once('nav.php'); ?>
                 ?>
             </tbody>
         </table>
-
+        
+        <div class="flex-between">
         <p> Total: R$<?=str_replace(".", ",", strval($precoTotal))?></p>
         <a href="pag.php?key=<?= $compra->getId() ?>" class="btn_comprar">Comprar</a>
+        </div>
+        
 
 
         <?php

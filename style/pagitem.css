@@ -87,9 +87,13 @@
 
 .btn_comprar{
     border: none;
+    width: 200px;
+    align-self: center;
     border-radius: 10px;
+    text-align: center;
     background-color: green;
     margin: 0 !important;
+    padding: 10px;
 }
 
 .btn_carrinho{

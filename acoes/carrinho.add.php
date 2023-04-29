@@ -22,6 +22,14 @@ $carrinhoController = new CarrinhoController();
 if (isset($_POST) && isset($_POST['id_produto'])) {
     $id_produto = filter_input(INPUT_POST, "id_produto");
     $id_cliente = $_SESSION['id_usuario'];
+
+    if ($_SESSION['id_usuario'] == NULL){
+        $_SESSION['mensagem'] = "Obrigatório informar Email e Senha";
+        $_SESSION['sucesso'] = false;
+        header('Location:../public/item.php?key=' . $id_produto);
+        die();
+    }
+    
     $preco_produto = filter_input(INPUT_POST, "preco_produto");
 
     $compra = new Compra();
