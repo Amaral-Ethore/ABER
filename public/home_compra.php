@@ -47,9 +47,12 @@ require_once('nav.php'); ?>
                 ?>
             </tbody>
         </table>
-
+        
+        <div class="flex-between">
         <p> Total: R$<?=str_replace(".", ",", strval($precoTotal))?></p>
         <a href="pag.php?key=<?= $compra->getId() ?>" class="btn_comprar">Comprar</a>
+        </div>
+        
 
 
         <?php

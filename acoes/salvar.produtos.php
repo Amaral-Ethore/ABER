@@ -112,5 +112,5 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
         $_SESSION['mensagem'] = "Extenção Invalida";
         $_SESSION['sucesso'] = false;
     }
-    header('Location:../public/home_produtos');
+    header('Location:../public/home_produtos.php');
 }

@@ -18,12 +18,9 @@ foreach ($carrinho as $c) {
   $precoTotal += $c->getPreco();
 }
 
+include_once('nav.php');
 ?>
 <div class="container">
-  <?php include_once('nav.php');
-  
-  ?>
-
 
   <div class="cart">
 

@@ -34,21 +34,7 @@ if (isset($_GET) && isset($_GET['key'])) {
                     <div class="carousel-item active">
                         <img src="../imagens/uploads/<?= $produto->getImagem(); ?>" class="d-block w-100" alt="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
                     </div>
-                    <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="ccccccccccccccccccccccccccccccc">
-                    </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselItens" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselItens" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
 
             <div class="bloco">
@@ -66,9 +52,9 @@ if (isset($_GET) && isset($_GET['key'])) {
 
                     <div class="flex-between espaco">
                         <div class="preco">
-                            <del>R$<?= round(($produto->getPreco() * $perc) / 30, 2); ?></del>
+                            <del>R$<?= str_replace(".", ",", round(($produto->getPreco() * $perc) / 30, 2)) ; ?></del>
                             <br>
-                            <span> R$<?= $produto->getPreco() ?></span>
+                            <span> R$<?= str_replace(".", ",", strval($produto->getPreco())) ?></span>
                             <p>à vista com desconto</p>
                         </div>
                         <div class="compra">
@@ -80,8 +66,8 @@ if (isset($_GET) && isset($_GET['key'])) {
                     </div>
 
                     <div espaco>
-                        <p>R$<?= round(($produto->getPreco() * $perc) / 80, 2); ?> no cartão</p>
-                        <p>até 12x de R$<?= round($produto->getPreco() / 12, 2); ?> </p>
+                        <p>R$<?= str_replace(".", ",", round(($produto->getPreco() * $perc) / 80, 2)); ?> no cartão</p>
+                        <p>até 12x de R$<?= str_replace(".", ",", round(($produto->getPreco()) / 12, 2)); ?> </p>
                     </div>
 
                     <div class="divisao espaco">
@@ -91,23 +77,24 @@ if (isset($_GET) && isset($_GET['key'])) {
                     <div class="pagamento">
                         <div class="flex-around">
                             <div>
-                                <p>2x de R$<?= round($produto->getPreco() / 2, 2); ?></p>
-                                <p>3x de R$<?= round($produto->getPreco() / 3, 2); ?></p>
-                                <p>4x de R$<?= round($produto->getPreco() / 4, 2); ?></p>
-                                <p>5x de R$<?= round($produto->getPreco() / 5, 2); ?></p>
-                                <p>6x de R$<?= round($produto->getPreco() / 6, 2); ?></p>
+                                <p>2x de R$<?= str_replace(".", ",", round(($produto->getPreco()) / 2, 2)); ?></p>
+                                <p>3x de R$<?= str_replace(".", ",", round(($produto->getPreco()) / 3, 2)); ?></p>
+                                <p>4x de R$<?= str_replace(".", ",", round(($produto->getPreco()) / 4, 2)); ?></p>
+                                <p>5x de R$<?= str_replace(".", ",", round(($produto->getPreco()) / 5, 2)); ?></p>
+                                <p>6x de R$<?= str_replace(".", ",", round(($produto->getPreco()) / 6, 2)); ?></p>
                             </div>
                             <div>
-                                <p>7x de R$<?= round($produto->getPreco() / 7, 2); ?></p>
-                                <p>8x de R$<?= round($produto->getPreco() / 8, 2); ?></p>
-                                <p>9x de R$<?= round($produto->getPreco() / 9, 2); ?></p>
-                                <p>10x de R$<?= round($produto->getPreco() / 10, 2); ?></p>
-                                <p>11x de R$<?= round($produto->getPreco() / 11, 2); ?></p>
+                                <p>7x de R$<?= str_replace(".", ",", round(($produto->getPreco())/ 7, 2)); ?></p>
+                                <p>8x de R$<?= str_replace(".", ",", round(($produto->getPreco())/ 8, 2)); ?></p>
+                                <p>9x de R$<?= str_replace(".", ",", round(($produto->getPreco())/ 9, 2)); ?></p>
+                                <p>10x de R$<?= str_replace(".", ",", round(($produto->getPreco()) / 10, 2)); ?></p>
+                                <p>11x de R$<?= str_replace(".", ",", round(($produto->getPreco()) / 11, 2)); ?></p>
                             </div>
                         </div>
 
-                        <div class="opcpagamento flex-between">
-                            adsad
+                        <div class="opcpagamento flex-around">
+                            <img src="../imagens/img cartao/mastercard_logo.png" />
+                            <img src="../imagens/img cartao/visa_logo.png" />
                         </div>
                     </div>
 
@@ -138,7 +125,7 @@ if (isset($_GET) && isset($_GET['key'])) {
                 </h2>
                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                     <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    A única com tecnologia estrelar patenteada que garante o fluxo de ar por todos os lados, o cozimento mais rápido e uniforme, deixando os alimentos macios por dentro e crocantes por fora. São 1425w e capacidade total do cesto de 2,6l e útil de 0,8kg. Com ajuste de temperatura de 80 a 200 graus, timer de 30 minutos e desligamento automático. Fácil de lavar: peças removíveis e preparadas para a máquina de lavar. Display analógico e cabo retrátil.
                     </div>
                 </div>
             </div>
