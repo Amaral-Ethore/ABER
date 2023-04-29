@@ -13,10 +13,11 @@ if (isset($_GET) && isset($_GET['key'])) {
 }
 
 ?>
-<div class="container">
-  <?php include_once('nav.php');
+<?php include_once('nav.php');
   
   ?>
+<div class="container">
+  
 
 
   <div class="cart">
@@ -61,7 +62,7 @@ if (isset($_GET) && isset($_GET['key'])) {
 
                 <div class="radio-input">
                   <input id="card" type="radio" class="inp-r-pagamento" name="payment">
-                  Pague <?php var_dump($carrinho->getPreco()); $carrinho->getPreco() ?> no cartão de Credito
+                  Pague <?php $carrinho->getPreco() ?> no cartão de Credito
                 </div>
               </label>
 

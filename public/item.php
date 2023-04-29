@@ -21,7 +21,6 @@ if (isset($_GET) && isset($_GET['key'])) {
 
 <?php require_once('nav.php') ?>
 <div class="container">
-
     <main>
         <div class="topo">
             <div id="carouselItens" class="carousel carousel_item slide">
@@ -35,11 +34,11 @@ if (isset($_GET) && isset($_GET['key'])) {
                         <img src="../imagens/uploads/<?= $produto->getImagem(); ?>" class="d-block w-100" alt="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
                     </div>
                     <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb">
+                        <img src="../imagens/aber-logo-zip-file/png/logo-no-background.png" class="d-block w-100" alt="alt">
                     </div>
-                    <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="ccccccccccccccccccccccccccccccc">
-                    </div>
+                    <iframe class="carousel-item" src="http://eelslap.com/" width="300" height="300">
+                        <p>Your browser does not support iframes.</p>
+                    </iframe>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselItens" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -72,7 +71,7 @@ if (isset($_GET) && isset($_GET['key'])) {
                             <p>à vista com desconto</p>
                         </div>
                         <div class="compra">
-                            
+
                             <input type="hidden" name="id_produto" value="<?= $produto->getId(); ?>">
                             <input type="hidden" name="preco_produto" value="<?= $produto->getPreco(); ?>">
                             <button type="submit" class="btn_carrinho">Carrinho</button>

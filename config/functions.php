@@ -22,10 +22,11 @@ function conectDb()
     }
 }
 
-function verificaSessao()
+function verificaSessao(string $location)
 {
     if (!isset($_SESSION) || !isset($_SESSION['usuario'])) {
         $_SESSION['mensagem'] = "Você deve se autenticar.";
-        header("Location:../public/index.php");
+        unset($_SESSION['usuario'], $_SESSION['tipo'], $_SESSION['privilegio'], $_SESSION['carrinho']);
+        header("Location:". $location);
     }
 }
