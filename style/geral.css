@@ -586,3 +586,10 @@ div[class*='column'] {
 .envio {
   font-size: 1.5rem;
 }
+
+.conclusao{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  text-align: center;
+}

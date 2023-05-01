@@ -118,4 +118,21 @@ class CarrinhoDAO
             die();
         }
     }
+
+    public function deletarTodosPorCompra($id_compra)
+    {
+        $pdo = conectDb();
+        try {
+            $stmt = $pdo->prepare("DELETE FROM carrinho WHERE compra = :id;");
+            $stmt->bindValue(":id", $id_compra);
+            $stmt->execute();
+            if ($stmt->rowCount()) {
+                $pdo->commit();
+            }
+            return $stmt->rowCount();
+        } catch (PDOException $ex) {
+            echo "Erro ao excluir carrinho: " . $ex->getMessage();
+            die();
+        }
+    }
 }

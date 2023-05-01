@@ -30,6 +30,11 @@ class CarrinhoController
         return $carrinho->getNome();
     }
 
+    public function deletarCarrinho($id_compra){
+        $dao = new CarrinhoDAO();
+        return $dao->deletarTodosPorCompra($id_compra);
+    }
+
     public function salvar($carrinho)
     {
         $dao = new CarrinhoDAO();

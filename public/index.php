@@ -45,7 +45,7 @@ require_once('nav.php') ?>
                                 <p class="card-text"><?= $p->getMarca(); ?></p>
                                 
                             </div>
-                        <a class="btncard" href="item.php?key=<?= $p->getId() ?>">Comprar</a>
+                        <a class="btncard" href="item.php?key=<?= $p->getId() ?>">Detalhes</a>
                     </div>
                 <?php } ?>
             </div>

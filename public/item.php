@@ -36,6 +36,16 @@ if (isset($_GET) && isset($_GET['key'])) {
                     <div class="carousel-item">
                         <img src="../imagens/aber-logo-zip-file/png/logo-no-background.png" class="d-block w-100" alt="alt">
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselItens" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselItens" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+
                     <iframe class="carousel-item" src="http://eelslap.com/" width="300" height="300">
                         <p>Your browser does not support iframes.</p>
                     </iframe>
@@ -57,7 +67,7 @@ if (isset($_GET) && isset($_GET['key'])) {
 
                     <div class="flex-between espaco">
                         <div class="preco">
-                            <del>R$<?= str_replace(".", ",", round(($produto->getPreco() * $perc) / 30, 2)) ; ?></del>
+                            <del>R$<?= str_replace(".", ",", round(($produto->getPreco() * $perc) / 30, 2)); ?></del>
                             <br>
                             <span> R$<?= str_replace(".", ",", strval($produto->getPreco())) ?></span>
                             <p>à vista com desconto</p>
@@ -89,9 +99,9 @@ if (isset($_GET) && isset($_GET['key'])) {
                                 <p>6x de R$<?= str_replace(".", ",", round(($produto->getPreco()) / 6, 2)); ?></p>
                             </div>
                             <div>
-                                <p>7x de R$<?= str_replace(".", ",", round(($produto->getPreco())/ 7, 2)); ?></p>
-                                <p>8x de R$<?= str_replace(".", ",", round(($produto->getPreco())/ 8, 2)); ?></p>
-                                <p>9x de R$<?= str_replace(".", ",", round(($produto->getPreco())/ 9, 2)); ?></p>
+                                <p>7x de R$<?= str_replace(".", ",", round(($produto->getPreco()) / 7, 2)); ?></p>
+                                <p>8x de R$<?= str_replace(".", ",", round(($produto->getPreco()) / 8, 2)); ?></p>
+                                <p>9x de R$<?= str_replace(".", ",", round(($produto->getPreco()) / 9, 2)); ?></p>
                                 <p>10x de R$<?= str_replace(".", ",", round(($produto->getPreco()) / 10, 2)); ?></p>
                                 <p>11x de R$<?= str_replace(".", ",", round(($produto->getPreco()) / 11, 2)); ?></p>
                             </div>
@@ -130,7 +140,7 @@ if (isset($_GET) && isset($_GET['key'])) {
                 </h2>
                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                     <div class="accordion-body">
-                    A única com tecnologia estrelar patenteada que garante o fluxo de ar por todos os lados, o cozimento mais rápido e uniforme, deixando os alimentos macios por dentro e crocantes por fora. São 1425w e capacidade total do cesto de 2,6l e útil de 0,8kg. Com ajuste de temperatura de 80 a 200 graus, timer de 30 minutos e desligamento automático. Fácil de lavar: peças removíveis e preparadas para a máquina de lavar. Display analógico e cabo retrátil.
+                        A única com tecnologia estrelar patenteada que garante o fluxo de ar por todos os lados, o cozimento mais rápido e uniforme, deixando os alimentos macios por dentro e crocantes por fora. São 1425w e capacidade total do cesto de 2,6l e útil de 0,8kg. Com ajuste de temperatura de 80 a 200 graus, timer de 30 minutos e desligamento automático. Fácil de lavar: peças removíveis e preparadas para a máquina de lavar. Display analógico e cabo retrátil.
                     </div>
                 </div>
             </div>

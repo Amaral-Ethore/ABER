@@ -14,6 +14,7 @@ if (isset($_GET) && isset($_GET['key'])) {
 
 foreach ($carrinho as $c) {
   $c->getPreco();
+  $c->getCompra();
   $precoTotal += $c->getPreco();
 }
 
@@ -93,8 +94,8 @@ include_once('nav.php');
         </div>
       </div>
       <div class="panel-footer">
-        <button class="btn-pag back-btn">Voltar</button>
-        <button class="btn-pag next-btn">Avançar</button>
+       <a href="./home_compra.php"> <button class="btn-pag back-btn">Voltar</button> </a> 
+       <a href="../acoes/conclusão.compra.php?key=<?= $c->getCompra()?>"> <button class="btn-pag next-btn">Avançar</button> </a> 
       </div>
     </div>
   </div>

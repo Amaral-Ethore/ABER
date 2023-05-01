@@ -53,8 +53,6 @@ require_once('nav.php'); ?>
         <a href="pag.php?key=<?= $compra->getId() ?>" class="btn_comprar">Comprar</a>
         </div>
         
-
-
         <?php
         if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == TRUE) {
         ?>
