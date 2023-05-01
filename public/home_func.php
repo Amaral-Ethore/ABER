@@ -9,8 +9,6 @@ $funcionario = $controller->buscarTodos();
 
 require_once('nav.php'); ?>
 <div class="container">
-
-
     <h1>Lista de Funcionários</h1>
     <a class="btn btn-primary" href="../public/cad_func.php">Novo Funcionário</a>
     <table class="table table-striped">
@@ -41,8 +39,6 @@ require_once('nav.php'); ?>
                     <td>
                         <a class="btn btn-light" href="./cad_func.php?key=<?= $f->getId() ?>"><i class="fa-solid fa-pen-clip"></i></a>
                         <a class="btn btn-light " href="../acoes/excluir.func.php?key=<?= $f->getId() ?>"><i class="fa-solid fa-trash"></i></a>
-
-
                     </td>
                 </tr>
             <?php
@@ -52,22 +48,22 @@ require_once('nav.php'); ?>
     </table>
 
     <?php
-    if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == TRUE) {
-    ?>
-        <div class="alert alert-success" role="alert">
-            <?= $_SESSION['mensagem']; ?>
-        </div>
-    <?php
-    }
-    if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == false) {
-    ?>
-        <div class="alert alert-danger" role="alert">
-            <?= $_SESSION['mensagem']; ?>
-        </div>
-    <?php
-    }
-    unset($_SESSION['sucesso'], $_SESSION['mensagem']);
-    ?>
+        if (isset($_SESSION) && isset($_SESSION['sucesso']) && isset($_SESSION['mensagem']) && $_SESSION['sucesso']) {
+        ?>
+            <div class="alert alert-success" role="alert">
+                <?= $_SESSION['mensagem']; ?>
+            </div>
+        <?php
+        }
+        if (isset($_SESSION) && isset($_SESSION['sucesso']) && isset($_SESSION['mensagem']) && !$_SESSION['sucesso']) {
+        ?>
+            <div class="alert alert-danger" role="alert">
+                <?= $_SESSION['mensagem']; ?>
+            </div>
+        <?php
+        }
+        unset($_SESSION['sucesso'], $_SESSION['mensagem']);
+        ?>
 
 </div>
 
