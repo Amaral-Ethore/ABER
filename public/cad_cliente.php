@@ -15,7 +15,7 @@ include_once('header.php');
     <h1>Cadastro Cliente</h1>
     <form method="post" action="../acoes/salvar.cliente.php">
         <div class="mb-3">
-            <label for="nome" class="form-label"> Nome </label>
+            <label for="nome" class="form-label"> * Nome </label>
             <input type="hidden" name="id" value="<?= $cliente->getId(); ?>">
             <input type="text" class="form-control" id="nome" name="nome" value="<?= $cliente->getNome() ?>">
         </div>
@@ -24,7 +24,7 @@ include_once('header.php');
             <input type="text" class="form-control" id="cpfcnpj" name="cpf_cnpj" value="<?= $cliente->getCpfCnpj() ?>">
         </div>
         <div class="mb-3">
-            <label for="email" class="form-label"> Email </label>
+            <label for="email" class="form-label"> * Email </label>
             <input type="email" class="form-control" id="email" name="email" value="<?= $cliente->getEmail() ?>">
         </div>
         <div class="mb-3">
@@ -36,7 +36,7 @@ include_once('header.php');
             <input type="tel" class="form-control" id="telefone" name="telefone" value="<?= $cliente->getTelefone() ?>">
         </div>
         <div class="mb-3">
-            <label for="senha" class="form-label"> Senha </label>
+            <label for="senha" class="form-label"> * Senha </label>
             <input type="password" class="form-control" id="senha" name="senha" value="<?= $cliente->getSenha() ?>">
         </div>
         <button type="submit" class="btn btn-primary">Salvar</button>

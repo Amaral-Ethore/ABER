@@ -16,8 +16,8 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
     $privilegio   = addslashes(filter_input(INPUT_POST, 'privilegio'));
 
 
-    if (empty($nome) || empty($email)) {
-        $_SESSION['mensagem'] = "Obrigatório informar Nome e email 2";
+    if (empty($nome) || empty($email) || empty($senha)) {
+        $_SESSION['mensagem'] = "Obrigatório informar Nome, Email e Senha";
         $_SESSION['sucesso'] = false;
         header('Location:../public/cad_func.php?key=' . $id);
         die();
@@ -73,7 +73,7 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
             $_SESSION['sucesso'] = false;
         }
     } else {
-        $_SESSION['mensagem'] = "Obrigatório informar Nome e email";
+        $_SESSION['mensagem'] = "Obrigatório informar Nome, Email e Senha";
         $_SESSION['sucesso'] = false;
     }
     header('Location:../public/cad_func.php');

@@ -17,16 +17,16 @@ include_once('header.php');
     <h1>Cadastro Funcionário</h1>
     <form method="Post" action="../acoes/salvar.func.php">
         <div class="mb-3">
-            <label for="nome" class="form-label"> Nome </label>
+            <label for="nome" class="form-label"> * Nome </label>
             <input type="text" class="form-control" id="nome" name="nome" value="<?= $funcionario->getNome() ?>">
             <input type="hidden" name="id" value="<?= $funcionario->getId(); ?>">
         </div>
         <div class="mb-3">
-            <label for="email" class="form-label"> Email </label>
+            <label for="email" class="form-label"> * Email </label>
             <input type="email" class="form-control" id="email" name="email" value="<?= $funcionario->getEmail() ?>">
         </div>
         <div class="mb-3">
-            <label for="senha" class="form-label"> Senha </label>
+            <label for="senha" class="form-label"> * Senha </label>
             <input type="password" class="form-control" id="senha" name="senha" value="<?= $funcionario->getSenha() ?>">
         </div>
         <div class="mb-3">

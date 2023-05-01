@@ -40,7 +40,7 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
                 $_SESSION['mensagem'] = "Atualizado com sucesso";
                 $_SESSION['sucesso'] = true;
             } else {
-                $_SESSION['mensagem'] = "Erro ao atualizar 1";
+                $_SESSION['mensagem'] = "Erro ao atualizar";
                 $_SESSION['sucesso'] = false;
             }
         }
@@ -85,11 +85,11 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
                 $_SESSION['sucesso'] = false;
             }
         } else {
-            $_SESSION['mensagem'] = "Obrigatório informar Nome e Descrição";
+            $_SESSION['mensagem'] = "Obrigatório informar Nome, Descrição e Imagem";
             $_SESSION['sucesso'] = false;
         }
     } else {
-        $_SESSION['mensagem'] = "Extenção Invalida";
+        $_SESSION['mensagem'] = "Extensão Invalida";
         $_SESSION['sucesso'] = false;
     }
     header('Location:../public/home_produtos.php');

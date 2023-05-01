@@ -141,7 +141,7 @@ if (isset($_GET) && isset($_GET['key'])) {
                 </h2>
                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                     <div class="accordion-body">
-                        A única com tecnologia estrelar patenteada que garante o fluxo de ar por todos os lados, o cozimento mais rápido e uniforme, deixando os alimentos macios por dentro e crocantes por fora. São 1425w e capacidade total do cesto de 2,6l e útil de 0,8kg. Com ajuste de temperatura de 80 a 200 graus, timer de 30 minutos e desligamento automático. Fácil de lavar: peças removíveis e preparadas para a máquina de lavar. Display analógico e cabo retrátil.
+                        Em todos esses anos nessa indústria vital, essa é a primeira vez que encontro um produto tão magnífico quanto este. Isso seria capaz de alimentar famílias, fazer nascer rosas no seu quintal, e estabilizar a economia brasileira. A vontade de chorar é imensa, mas a de comemorar a chegada deste produto é maior.
                     </div>
                 </div>
             </div>

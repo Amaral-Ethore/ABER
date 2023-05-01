@@ -68,7 +68,7 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
             header('Location:../public/cad_cliente.php');
         }
     } else {
-        $_SESSION['mensagem'] = "Obrigatório informar Nome e Email e Senha";
+        $_SESSION['mensagem'] = "Obrigatório informar Nome, Email e Senha";
         $_SESSION['sucesso'] = false;
         header('Location:../public/cad_cliente.php');
     }
