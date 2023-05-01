@@ -61,7 +61,7 @@ if (isset($_POST) && isset($_POST['id']) && !empty($_POST['id'])) {
         if ($resultado) {
             $_SESSION['mensagem'] = "Criado com sucesso";
             $_SESSION['sucesso'] = true;
-            header('Location:../public/home_cliente.php');
+            header('Location:../public/index.php');
         } else {
             $_SESSION['mensagem'] = "Erro ao criar";
             $_SESSION['sucesso'] = false;

@@ -51,8 +51,9 @@ include_once('header.php');
                 <input type="file" class="form-control" id="imagem" name="imagem" value="<?= $produto->getImagem() ?>">
             </div>
             <button type="submit" class="btn btn-primary">Salvar</button>
-        </form> <?php
-                if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso']) {
+        </form> 
+        <?php
+                if (isset($_SESSION) && isset($_SESSION['sucesso']) && isset($_SESSION['mensagem']) && $_SESSION['sucesso']) {
                 ?>
             <div class="alert alert-success" role="alert">
                 <?= $_SESSION['mensagem']; ?>

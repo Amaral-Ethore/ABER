@@ -54,14 +54,14 @@ require_once('nav.php'); ?>
         </div>
         
         <?php
-        if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == TRUE) {
+        if (isset($_SESSION) && isset($_SESSION['sucesso']) && isset($_SESSION['mensagem']) && $_SESSION['sucesso'] == TRUE) {
         ?>
             <div class="alert alert-success" role="alert">
                 <?= $_SESSION['mensagem']; ?>
             </div>
         <?php
         }
-        if (isset($_SESSION) && isset($_SESSION['sucesso']) && $_SESSION['sucesso'] == false) {
+        if (isset($_SESSION) && isset($_SESSION['sucesso']) && isset($_SESSION['mensagem']) && $_SESSION['sucesso'] == false) {
         ?>
             <div class="alert alert-danger" role="alert">
                 <?= $_SESSION['mensagem']; ?>
